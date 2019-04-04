@@ -3,4 +3,10 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="games_company">Games Company</string>
+    <string name="programmer">Programmer</string>
+    <string name="know_how_to_program_games">- Know how to program games</string>
+    <string name="be_experienced_with_android_studio">- Be experienced with Android Studio</string>
+    <string name="continue_to_assessment">continue to assessment</string>
 </resources>
+
