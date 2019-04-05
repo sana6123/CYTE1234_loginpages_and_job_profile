@@ -13,10 +13,15 @@
         android:id="@+id/rentalLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="876dp"
+        android:layout_marginTop="550dp"
         android:gravity="top"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="134dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502">
 
         <ImageView
             android:id="@+id/imageView"
@@ -36,7 +41,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="First Name"
+            android:hint="Name"
             android:inputType="textPersonName"
             android:textColorHint="@color/bckcolor"
             android:textStyle="italic"
@@ -47,29 +52,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.21" />
 
-
-        <EditText
-            android:id="@+id/candidateLname_cyte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:hint="Last Name"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/bckcolor"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.91"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.21" />
 
         <EditText
             android:id="@+id/candidate_phone_cyte"
@@ -114,16 +96,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.292" />
-
-        <EditText
-            android:id="@+id/username_cand"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Username"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/bckcolor"
-            android:textStyle="italic" />
 
         <EditText
             android:id="@+id/candidate_pass_cyte"

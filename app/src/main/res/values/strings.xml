@@ -8,5 +8,15 @@
     <string name="know_how_to_program_games">- Know how to program games</string>
     <string name="be_experienced_with_android_studio">- Be experienced with Android Studio</string>
     <string name="continue_to_assessment">continue to assessment</string>
+    <string name="company_name">Company Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="cyte">CYTE</string>
+    <string name="postal_address">Postal Address</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="employer">employer</string>
+    <string name="candidate">candidate</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
 </resources>
 

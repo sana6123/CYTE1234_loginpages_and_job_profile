@@ -13,10 +13,14 @@
         android:id="@+id/rentalLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="876dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginBottom="-1dp"
         android:gravity="top"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="230dp"
-        tools:layout_editor_absoluteY="122dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -36,7 +40,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="Company Name"
+            android:hint="@string/company_name"
             android:inputType="textPersonName"
             android:textColorHint="@color/bckcolor"
             android:textStyle="italic"
@@ -59,7 +63,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textColorHint="@color/bckcolor"
             android:textStyle="italic"
@@ -68,7 +72,8 @@
             app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.292" />
+            app:layout_constraintVertical_bias="0.292"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/employer_phone_cyte"
@@ -81,7 +86,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"
-            android:hint="Phone Number"
+            android:hint="@string/phone_number"
             android:inputType="phone"
             android:textColorHint="@color/bckcolor"
             android:textStyle="italic"
@@ -89,16 +94,6 @@
             app:layout_constraintHorizontal_bias="0.41"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/employer_usname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Username"
-            android:textColorHint="@color/bckcolor"
-            android:textStyle="italic"
-            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/employer_pass_cyte"
@@ -112,7 +107,7 @@
 
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:textColorHint="@color/bckcolor"
             android:textStyle="italic"
@@ -128,12 +123,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Confirm Password"
+            android:hint="@string/confirm_password"
             android:inputType="textPassword"
             android:textColorHint="@color/bckcolor"
             android:textStyle="italic"
             tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="394dp" />
+            tools:layout_editor_absoluteY="394dp"
+            android:autofillHints="" />
 
 
         <EditText
@@ -147,7 +143,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="Postal Address"
+            android:hint="@string/postal_address"
             android:inputType="textPostalAddress"
             android:textColorHint="@color/bckcolor"
             android:textStyle="italic"
@@ -168,7 +164,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.47"
@@ -187,7 +183,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="CYTE"
+        android:text="@string/cyte"
         android:textStyle="italic"
 
         android:textColor="@color/ftcolor"
@@ -210,7 +206,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="candidate"
+        android:text="@string/candidate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.022"
@@ -228,7 +224,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="employer"
+        android:text="@string/employer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.843"
