@@ -5,6 +5,7 @@
     <color name="ftcolor">#ffffff</color>
     <color name="colorAccent">#D81B60</color>
     <color name="bckcolor">#000000</color>
+    <color name="yelcolor">#ffff33</color>
     <drawable name="CyteLogo" />
 
 </resources>
