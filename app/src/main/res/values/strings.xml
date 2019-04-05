@@ -18,5 +18,9 @@
     <string name="email">Email</string>
     <string name="phone_number">Phone Number</string>
     <string name="password">Password</string>
+    <string name="employer2">Employer2</string>
+    <string name="candidate2">Candidate2</string>
+    <string name="cyte2">CYTE2</string>
+    <string name="todo">TODO</string>
 </resources>
 
