@@ -5,8 +5,8 @@
     <color name="colorAccent">#D81B60</color>
     <color name="bckcolor">#000000</color>
     <color name="yelcolor">#ffff33</color>
-    <drawable name="CyteLogo" />
-
+    <drawable name="CyteLogo"/>
+    <color name="ftcolor">#FDFCFBFB</color>
     <color name="fontColor">#FD000000</color>
     <color name="greycolor">#CED2D6</color>
 
