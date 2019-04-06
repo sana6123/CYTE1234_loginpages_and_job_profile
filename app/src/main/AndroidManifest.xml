@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".browser"></activity>
+        <activity android:name=".job_profile" />
+        <activity android:name=".employee_login" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -20,8 +23,10 @@
         </activity>
         <activity
             android:name=".Employee_Profile_Activity"
-            android:label="EmployeeProfileActivity">
-        </activity>
+            android:label="EmployeeProfileActivity" />
+        <activity
+            android:name=".employer_snpg"
+            android:label="EmployeeSignUp" />
     </application>
 
 </manifest>

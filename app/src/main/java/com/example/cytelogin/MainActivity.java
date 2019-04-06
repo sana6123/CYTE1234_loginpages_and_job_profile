@@ -47,7 +47,15 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                startActivity(new Intent(MainActivity.this, Employee_Profile_Activity.class));
+                startActivity(new Intent(MainActivity.this, employee_login.class));
+            }
+        });
+
+        final Button button2 = (Button) findViewById(R.id.employer_startupbuttton);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // your handler code here
+                startActivity(new Intent(MainActivity.this, employee_login.class));
 
             }
         });

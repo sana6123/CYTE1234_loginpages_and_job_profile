@@ -12,7 +12,7 @@ public class MainActivity_e_c extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Temp code that shows employee form
-        Intent intent = new Intent(getApplicationContext(), Employee_Profile_Activity.class);
+        Intent intent = new Intent(getApplicationContext(), employee_login.class);
         startActivity(intent);
 
     }

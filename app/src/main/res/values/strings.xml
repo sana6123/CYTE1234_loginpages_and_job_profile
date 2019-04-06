@@ -22,5 +22,12 @@
     <string name="candidate2">Candidate2</string>
     <string name="cyte2">CYTE2</string>
     <string name="todo">TODO</string>
+
+
+    <string name="search">Search</string>
+    <string name="selectTitle">jobTitle</string>
+
+
+
 </resources>
 
