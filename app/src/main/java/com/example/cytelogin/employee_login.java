@@ -1,27 +1,25 @@
 package com.example.cytelogin;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class Employee_Profile_Activity extends AppCompatActivity {
+public class employee_login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employee__profile);
+        setContentView(R.layout.activity_employee_login);
 
-        final Button button = (Button) findViewById(R.id.candidate_signupdn);
+        final Button button = (Button) findViewById(R.id.signup_main);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                startActivity(new Intent(Employee_Profile_Activity.this, browser.class));
+                startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
 
             }
         });
-
     }
 }
