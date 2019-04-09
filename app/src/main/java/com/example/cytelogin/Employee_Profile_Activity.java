@@ -18,7 +18,7 @@ public class Employee_Profile_Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                startActivity(new Intent(Employee_Profile_Activity.this, browser.class));
+                startActivity(new Intent(Employee_Profile_Activity.this, job_profile.class));
 
             }
         });
