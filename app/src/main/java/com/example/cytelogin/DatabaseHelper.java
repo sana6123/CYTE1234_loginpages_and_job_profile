@@ -49,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.query(TABLE_NAME, new String[]{ID_1,
-                        TITLE_2, INDUSTRY_3, CITY_4}, TITLE_2 + "=?" + " AND " + INDUSTRY_3 + "=?" + " AND " + CITY_4 + "=?",
+                        TITLE_2, INDUSTRY_3, CITY_4}, ID_1 + "=?"+ TITLE_2 + "=?" + " AND " + INDUSTRY_3 + "=?" + " AND " + CITY_4 + "=?",
                 new String[]{ String.valueOf(title), String.valueOf(industry), String.valueOf(city) }, null, null, null, null);
 
         if (cursor.moveToFirst()) {
@@ -91,7 +91,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    public boolean insertData (String id, String title, String industry, String city) {
+    public boolean insertData (int id, String title, String industry, String city) {
 ///insert values
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
