@@ -79,16 +79,6 @@ public class BlankFragment extends Fragment {
 
         }
 
-        TextView Question = findViewById(R.id.Question);
-        RadioButton answer1 = findViewById(R.id.answer1);
-        RadioButton answer2 = findViewById(R.id.answer2);
-        RadioButton answer3 = findViewById(R.id.answer3);
-
-        Question.setText(mParam1);
-        answer1.setText(mParam2);
-        answer2.setText(mParam3);
-        answer3.setText(mParam4);
-
 
     }
 
@@ -96,6 +86,18 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        TextView Question = (TextView) getView().findViewById(R.id.Question);
+        RadioButton answer1 = (RadioButton) getView().findViewById(R.id.answer1);
+        RadioButton answer2 = (RadioButton) getView().findViewById(R.id.answer2);
+        RadioButton answer3 = (RadioButton) getView().findViewById(R.id.answer3);
+
+        Question.setText(mParam1);
+        answer1.setText(mParam2);
+        answer2.setText(mParam3);
+        answer3.setText(mParam4);
+
+
         return inflater.inflate(R.layout.fragment_blank, container, false);
     }
 
