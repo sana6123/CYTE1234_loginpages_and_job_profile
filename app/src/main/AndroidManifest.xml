@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".employer_add_posts"></activity>
         <activity android:name=".job_profile" />
         <activity android:name=".employee_login" />
         <activity
