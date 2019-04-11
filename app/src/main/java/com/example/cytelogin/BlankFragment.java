@@ -117,13 +117,26 @@ public class BlankFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        /*
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
+        }*/
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        try {
+            mListener = (OnFragmentInteractionListener) getActivity();
+        } catch (ClassCastException e) {
+            throw new ClassCastException(getActivity().toString()
+                    + " must implement OnFragmentInteractionListener");
         }
     }
+
 
     @Override
     public void onDetach() {
