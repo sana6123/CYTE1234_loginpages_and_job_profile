@@ -9,7 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 /**
@@ -93,8 +96,9 @@ public class BlankFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        TextView Question = (TextView) getView().findViewById(R.id.Question);
-        RadioButton answer1 = (RadioButton) getView().findViewById(R.id.answer1);
+        TextView Question = getView().findViewById(BuildConfig.id.Question);
+        RadioGroup answers = getView().findViewById(R.id.radiogroup1);
+        RadioButton answer1 = (RadioButton) answers.findViewById(R.id.answer1);
         RadioButton answer2 = (RadioButton) getView().findViewById(R.id.answer2);
         RadioButton answer3 = (RadioButton) getView().findViewById(R.id.answer3);
 
@@ -141,7 +145,7 @@ public class BlankFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+      //  mListener = null;
     }
 
     /**

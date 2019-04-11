@@ -8,6 +8,6 @@ public class job_profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_job_profile);
+        setContentView(R.layout.job_profile);
     }
 }
