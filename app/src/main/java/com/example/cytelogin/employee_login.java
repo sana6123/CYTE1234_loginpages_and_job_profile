@@ -14,6 +14,8 @@ public class employee_login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_login);
+
+
         final Button login_button = (Button) findViewById(R.id.Login_Cyte);
         final Button signup_button = (Button) findViewById(R.id.signup_main);
 
