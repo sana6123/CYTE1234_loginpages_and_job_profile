@@ -7,12 +7,10 @@
     tools:context=".Assessment1">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        android:id="@+id/assess_layout"
-        tools:layout_editor_absoluteY="8dp">
+        android:id="@+id/assess_layout">
 
 
         <fragment
