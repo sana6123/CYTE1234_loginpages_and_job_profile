@@ -16,7 +16,10 @@ public class employer_snpg extends AppCompatActivity {
         setContentView(R.layout.employer_signuppg);
 
 //for declaring the buttons
-        final Button employer_profile = (Button) findViewById(R.id.employer_signupdn);
+       final Button employer_profile = (Button) findViewById(R.id.employer_signupdn);
+        final Button employee_button1 = (Button) findViewById(R.id.employee_button);
+
+//make a button connecting the two screens of making a new profile
 
 
 //for connecting the screens using buttons
