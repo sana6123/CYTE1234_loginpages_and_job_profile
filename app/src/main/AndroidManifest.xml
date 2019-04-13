@@ -28,7 +28,8 @@
         <activity
             android:name=".employer_snpg"
             android:label="EmployeeSignUp" />
-        <activity android:name=".Assessment1"></activity>
+
+
     </application>
 
 </manifest>
