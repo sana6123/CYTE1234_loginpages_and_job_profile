@@ -11,11 +11,11 @@ import android.database.sqlite.SQLiteOpenHelper;
         public static final String DATABASE_name="Employer_info_storage";
         public static final String TABLE_NAME="employer_profile";
         //declaring our table names that would be included in this database
-        public static final String COL_1="Company Name";
-        public static final String COL_2="Email";
-        public static final String COL_3="Phone Number";
-        public static final String COL_4="Password";
-        public static final String COL_5="Postal_code";
+        public static final String COL_1="Company_Name";
+        public static final String COL_2="Email_employer";
+        public static final String COL_3="Phone_employer";
+        public static final String COL_4="Password_employer";
+        public static final String COL_5="Postal_code_employer";
 
 
         //whenever this constructor would be called database would be created
@@ -29,9 +29,9 @@ import android.database.sqlite.SQLiteOpenHelper;
         @Override
         public void onCreate(SQLiteDatabase db) {
             //for creating tables inside our database
-            db.execSQL(String.format("create table if not exists" +TABLE_NAME+" (Name TEXT PRIMARY KEY AUTOINCREMENT, Phone INTEGER,Email TEXT,Password INTEGER,Confirm_Password INTEGER,Postal_code INTEGER)"));
+            db.execSQL(String.format("create table if not exists" +TABLE_NAME+" (COMPANY_NAME TEXT PRIMARY KEY AUTOINCREMENT, Email_EMPLOYER TEXT ,PHONE_EMPLOYER INTEGER,Password INTEGER,,Postal_code INTEGER)"));
 
-            String query = "CREATE TABLE IF NOT EXISTS" +TABLE_NAME+"("+COL_1+"TEXT PRIMARY KEY AUTOINCREMENT," + COL_2 + "INTEGER"+ COL_3 + "TEXT" +  COL_4 + "INTEGER" + COL_5 +"TEXT)";
+            String query = "CREATE TABLE IF NOT EXISTS" +TABLE_NAME+"("+COL_1+"TEXT PRIMARY KEY AUTOINCREMENT," + COL_2 + "TEXT"+ COL_3 + "INTEGER" +  COL_4 + "INTEGER" + COL_5 +"TEXT)";
 
         }
 
@@ -41,4 +41,4 @@ import android.database.sqlite.SQLiteOpenHelper;
         }
     }
 
-}
+
