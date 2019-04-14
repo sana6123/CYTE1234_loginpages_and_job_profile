@@ -26,9 +26,9 @@ public class database_profile_employee extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //for creating tables inside our database
-        db.execSQL(String.format("create table if not exists" +TABLE_NAME+" (Name TEXT PRIMARY KEY AUTOINCREMENT, Phone INTEGER,Email TEXT,Password INTEGER,Confirm_Password INTEGER,Postal_code INTEGER)"));
+        db.execSQL(String.format("create table if not exists" +TABLE_NAME+" (Name TEXT PRIMARY KEY AUTOINCREMENT, Phone INTEGER,Email STRING,Password INTEGER,Confirm_Password INTEGER,Postal_code STRING)"));
 
-       String query = "CREATE TABLE IF NOT EXISTS" +TABLE_NAME+"("+COL_1+"TEXT PRIMARY KEY AUTOINCREMENT," + COL_2 + "INTEGER"+ COL_3 + "TEXT" +  COL_4 + "INTEGER" + COL_5 +"TEXT)";
+       String query = "CREATE TABLE IF NOT EXISTS" +TABLE_NAME+"("+COL_1+"TEXT PRIMARY KEY AUTOINCREMENT," + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
 
     }
 
