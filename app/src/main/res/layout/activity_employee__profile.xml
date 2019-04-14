@@ -119,17 +119,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.47" />
 
-        <EditText
-            android:id="@+id/candidatecon_cyte"
-            android:layout_width="366dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:textColorHint="@color/bckcolor"
-            android:textStyle="italic"
-            tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="394dp" />
+
 
 
         <EditText
