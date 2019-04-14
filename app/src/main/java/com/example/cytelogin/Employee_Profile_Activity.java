@@ -33,7 +33,6 @@ public class Employee_Profile_Activity extends AppCompatActivity {
                 EditText employee_phone = (EditText) findViewById(R.id.candidate_phone_cyte);
                 EditText employee_email = (EditText) findViewById(R.id.candidate_emailcyte);
                 EditText employee_password = (EditText) findViewById(R.id.candidate_pass_cyte);
-                EditText employee_confirmpass = (EditText) findViewById(R.id.candidatecon_cyte);
                 EditText employee_location = (EditText) findViewById(R.id.candidate_location_cyte);
 
                 // Pull input from text boxes
@@ -41,7 +40,6 @@ public class Employee_Profile_Activity extends AppCompatActivity {
                 String employee_phone1 = employee_phone.getText().toString();
                 String employee_email1 = employee_email.getText().toString();
                 String employee_password1 = employee_password.getText().toString();
-                String employee_confirmpass1 = employee_confirmpass.getText().toString();
                 String employee_location1 = employee_location.getText().toString();
 
 
@@ -49,7 +47,7 @@ public class Employee_Profile_Activity extends AppCompatActivity {
 // Send username and password to the database and check
 
                 //login_button.setText(username + " " + password); // Get rid of this
-                Toast.makeText(getApplicationContext(), "Data is stored", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Your data is stored", Toast.LENGTH_SHORT).show();
 
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
             }

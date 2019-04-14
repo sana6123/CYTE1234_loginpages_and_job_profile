@@ -15,7 +15,7 @@
         android:layout_width="1219dp"
         android:layout_height="86dp"
         android:background="@color/greycolor"
-        android:text="Programmer Assessment"
+        android:text="@string/programmer_assessment"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,10 +28,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
+        android:paddingLeft="15dp"
         android:paddingTop="60dp"
         android:paddingRight="15dp"
-        android:paddingBottom="15dp"
+        android:paddingEnd="15dp"
         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/question1"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
@@ -72,10 +72,17 @@
                 android:id="@+id/radio4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="RadioButton" />
+                android:layout_weight="1" />
 
         </RadioGroup>
+
+        <Button
+            android:id="@+id/submit_assess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="22sp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -11,11 +11,23 @@
         <item>Edmonton</item>
     </string-array>
 
-    <string-array name="assessment_array">
+    <string-array name="answer_array1">
         <item>Button</item>
         <item>TextView</item>
         <item>LinearLayout</item>
         <item>RadioGroup</item>
+    </string-array>
+
+    <string-array name="answer_array2">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="correct_answers">
+        <item>1</item>
+        <item>Button</item>
     </string-array>
 
 </resources>

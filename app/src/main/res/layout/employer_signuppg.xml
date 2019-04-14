@@ -118,18 +118,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.47" />
 
-        <EditText
-            android:id="@+id/employercon_cyte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/confirm_password"
-            android:inputType="textPassword"
-            android:textColorHint="@color/bckcolor"
-            android:textStyle="italic"
-            tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="394dp" />
+
 
 
         <EditText
