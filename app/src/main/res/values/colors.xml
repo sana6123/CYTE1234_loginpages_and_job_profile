@@ -8,6 +8,6 @@
     <drawable name="CyteLogo"/>
     <color name="ftcolor">#FDFCFBFB</color>
     <color name="fontColor">#FD000000</color>
-    <color name="greycolor">#CED2D6</color>
+    <color name="greycolor">#ced2d6</color>
 
 </resources>
