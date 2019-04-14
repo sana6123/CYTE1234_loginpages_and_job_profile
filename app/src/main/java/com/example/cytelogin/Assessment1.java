@@ -24,7 +24,7 @@ public class Assessment1 extends AppCompatActivity {
         myFrag.setArguments(args);
 
         LinearLayout layout = findViewById(R.id.assess_layout);
-        //layout.setId(2);
+        layout.setId(2);
 
        // int fragCount=1;
         //fragTransaction.add(myFrag, "fragment" +fragCount);

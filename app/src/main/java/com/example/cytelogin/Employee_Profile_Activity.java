@@ -9,13 +9,19 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Employee_Profile_Activity extends AppCompatActivity {
+    //this is from the video
+    database_profile_employee empeedb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startActivity(new Intent(Employee_Profile_Activity.this, job_profile.class));
-
         setContentView(R.layout.activity_employee__profile);
+
+        //this is from the video, calling out the database whenever this constructor is called
+        empeedb = new database_profile_employee(this);
+
+
+        startActivity(new Intent(Employee_Profile_Activity.this, job_profile.class));
         final Button button = (Button) findViewById(R.id.candidate_signupdn);
         final Button employee_button1 = (Button) findViewById(R.id.employee_button);
 
@@ -41,6 +47,7 @@ public class Employee_Profile_Activity extends AppCompatActivity {
 
 
 // Send username and password to the database and check
+
                 //login_button.setText(username + " " + password); // Get rid of this
                 Toast.makeText(getApplicationContext(), "Data is stored", Toast.LENGTH_SHORT).show();
 

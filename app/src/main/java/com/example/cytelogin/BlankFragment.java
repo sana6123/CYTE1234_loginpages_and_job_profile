@@ -96,7 +96,7 @@ public class BlankFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        TextView Question = getView().findViewById(BuildConfig.id.Question);
+        TextView Question = getView().findViewById(R.id.Question);
         RadioGroup answers = getView().findViewById(R.id.radiogroup1);
         RadioButton answer1 = (RadioButton) answers.findViewById(R.id.answer1);
         RadioButton answer2 = (RadioButton) getView().findViewById(R.id.answer2);
