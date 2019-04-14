@@ -42,3 +42,5 @@ import android.database.sqlite.SQLiteOpenHelper;
     }
 
 
+///figure out a way of connecting the users input and link it with the database
+//figure out a way for putting an anonomys identity
