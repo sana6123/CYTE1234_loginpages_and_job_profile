@@ -14,24 +14,26 @@ public class database_profile_employee extends SQLiteOpenHelper {
     public static final String COL_2="Phone";
     public static final String COL_3="Email";
     public static final String COL_4="Password";
-    public static final String COL_5="Confirm_Password";
-    public static final String COL_6="Postal_code";
+    public static final String COL_5="Postal_code";
 
 
 //whenever this constructor would be called database would be created
     public database_profile_employee(Context context) {
         super(context, DATABASE_name, null, 1);
-        database_profile_employee db= this.getWritableDatabase()
+        SQLiteDatabase db= this.getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         //for creating tables inside our database
-        db.execSQL("create table" +TABLE_NAME+" (Name TEXT PRIMARY KEY AUTOINCREMENT, Phone INTEGER,Email TEXT,Password INTEGER,Confirm_Password INTEGER,Postal_code INTEGER)");
+        db.execSQL(String.format("create table if not exists" +TABLE_NAME+" (Name TEXT PRIMARY KEY AUTOINCREMENT, Phone INTEGER,Email TEXT,Password INTEGER,Confirm_Password INTEGER,Postal_code INTEGER)"));
+
+       String query = "CREATE TABLE IF NOT EXISTS" +TABLE_NAME+"("+COL_1+"TEXT PRIMARY KEY AUTOINCREMENT," + COL_2 + "INTEGER"+ COL_3 + "TEXT" +  COL_4 + "INTEGER" + COL_5 +"TEXT)";
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-       db.execSQL("DROP TABLE IF EXISTS"+TABLE_NAME);
+       //db.execSQL("DROP TABLE IF EXISTS"+TABLE_NAME);
     }
 }
