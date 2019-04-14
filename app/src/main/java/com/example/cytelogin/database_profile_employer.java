@@ -29,7 +29,7 @@ import android.database.sqlite.SQLiteOpenHelper;
         @Override
         public void onCreate(SQLiteDatabase db) {
             //for creating tables inside our database
-            db.execSQL(String.format("create table if not exists" +TABLE_NAME+" (COMPANY_NAME TEXT PRIMARY KEY AUTOINCREMENT, Email_EMPLOYER TEXT ,PHONE_EMPLOYER INTEGER,Password INTEGER,,Postal_code STRING)"));
+            db.execSQL(String.format("create table if not exists" +TABLE_NAME+" (COMPANY_NAME TEXT PRIMARY KEY AUTOINCREMENT, Email_EMPLOYER TEXT ,PHONE_EMPLOYER INTEGER,Password INTEGER,Postal_code STRING)"));
 
             String query = "CREATE TABLE IF NOT EXISTS" +TABLE_NAME+"("+COL_1+"TEXT PRIMARY KEY AUTOINCREMENT," + COL_2 + "STRING"+ COL_3 + "INTEGER" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
 
