@@ -26,7 +26,7 @@ public class database_profile_employee extends SQLiteOpenHelper {
     public static final String DATABASE_name="Employee_info_storage";
 
     //declaring our table names that would be included in this database
-    private static final String KEY_ID = "id";
+    private static final String KEY_ID = "idd";
     public static final String COL_1="Name";
     public static final String COL_2="Phone";
     public static final String COL_3="Email";
@@ -48,7 +48,6 @@ public class database_profile_employee extends SQLiteOpenHelper {
        String query = "CREATE TABLE IF NOT EXISTS" +TABLE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"STRING" + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
 
         // Execute the above SQL instructions
-        db.execSQL(CREATE_APPLICATIONS_TABLE);
     }
 
     @Override
@@ -96,14 +95,14 @@ public class database_profile_employee extends SQLiteOpenHelper {
             do {
                 // From the row that the Cursor is currently looking at, make a new SpaceshipApplication object and fill in the details using info from the retrieved row
                 database_profile_employee spaceshipApplication = new database_profile_employee(
-                        Integer.parseInt(cursor.getString(0)), // id
+                        Integer.parseInt(cursor.getString(0)),
                         cursor.getString(1), // name
-                        cursor.getInt(2), // phonenumber
+                        cursor.getString(2), // phonenumber
                         cursor.getString(3), // email
-                        cursor.getString(4) // password
-                        cursor.getString(5) // postalcode
-
+                        cursor.getString(4),// password
+                        cursor.getString(5),// postalcode
                 );
+
                 appsList.add(spaceshipApplication); // then add it to our list
             } while (cursor.moveToNext()); // Is there another row after this one? If not, we're done.
         }
@@ -133,11 +132,11 @@ public class database_profile_employee extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COL_1, sa.getName());//name
-        values.put(COL_2, sa.getPhoneNumber());//phone
-        values.put(COL_3, sa.getEmail());//email
-        values.put(COL_4, sa.getPassword());//password
-        values.put(COL_5, sa.getPostalCode());//postalcode
+        ContentValues.put(COL_1, idd());//name
+        ContentValues.put(COL_2, getPhone());//phone
+        ContentValues.put(COL_3, getEmail());//email
+        ContentValues.put(COL_4, getPassword());//password
+        ContentValues.put(COL_5, getPostalCode());//postalcode
 
         return db.update(TABLE_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(sa.getId())});
     }
@@ -149,4 +148,4 @@ public class database_profile_employee extends SQLiteOpenHelper {
     }
 }
 
-}
+
