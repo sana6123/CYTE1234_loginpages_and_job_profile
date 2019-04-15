@@ -6,14 +6,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class employee_login extends AppCompatActivity {
+
+
+    private EditText Name;
+    private EditText Password;
+    private Button Login;
+    private TextView info;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_login);
+
+        Name = (EditText)findViewById(R.id.Loginusername_Cyte);
+        Password = (EditText)findViewById(R.id.Loginpassword_Cyte);
+        info = (TextView) findViewById(R.id.textView2);
+        Login = (Button) findViewById(R.id.Login_Cyte);
+        //for checking out the values in the database with the values entered
+
 
 
         final Button login_button = (Button) findViewById(R.id.Login_Cyte);
