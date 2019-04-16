@@ -26,7 +26,7 @@ public class database_profile_employee extends SQLiteOpenHelper {
     public static final String DATABASE_name="Employee_info_storage";
 
     //declaring our table names that would be included in this database
-    private static final String KEY_ID = "id";
+    private static final String KEY_ID = "idd";
     public static final String COL_1="Name";
     public static final String COL_2="Phone";
     public static final String COL_3="Email";
@@ -48,7 +48,7 @@ public class database_profile_employee extends SQLiteOpenHelper {
        String query = "CREATE TABLE IF NOT EXISTS" +TABLE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"STRING" + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
 
         // Execute the above SQL instructions
-        db.execSQL(CREATE_APPLICATIONS_TABLE);
+        //db.execSQL(CREATE_APPLICATIONS_TABLE);
     }
 
     @Override
@@ -64,11 +64,11 @@ public class database_profile_employee extends SQLiteOpenHelper {
         // To insert a value into the database, we'll use a ContentValues object, which you can think of as a new blank row.
         ContentValues values = new ContentValues();
         // Filling in the details of this row
-        values.put(COL_1,Employee_signup.getName());
-        values.put(COL_2, Employee_signup.getPhone());
-        values.put(COL_3,Employee_signup .getEmail());
-        values.put(COL_4,Employee_signup .getPassword());
-        values.put(COL_5,Employee_signup .getPostalcode());
+        values.put(COL_1,employee_accounts.getName());
+        values.put(COL_2, employee_accounts.getPhone());
+        values.put(COL_3,employee_accounts .getEmail());
+        values.put(COL_4,employee_accounts .getPassword());
+        values.put(COL_5,employee_accounts .getPostal_code());
 
 
         // inserting the row which is filled in with the details from the SpaceshipApplication into the table.
@@ -100,7 +100,8 @@ public class database_profile_employee extends SQLiteOpenHelper {
                         cursor.getString(1), // name
                         cursor.getInt(2), // phonenumber
                         cursor.getString(3), // email
-                        cursor.getString(4) // password
+                        // password
+                        cursor.getString(4)
                         cursor.getString(5) // postalcode
 
                 );
