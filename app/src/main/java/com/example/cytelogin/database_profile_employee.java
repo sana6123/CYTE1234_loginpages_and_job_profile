@@ -100,7 +100,7 @@ public class database_profile_employee extends SQLiteOpenHelper {
                         cursor.getString(2), // phonenumber
                         cursor.getString(3), // email
                         cursor.getString(4),// password
-                        cursor.getString(5),// postalcode
+                        cursor.getString(5), // postalcode
                 );
 
                 appsList.add(spaceshipApplication); // then add it to our list
