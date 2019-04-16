@@ -36,12 +36,12 @@
 
 
         <TextView
-            android:id="@+id/question"
+            android:id="@+id/question1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/question1"
+            android:text=""
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -54,25 +54,29 @@
                 android:id="@+id/radio1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
             <RadioButton
                 android:id="@+id/radio2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
             <RadioButton
                 android:id="@+id/radio3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
             <RadioButton
                 android:id="@+id/radio4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textSize="18sp" />
 
         </RadioGroup>
 

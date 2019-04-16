@@ -28,7 +28,7 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
         Button posts = findViewById(R.id.post);
         final EditText title = findViewById(R.id.createTitle);
 
-        final Spinner spinner = (Spinner) findViewById(R.id.spinnerIndustry);
+        final Spinner spinner = (Spinner) findViewById(R.id.createIndustry);
         // Create an ArrayAdapter using a string array and a default spinner layout
         ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this,R.array.industry_array, android.R.layout.simple_spinner_item);
         //Specify the layout to use when the list of choices appears
@@ -36,7 +36,7 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
         //Apply adapter to the spinner
         spinner.setAdapter(industryAdapter);
 
-        final Spinner spinner2 = (Spinner) findViewById(R.id.spinnerCity);
+        final Spinner spinner2 = (Spinner) findViewById(R.id.createCity);
         // Create an ArrayAdapter using a string array and a default spinner layout
         ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this,R.array.city_array, android.R.layout.simple_spinner_item);
         //Specify the layout to use when the list of choices appears
@@ -60,7 +60,7 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
                 editor.commit();
 
                 myDb.insertData(id, createTitle, createIndustry, createCity);
-                myDb.close();
+                finish();
             }
         });
     }
