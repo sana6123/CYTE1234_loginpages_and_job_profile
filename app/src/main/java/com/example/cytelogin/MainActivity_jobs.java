@@ -70,10 +70,12 @@ DatabaseHelper myDb;
                         }});
                     jobPostlist.addView(t);
                 }
+
+                jobPostlist.postInvalidate();
             }
         });
 
-
+//create an activity with the linear layout to call search posts, follow spaceship example
 
 
 

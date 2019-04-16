@@ -8,11 +8,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteTransactionListener;
+import android.widget.Space;
+
+import java.util.List;
+
 
 //in the constructor we create a database
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "jobs.db"; //name of the db
-    public static final String TABLE_NAME = "jobs.table"; //table name
+    public static final String DATABASE_NAME = "jobs"; //name of the db
+    public static final String TABLE_NAME = "jobsTable"; //table name
     public static final String ID_1 = "ID"; //column 1 name
     public static final String TITLE_2 = "TITLE"; //column 2 name
     public static final String INDUSTRY_3 = "INDUSTRY"; //column 3 name
@@ -23,7 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
         //creates database and table
-        SQLiteDatabase db = this.getWritableDatabase();
+        //SQLiteDatabase db = this.getWritableDatabase();
     }
 
 
@@ -31,16 +39,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //where you create a table? metjod that executes when database is called
-        db.execSQL(String.format("create table" + TABLE_NAME +"  (ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, INDUSTRY TEXT, CITY TEXT)", TABLE_NAME));
-        //"CREATE TABLE " + TABLE_NAME + "(" + ID_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT"+ ")"
+        db.execSQL(String.format("create table if not exists " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, INDUSTRY TEXT, CITY TEXT)"));
+
+        String query = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + ID_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT)";
+        db.execSQL(query);
     }
 
 
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-    db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
-    onCreate(db);
+    //db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
+    //onCreate(db);
     }
 
 
@@ -49,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.query(TABLE_NAME, new String[]{ID_1,
-                        TITLE_2, INDUSTRY_3, CITY_4}, ID_1 + "=?"+ TITLE_2 + "=?" + " AND " + INDUSTRY_3 + "=?" + " AND " + CITY_4 + "=?",
+                        TITLE_2, INDUSTRY_3, CITY_4}, ID_1 + "=? AND "+ TITLE_2 + "=?" + " AND " + INDUSTRY_3 + "=?" + " AND " + CITY_4 + "=?",
                 new String[]{ String.valueOf(title), String.valueOf(industry), String.valueOf(city) }, null, null, null, null);
 
         if (cursor.moveToFirst()) {
@@ -101,10 +111,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(CITY_4, city);
     long result = db.insert(TABLE_NAME, null, contentValues);
     //gives -1 result if there is an error
-if(result == -1)
+if(result == -1) {
+
+
+    db.close();
     return false;
-else
+} else {
+    db.close();
+
     return true;
+}
     }
 
 
