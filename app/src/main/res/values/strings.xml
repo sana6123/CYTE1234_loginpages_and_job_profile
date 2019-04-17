@@ -21,15 +21,15 @@
     <string name="employer2">Employer2</string>
     <string name="candidate2">Candidate2</string>
     <string name="cyte2">CYTE2</string>
-    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
 
 
     <string name="search">Search</string>
     <string name="selectTitle">jobTitle</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="submit">Submit</string>
-
+    <string name="todo">TODO</string>
+    <string name="programmer_assessment">Programmer Assessment</string>
 </resources>
 

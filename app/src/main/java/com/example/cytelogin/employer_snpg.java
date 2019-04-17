@@ -10,13 +10,19 @@ import android.widget.Toast;
 
 public class employer_snpg extends AppCompatActivity {
 
+    database_profile_employer emperdb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.employer_signuppg);
 
+
+        emperdb = new database_profile_employer(this);
+
+
 //for declaring the buttons
-       final Button employer_profile = (Button) findViewById(R.id.employer_signupdn);
+        final Button employer_profile = (Button) findViewById(R.id.employer_signupbn);
         final Button employee_button1 = (Button) findViewById(R.id.employee_button);
 
 //make a button connecting the two screens of making a new profile
@@ -37,7 +43,6 @@ public class employer_snpg extends AppCompatActivity {
                EditText email_input = (EditText) findViewById(R.id.employer_emailcyte);
                 EditText employer_phone = (EditText) findViewById(R.id.employer_phone_cyte);
                 EditText employer_password = (EditText) findViewById(R.id.employer_pass_cyte);
-                EditText employer_confirmpass = (EditText) findViewById(R.id.employercon_cyte);
                 EditText employer_location = (EditText) findViewById(R.id.employer_location_cyte);
 
 
@@ -46,14 +51,15 @@ public class employer_snpg extends AppCompatActivity {
                 String employer_email = email_input.getText().toString();
                 String employer_phonenumber = employer_phone.getText().toString();
                 String employer_password1 = employer_password.getText().toString();
-                String employer_confirmpass1 = employer_confirmpass.getText().toString();
                 String employer_location1 = employer_location.getText().toString();
 
                 // Send username and password to the database and check
                 //login_button.setText(username + " " + password); // Get rid of this
                 Toast.makeText(getApplicationContext(), "Data is stored", Toast.LENGTH_SHORT).show();
 
-                //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
+
+                //TODO: Change the flow (Not to Assessment1, instead to job browsing screen)
+                startActivity(new Intent(employer_snpg.this, Assessment1.class));
             }
         });
     }

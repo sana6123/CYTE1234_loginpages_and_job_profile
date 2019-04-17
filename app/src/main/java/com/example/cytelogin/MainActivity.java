@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
        // mTextMessage = (TextView) findViewById(R.id.message);
         //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_home);
         //navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        final Button button = (Button) findViewById(R.id.employee_startupbutton);
+        final Button button = findViewById(R.id.employee_startupbutton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
@@ -51,15 +51,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button button2 = (Button) findViewById(R.id.employer_startupbuttton);
+        final Button button2 = findViewById(R.id.employer_startupbuttton);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                startActivity(new Intent(MainActivity.this, employee_login.class));
+                startActivity(new Intent(MainActivity.this, employer_add_posts.class));
 
             }
         });
-        startActivity(new Intent(this, Assessment1.class));
+
+
+
     }
 
 }

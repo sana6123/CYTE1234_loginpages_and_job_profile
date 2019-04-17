@@ -119,17 +119,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.47" />
 
-        <EditText
-            android:id="@+id/candidatecon_cyte"
-            android:layout_width="366dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:textColorHint="@color/bckcolor"
-            android:textStyle="italic"
-            tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="394dp" />
+
 
 
         <EditText
@@ -163,13 +153,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="452dp"
+        android:layout_marginTop="624dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Sign Up"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

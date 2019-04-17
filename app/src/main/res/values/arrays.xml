@@ -11,4 +11,48 @@
         <item>Edmonton</item>
     </string-array>
 
+    <string-array name="question_array">
+        <item> </item>
+        <item>What component could be clicked in order to send the user to a new activity?</item>
+        <item>Which of these is not a feature of heap memory?</item>
+        <item>What number?</item>
+        <item>What next number?</item>
+    </string-array>
+
+    <string-array name="answer_array1">
+        <item>Button</item>
+        <item>TextView</item>
+        <item>LinearLayout</item>
+        <item>RadioGroup</item>
+    </string-array>
+
+    <string-array name="answer_array2">
+        <item>Stored objects are globally accessible</item>
+        <item>There is no limit on memory size</item>
+        <item>Used by all parts of the application</item>
+        <item>Variables cannot be resized</item>
+    </string-array>
+
+    <string-array name="answer_array3">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="answer_array4">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="correct_answers">
+        <item> </item>
+        <item>Button</item>
+        <item>Variables cannot be resized</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>
