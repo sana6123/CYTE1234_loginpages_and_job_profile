@@ -35,6 +35,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_4="Password";
     public static final String COL_5="Postal_code";
 
+    private static final String COMPLETED_ASSESSMENTS="completed_assessments";
+    public static final String CA_EMP_ID="Employee ID";
+    public static final String CA_JP_ID="Job Post ID";
+
 
 
     //constructor //whenever it is called, the database will be created
@@ -52,11 +56,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //where you create a table? metjod that executes when database is called
         db.execSQL(String.format("create table if not exists " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, INDUSTRY TEXT, CITY TEXT)"));
 
-        String query = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + ID_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT)";
-        db.execSQL(query);
+        String createJobPostsTable = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + ID_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT)";
+        db.execSQL(createJobPostsTable);
 
-        String query1 = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"STRING" + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
-        db.execSQL(query1);
+        String createEmployeeTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"STRING" + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
+        db.execSQL(createEmployeeTable);
+
+        //String createEmployerTable =
+        //db.execSQL(query1);
+        String createCompletedAssessmentsTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"STRING" + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
+        db.execSQL(createCompletedAssessmentsTable);
     }
 
 
@@ -210,6 +219,45 @@ if(result == -1) {
 
     return true;
 }
+    }
+//when the employee finishes their assessment the addCompletedAssessnt
+    public boolean addCompletedAssessment(int jobPostID, int employeeID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(CA_EMP_ID, employeeID);
+        contentValues.put(CA_JP_ID, jobPostID);
+        long result = db.insert(COMPLETED_ASSESSMENTS, null, contentValues);
+        //gives -1 result if there is an error
+        if(result == -1) {
+            db.close();
+            return false;
+        } else {
+            db.close();
+
+            return true;
+        }
+    }
+
+   //this will get us all the completed assessment = id jobposts+id for employee
+    //and the employer would be given the employee id
+
+    ArrayList<Integer> getAllCompletedAssessments(int jobPostID) {
+        ArrayList<Integer> employeeList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.query(COMPLETED_ASSESSMENTS, new String[]{CA_EMP_ID, CA_JP_ID}, CA_JP_ID + "=?",
+                new String[]{ Integer.toString(jobPostID) }, null, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Integer i = new Integer(
+                        Integer.parseInt(cursor.getString(0))
+                );
+                employeeList.add(i);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return employeeList;
     }
 
 
