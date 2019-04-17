@@ -4,59 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".employer_add_posts">
+    tools:context=".employer_add_posts"
+    android:background="@drawable/everyscreenbackground">
 
     <EditText
         android:id="@+id/createTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_border_edittext"
         android:ems="10"
         android:hint="Select Title"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text=" Name"
+        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/createIndustry"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.909" />
 
     <Spinner
         android:id="@+id/createIndustry"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
+        android:layout_width="401dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="100dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/createCity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/createCity"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
+        android:layout_width="398dp"
+        android:layout_height="41dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="236dp"
+        android:layout_marginBottom="140dp"
         app:layout_constraintBottom_toTopOf="@+id/post"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/post"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="107dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="68dp"
+        android:background="@drawable/rounded_border"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="307dp" />
+        tools:layout_editor_absoluteX="288dp" />
 </android.support.constraint.ConstraintLayout>
