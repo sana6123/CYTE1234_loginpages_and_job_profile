@@ -8,7 +8,7 @@
     android:background="@drawable/everyscreenbackground">
 
     <TextView
-        android:id="@+id/scoreview"
+        android:id="@+id/result"
         android:layout_width="139dp"
         android:layout_height="67dp"
         android:layout_marginStart="8dp"
@@ -61,7 +61,7 @@
         android:textColor="@color/Gold"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/scoreview"
+        app:layout_constraintBottom_toTopOf="@+id/result"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.21"
@@ -81,7 +81,7 @@
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/scoreview"
+        app:layout_constraintBottom_toTopOf="@+id/result"
         app:layout_constraintEnd_toStartOf="@+id/textView12"
         app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toEndOf="@+id/textView4"
@@ -147,7 +147,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:typeface="sans"
-        app:layout_constraintBottom_toTopOf="@+id/scoreview"
+        app:layout_constraintBottom_toTopOf="@+id/result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
