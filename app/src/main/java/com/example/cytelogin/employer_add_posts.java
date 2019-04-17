@@ -59,7 +59,7 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
                 editor.putInt(NEXT_ID, id+1);
                 editor.commit();
 
-                myDb.insertData(id, createTitle, createIndustry, createCity);
+                myDb.addJobPost(id, createTitle, createIndustry, createCity);
                 finish();
             }
         });

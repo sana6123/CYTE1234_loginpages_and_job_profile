@@ -1,8 +1,8 @@
 package com.example.cytelogin;
 
 public class employee_accounts {
-    public employee_accounts(int idd, String name, String phone, String email, String password, String postal_code) {
-        this.idd = idd;
+    public employee_accounts(String name, String phone, String email, String password, String postal_code) {
+        this.idd = -1;
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -11,14 +11,13 @@ public class employee_accounts {
     }
 
     private int idd;
+    private String name;
+    private String phone;
+    private String email;
+    private String password;
+    private String postal_code;
 
 
-
-    public employee_accounts(String idd, String i) {
-
-
-
-    }
 
     public int getIdd() {
         return idd;
@@ -28,7 +27,7 @@ public class employee_accounts {
         this.idd = idd;
     }
 
-    public static String getName() {
+    public  String getName() {
         return name;
     }
 
@@ -36,7 +35,7 @@ public class employee_accounts {
         this.name = name;
     }
 
-    public static String getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -44,10 +43,10 @@ public class employee_accounts {
         this.phone = phone;
     }
 
-    public static String getEmail() { return email; }
+    public String getEmail() { return email; }
     public void setEmail (String email) { this.email = email; }
 
-    public static String getPassword() {
+    public String getPassword() {
         return phone;
     }
 
@@ -55,14 +54,10 @@ public class employee_accounts {
         this.password = password;
     }
 
-    public static String getPostal_code() { return postal_code; }
+    public String getPostal_code() { return postal_code; }
     public void setPostal_code (String postal_code) { this.postal_code = postal_code; }
 
-    private String name;
-    private String phone;
-    private String email;
-    private String password;
-    private String postal_code;
+
 
 
 }

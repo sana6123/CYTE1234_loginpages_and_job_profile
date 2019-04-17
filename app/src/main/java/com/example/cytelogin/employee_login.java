@@ -10,8 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class employee_login extends AppCompatActivity {
-
-
+    private DatabaseHelper db;
     private EditText Name;
     private EditText Password;
     private Button Login;
@@ -28,7 +27,7 @@ public class employee_login extends AppCompatActivity {
         info = (TextView) findViewById(R.id.textView2);
         Login = (Button) findViewById(R.id.Login_Cyte);
         //for checking out the values in the database with the values entered
-
+        db = new DatabaseHelper(this);
 
 
         final Button login_button = (Button) findViewById(R.id.Login_Cyte);
@@ -47,13 +46,23 @@ public class employee_login extends AppCompatActivity {
                 EditText username_input = (EditText) findViewById(R.id.Loginusername_Cyte);
                 EditText password_input = (EditText) findViewById(R.id.Loginpassword_Cyte);
                 // Pull input from text boxes
-                String username = username_input.getText().toString();
+                String email = username_input.getText().toString();
                 String password = password_input.getText().toString();
                 // Send username and password to the database and check
                 //login_button.setText(username + " " + password); // Get rid of this
-                Toast.makeText(getApplicationContext(), "You've entered username:  " + username +
-                        " password: " + password, Toast.LENGTH_SHORT).show();
 
+                employee_accounts e = db.getEmployeeByEmail(email);
+                String ePass = e.getPassword();
+
+                if (password.contentEquals(ePass)) {
+                    // Password and Email match. Successful Login
+                    // Make your intent and go to employee profile activity.
+                    Intent i = new Intent(getApplicationContext(), employer_add_posts.class);
+                    startActivity(i);
+                    // Remember to put ".class" at the end of the activity name!
+                } else {
+                    Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
+                }
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
             }
         });
