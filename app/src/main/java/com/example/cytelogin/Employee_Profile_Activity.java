@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class Employee_Profile_Activity extends AppCompatActivity {
     //this is from the video
-    database_profile_employee empeedb;
+    DatabaseHelper empeedb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class Employee_Profile_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_employee__profile);
 
         //this is from the video, calling out the database whenever this constructor is called
-        empeedb = new database_profile_employee(this);
+        empeedb = new DatabaseHelper(this);
 
 
         startActivity(new Intent(Employee_Profile_Activity.this, job_profile.class));
@@ -42,7 +42,7 @@ public class Employee_Profile_Activity extends AppCompatActivity {
                 String employee_password1 = employee_password.getText().toString();
                 String employee_location1 = employee_location.getText().toString();
 
-
+                empeedb.addEmployee(employee_name1,employee_phone1,employee_email1,employee_password1, employee_location1);
 
 // Send username and password to the database and check
 
