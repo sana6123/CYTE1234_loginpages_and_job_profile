@@ -6,29 +6,205 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/cytesignupbackground_empee">
+    android:background="@drawable/cytesignupbackgroundnotext">
 
 
-    <LinearLayout
-        android:id="@+id/rentalLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="943dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginBottom="-1dp"
-        android:gravity="top"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="396dp"
+        android:layout_height="535dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/semitransparentbackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-        <ImageView
-            android:id="@+id/imageView"
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="77dp"
-            app:srcCompat="@drawable/cyte_logo" />
+            android:layout_height="525dp"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="118dp">
 
+            <EditText
+                android:id="@+id/employer_fname_cyte"
+                android:layout_width="339dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="23dp"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="34dp"
+                android:layout_marginRight="34dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint="@string/company_name"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/bckcolor"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.215" />
 
+            <EditText
+                android:id="@+id/employer_emailcyte"
+                android:layout_width="343dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/employer_phone_cyte"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="122dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="-44dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/bckcolor"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.292" />
+
+            <EditText
+                android:id="@+id/employer_pass_cyte"
+                android:layout_width="339dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/employer_emailcyte"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="262dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColorHint="@color/bckcolor"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.473"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.47" />
+
+            <EditText
+                android:id="@+id/employer_phone_cyte"
+                android:layout_width="344dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/employer_signupdn"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="292dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:textColorHint="@color/bckcolor"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/employercon_cyte"
+                android:layout_width="339dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="332dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginRight="31dp"
+                android:layout_marginBottom="235dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:textColorHint="@color/bckcolor"
+                android:textStyle="italic"
+                tools:layout_editor_absoluteX="14dp"
+                tools:layout_editor_absoluteY="394dp" />
+
+            <EditText
+                android:id="@+id/employer_location_cyte"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="26dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="399dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint="@string/postal_address"
+                android:inputType="textPostalAddress"
+                android:textColorHint="@color/bckcolor"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.476"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.904" />
+
+            <Button
+                android:id="@+id/employer_signupdn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="117dp"
+                android:layout_marginLeft="117dp"
+                android:layout_marginTop="488dp"
+                android:layout_marginEnd="127dp"
+                android:layout_marginRight="127dp"
+                android:background="@drawable/rounded_border"
+                android:text="@string/sign_up"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+<<<<<<< Updated upstream
         <EditText
             android:id="@+id/employer_fname_cyte"
             android:layout_width="match_parent"
@@ -162,64 +338,74 @@
             app:layout_constraintVertical_bias="0.988" />
 
     </LinearLayout>
+=======
+>>>>>>> Stashed changes
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="118dp"
+        android:layout_height="36dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/cyte"
-        android:textStyle="italic"
-
+        android:text="SIGN UP"
         android:textColor="@color/ftcolor"
+
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
-
+        app:layout_constraintVertical_bias="0.013" />
 
 
     <Button
         android:id="@+id/employee_button"
-        android:layout_width="165dp"
-        android:layout_height="41dp"
+        android:layout_width="167dp"
+        android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/transparentbackground"
         android:text="@string/candidate"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintHorizontal_bias="0.035"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.079" />
 
     <Button
         android:id="@+id/employer_button2"
-        android:layout_width="159dp"
-        android:layout_height="41dp"
+        android:layout_width="156dp"
+        android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/transparent"
         android:text="@string/employer"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintHorizontal_bias="0.966"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintVertical_bias="0.079" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -227,7 +413,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="21dp" />
-
 
 
 </android.support.constraint.ConstraintLayout>

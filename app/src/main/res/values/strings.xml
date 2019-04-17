@@ -22,7 +22,7 @@
     <string name="candidate2">Candidate2</string>
     <string name="cyte2">CYTE2</string>
     <string name="todo1">TODO</string>
-
+    <string name="assessment_thanks">Thank you for completing this assessment. Please be aware that you might be contacted by an employer to further your employment.</string>
 
     <string name="search">Search</string>
     <string name="selectTitle">jobTitle</string>
@@ -31,5 +31,6 @@
     <string name="submit">Submit</string>
     <string name="todo">TODO</string>
     <string name="programmer_assessment">Programmer Assessment</string>
+
 </resources>
 
