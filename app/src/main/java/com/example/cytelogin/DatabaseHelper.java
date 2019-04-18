@@ -66,7 +66,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String createEmployeeTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"STRING" + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
         db.execSQL(createEmployeeTable);
 
-        String createEmployerTable = " CREATE TABLE IF NOT EXISTS " + EMPLOYER_NAME +("+ KEY_IDD PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "STRING" + EMPR_2+ "STRING" + EMPR_3 +"STRING"+ EMPR_4+ "STRING" + EMPR_5 +"STRING");
+        String createEmployerTable = "CREATE TABLE IF NOT EXISTS " + EMPLOYER_NAME +"("+ "KEY_IDD PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "STRING" + EMPR_2+ "STRING" + EMPR_3 +"STRING"+ EMPR_4+ "STRING" + EMPR_5 +"STRING)";
+        db.execSQL(createEmployerTable);
+
+
 
         //String createEmployerTable =
         //db.execSQL(query1);
@@ -119,7 +122,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return jobsList;
     }
     //EMPLOYER
-    ArrayList<employer_accounts> getallemployer() {
+    ArrayList<employer_accounts> getAllEmployer() {
         ArrayList<employer_accounts> appsList = new ArrayList<>();
         // we aren't making any changes so use a readable database, not a writable one.
         SQLiteDatabase db = this.getReadableDatabase();
@@ -155,7 +158,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //////////
     //EMPLOYEE
 
-    } employer_accounts getallemployee() {
+    } ArrayList<employee_accounts> getallemployee() {
         ArrayList<employee_accounts> appsList = new ArrayList<>();
         // we aren't making any changes so use a readable database, not a writable one.
         SQLiteDatabase db = this.getReadableDatabase();
@@ -187,7 +190,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return appsList;
-
+    }
         ///////////////
 
         //EMPLOYEE
@@ -247,10 +250,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //EMPLOYER
         employee_accounts getEmployer ( int id){
             // we aren't making any changes so use a readable database, not a writable one.
-            SQLiteDatabase db1 = this.getReadableDatabase();
+            SQLiteDatabase db = this.getReadableDatabase();
 
             // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
-            Cursor cursor1 = db.query(EMPLOYER_NAME, new String[]{KEY_IDD,
+            Cursor cursor = db.query(EMPLOYER_NAME, new String[]{KEY_IDD,
                             EMPR_1, EMPR_2, EMPR_3, EMPR_4, EMPR_5}, KEY_IDD + "=?",
                     new String[]{String.valueOf(id)}, null, null, null, null);
             if (cursor != null) { // If there are non-zero rows returned
@@ -265,18 +268,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getReadableDatabase();
 
             // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
-            Cursor cursor1 = db.query(EMPLOYEE_NAME, new String[]{KEY_ID,
-                            COL_1, COL_2, COL_3, COL_4, COL_5}, COL_3 + "=?",
+            Cursor cursor1 = db.query(EMPLOYER_NAME, new String[]{KEY_IDD,
+                            EMPR_1, EMPR_2, EMPR_3, EMPR_4, EMPR_5}, EMPR_2 + "=?",
                     new String[]{email_empr}, null, null, null, null);
-            if (cursor != null) { // If there are non-zero rows returned
-                cursor.moveToFirst(); // go to the first one
+            if (cursor1 != null) { // If there are non-zero rows returned
+                cursor1.moveToFirst(); // go to the first one
             }
-            cursor.close();
-            return new employer_accounts(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+            cursor1.close();
+            return new employer_accounts(cursor1.getString(1), cursor1.getString(2), cursor1.getString(3), cursor1.getString(4), cursor1.getString(5));
         }
 
-        public boolean addEmployer (String companyname, String email_empr, String email, String
-        password, String postalCode){
+        public boolean addEmployer (String companyname, String email_empr, String phone_empr, String
+        password_empr, String postal_code_empr){
 ///insert values
 
             SQLiteDatabase db = this.getWritableDatabase();
@@ -284,8 +287,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             contentValues.put(EMPR_1, companyname);
             contentValues.put(EMPR_2, email_empr);
             contentValues.put(EMPR_3, phone_empr);
-            contentValues.put(EMPR_4, password);
-            contentValues.put(EMPR_5, postalCode);
+            contentValues.put(EMPR_4, password_empr);
+            contentValues.put(EMPR_5, postal_code_empr);
             long result = db.insert(EMPLOYEE_NAME, null, contentValues);
             //gives -1 result if there is an error
             if (result == -1) {
@@ -382,7 +385,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return db.update(EMPLOYEE_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(sa.getIdd())});
         }
         //EMPLOYER
-        int update_employee (employee_accounts sa){
+        int update_employer (employer_accounts sa){
             SQLiteDatabase db = this.getWritableDatabase();
 
             ContentValues values = new ContentValues();
@@ -392,7 +395,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(EMPR_4, sa.password_empr());//password
             values.put(EMPR_5, sa.postal_code_empr());//postalcode
 
-            return db.update(EMPLOYEE_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(sa.getIdd())});
+            return db.update(EMPLOYER_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(sa.getid_1())});
         }
 
 
@@ -409,5 +412,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-}
+
 
