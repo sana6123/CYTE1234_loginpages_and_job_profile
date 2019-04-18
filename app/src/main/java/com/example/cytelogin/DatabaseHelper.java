@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.time.Instant;
 import java.util.ArrayList;
 
 
@@ -196,9 +197,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //EMPLOYEE
         employee_accounts getemployee(int id) {
             // we aren't making any changes so use a readable database, not a writable one.
-           // SQLiteDatabase db = this.getReadableDatabase();
+           SQLiteDatabase db = this.getReadableDatabase();
 
             // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
+
             Cursor cursor2 = db.query(EMPLOYEE_NAME, new String[]{KEY_IDD,
                             COL_1, COL_2, COL_3, COL_4, COL_5}, KEY_IDD + "=?",
                     new String[]{String.valueOf(id)}, null, null, null, null);

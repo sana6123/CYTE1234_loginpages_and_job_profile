@@ -63,9 +63,7 @@ public class employer_accounts {
     public void setpostal_code_empr (String postal_code_empr) { this.postal_code_empr = postal_code_empr; }
 
 
-
-
-
-
-
+    public String postal_code_empr() {
+        return null;
+    }
 }
