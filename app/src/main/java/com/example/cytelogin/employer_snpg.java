@@ -25,7 +25,6 @@ public class employer_snpg extends AppCompatActivity {
         final Button employer_profile = (Button) findViewById(R.id.employer_signupbn);
         final Button employee_button1 = (Button) findViewById(R.id.employee_button);
 
-//make a button connecting the two screens of making a new profile
 
 
 //for connecting the screens using buttons
@@ -40,7 +39,7 @@ public class employer_snpg extends AppCompatActivity {
             public void onClick(View v) {
                 // Get references to text boxes
                 EditText companynm_input = (EditText) findViewById(R.id.employer_fname_cyte);
-               EditText email_input = (EditText) findViewById(R.id.employer_emailcyte);
+                EditText email_input = (EditText) findViewById(R.id.employer_emailcyte);
                 EditText employer_phone = (EditText) findViewById(R.id.employer_phone_cyte);
                 EditText employer_password = (EditText) findViewById(R.id.employer_pass_cyte);
                 EditText employer_location = (EditText) findViewById(R.id.employer_location_cyte);
@@ -58,8 +57,7 @@ public class employer_snpg extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Data is stored", Toast.LENGTH_SHORT).show();
 
 
-                //TODO: Change the flow (Not to Assessment1, instead to job browsing screen)
-                startActivity(new Intent(employer_snpg.this, Assessment1.class));
+                startActivity(new Intent(employer_snpg.this, employer_add_posts.class));
             }
         });
     }

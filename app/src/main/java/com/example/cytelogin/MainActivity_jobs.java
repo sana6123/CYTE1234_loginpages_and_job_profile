@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -64,21 +65,21 @@ DatabaseHelper myDb;
                     t.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), WhenClickItem.class);
+                            Intent intent = new Intent(getApplicationContext(), Assessment1.class);
                             intent.putExtra("id", update_id);
                             startActivity(intent);
                         }});
                     jobPostlist.addView(t);
                 }
-
+// what is the Joblist from database then?
                 jobPostlist.postInvalidate();
             }
         });
 
 //create an activity with the linear layout to call search posts, follow spaceship example
 
-
-
+//something I added this weekend
+        Toast.makeText(getApplicationContext(), "New post is stored", Toast.LENGTH_SHORT).show();
 
     }
 

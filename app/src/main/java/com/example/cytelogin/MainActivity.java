@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                startActivity(new Intent(MainActivity.this, employer_add_posts.class));
+                startActivity(new Intent(MainActivity.this, employer_snpg.class));
 
             }
         });
