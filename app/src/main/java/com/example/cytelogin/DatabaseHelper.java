@@ -53,6 +53,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //SQLiteDatabase db = this.getWritableDatabase();
     }
 
+    public DatabaseHelper(Employee_Profile_Activity context) {
+        super(context, DATABASE_NAME, null, 1);
+        //creates database and table
+        //SQLiteDatabase db = this.getWritableDatabase();
+    }
 
 
     @Override
