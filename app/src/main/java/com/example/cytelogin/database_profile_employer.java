@@ -89,7 +89,7 @@ public class database_profile_employer extends SQLiteOpenHelper {
                         cursor.getString(1), // name
                         cursor.getInt(2), // phonenumber
                         cursor.getString(3), // email
-                        cursor.getString(4) // password
+                        cursor.getString(4), // password
                         cursor.getString(5) // postalcode
 
                 );

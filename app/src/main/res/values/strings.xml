@@ -25,7 +25,7 @@
     <string name="assessment_thanks">Thank you for completing this assessment. Please be aware that you might be contacted by an employer to further your employment.</string>
 
     <string name="search">Search</string>
-    <string name="selectTitle">jobTitle</string>
+    <string name="selectTitle"> Job Title</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="submit">Submit</string>
