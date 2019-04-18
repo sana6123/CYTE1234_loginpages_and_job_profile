@@ -8,14 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteTransactionListener;
-import android.widget.Space;
-
-import java.util.List;
-
 
 //in the constructor we create a database for jobposts
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -163,7 +155,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //////////
     //EMPLOYEE
 
-    } ArrayList<employee_accounts> getallemployee() {
+    } employer_accounts getallemployee() {
         ArrayList<employee_accounts> appsList = new ArrayList<>();
         // we aren't making any changes so use a readable database, not a writable one.
         SQLiteDatabase db = this.getReadableDatabase();
@@ -180,7 +172,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             // can potentially never execute code inside itself.
             do {
                 // From the row that the Cursor is currently looking at, make a new SpaceshipApplication object and fill in the details using info from the retrieved row
-                employee_accounts spaceshipApplication = new employee_accounts (
+                employee_accounts spaceshipApplication = new employee_accounts(
                         cursor.getString(1), // name
                         cursor.getString(2), // phonenumber
                         cursor.getString(3), // email
@@ -189,7 +181,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 );
 
                 appsList.add(spaceshipApplication); // then add it to our list
-            } while (cursor.moveToNext()); // Is there another row after this one? If not, we're done.
+            }
+            while (cursor.moveToNext()); // Is there another row after this one? If not, we're done.
         }
         cursor.close();
         db.close();
@@ -197,146 +190,224 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         ///////////////
 
-    //EMPLOYEE
-    employee_accounts getemployee(int id) {
-        // we aren't making any changes so use a readable database, not a writable one.
-        SQLiteDatabase db = this.getReadableDatabase();
+        //EMPLOYEE
+        employee_accounts getemployee ( int id){
+            // we aren't making any changes so use a readable database, not a writable one.
+            SQLiteDatabase db = this.getReadableDatabase();
 
-        // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
-        Cursor cursor = db.query(EMPLOYEE_NAME, new String[]{KEY_ID,
-                        COL_1, COL_2, COL_3, COL_4,COL_5}, KEY_ID + "=?",
-                new String[]{ String.valueOf(id) }, null, null, null, null);
-        if (cursor != null) { // If there are non-zero rows returned
-            cursor.moveToFirst(); // go to the first one
+            // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
+            Cursor cursor = db.query(EMPLOYEE_NAME, new String[]{KEY_ID,
+                            COL_1, COL_2, COL_3, COL_4, COL_5}, KEY_ID + "=?",
+                    new String[]{String.valueOf(id)}, null, null, null, null);
+            if (cursor != null) { // If there are non-zero rows returned
+                cursor.moveToFirst(); // go to the first one
+            }
+            cursor.close();
+            return new employee_accounts(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
         }
-        cursor.close();
-        return new employee_accounts(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4),cursor.getString(5));
-    }
 
-    employee_accounts getEmployeeByEmail(String email) {
-        // we aren't making any changes so use a readable database, not a writable one.
-        SQLiteDatabase db = this.getReadableDatabase();
+        employee_accounts getEmployeeByEmail (String email){
+            // we aren't making any changes so use a readable database, not a writable one.
+            SQLiteDatabase db = this.getReadableDatabase();
 
-        // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
-        Cursor cursor = db.query(EMPLOYEE_NAME, new String[]{KEY_ID,
-                        COL_1, COL_2, COL_3, COL_4,COL_5}, COL_3 + "=?",
-                new String[]{ email }, null, null, null, null);
-        if (cursor != null) { // If there are non-zero rows returned
-            cursor.moveToFirst(); // go to the first one
+            // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
+            Cursor cursor = db.query(EMPLOYEE_NAME, new String[]{KEY_ID,
+                            COL_1, COL_2, COL_3, COL_4, COL_5}, COL_3 + "=?",
+                    new String[]{email}, null, null, null, null);
+            if (cursor != null) { // If there are non-zero rows returned
+                cursor.moveToFirst(); // go to the first one
+            }
+            cursor.close();
+            return new employee_accounts(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
         }
-        cursor.close();
-        return new employee_accounts(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4),cursor.getString(5));
-    }
 
-    public boolean addEmployee(String name, String phone, String email, String password, String postalCode) {
+        public boolean addEmployee (String name, String phone, String email, String password, String
+        postalCode){
 ///insert values
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1, name);
-        contentValues.put(COL_2, phone);
-        contentValues.put(COL_3, email);
-        contentValues.put(COL_4, password);
-        contentValues.put(COL_5, postalCode);
-        long result = db.insert(EMPLOYEE_NAME, null, contentValues);
-        //gives -1 result if there is an error
-        if(result == -1) {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(COL_1, name);
+            contentValues.put(COL_2, phone);
+            contentValues.put(COL_3, email);
+            contentValues.put(COL_4, password);
+            contentValues.put(COL_5, postalCode);
+            long result = db.insert(EMPLOYEE_NAME, null, contentValues);
+            //gives -1 result if there is an error
+            if (result == -1) {
 
 
-            db.close();
-            return false;
-        } else {
-            db.close();
+                db.close();
+                return false;
+            } else {
+                db.close();
 
-            return true;
+                return true;
+            }
         }
-    }
+//EMPLOYER
+        employee_accounts getEmployer ( int id){
+            // we aren't making any changes so use a readable database, not a writable one.
+            SQLiteDatabase db1 = this.getReadableDatabase();
 
-    public boolean addJobPost(int id, String title, String industry, String city) {
+            // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
+            Cursor cursor1 = db.query(EMPLOYER_NAME, new String[]{KEY_IDD,
+                            EMPR_1, EMPR_2, EMPR_3, EMPR_4, EMPR_5}, KEY_IDD + "=?",
+                    new String[]{String.valueOf(id)}, null, null, null, null);
+            if (cursor != null) { // If there are non-zero rows returned
+                cursor.moveToFirst(); // go to the first one
+            }
+            cursor.close();
+            return new employer_accounts(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+        }
+
+        employer_accounts getEmployerByEmail (String email_empr){
+            // we aren't making any changes so use a readable database, not a writable one.
+            SQLiteDatabase db = this.getReadableDatabase();
+
+            // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
+            Cursor cursor1 = db.query(EMPLOYEE_NAME, new String[]{KEY_ID,
+                            COL_1, COL_2, COL_3, COL_4, COL_5}, COL_3 + "=?",
+                    new String[]{email_empr}, null, null, null, null);
+            if (cursor != null) { // If there are non-zero rows returned
+                cursor.moveToFirst(); // go to the first one
+            }
+            cursor.close();
+            return new employer_accounts(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+        }
+
+        public boolean addEmployer (String companyname, String email_empr, String email, String
+        password, String postalCode){
 ///insert values
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(ID_1, id);
-        contentValues.put(TITLE_2, title);
-        contentValues.put(INDUSTRY_3, industry);
-        contentValues.put(CITY_4, city);
-    long result = db.insert(TABLE_NAME, null, contentValues);
-    //gives -1 result if there is an error
-if(result == -1) {
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(EMPR_1, companyname);
+            contentValues.put(EMPR_2, email_empr);
+            contentValues.put(EMPR_3, phone_empr);
+            contentValues.put(EMPR_4, password);
+            contentValues.put(EMPR_5, postalCode);
+            long result = db.insert(EMPLOYEE_NAME, null, contentValues);
+            //gives -1 result if there is an error
+            if (result == -1) {
 
 
-    db.close();
-    return false;
-} else {
-    db.close();
+                db.close();
+                return false;
+            } else {
+                db.close();
 
-    return true;
-}
-    }
+                return true;
+            }
+        }
+
+
+        public boolean addJobPost ( int id, String title, String industry, String city){
+///insert values
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(ID_1, id);
+            contentValues.put(TITLE_2, title);
+            contentValues.put(INDUSTRY_3, industry);
+            contentValues.put(CITY_4, city);
+            long result = db.insert(TABLE_NAME, null, contentValues);
+            //gives -1 result if there is an error
+            if (result == -1) {
+
+
+                db.close();
+                return false;
+            } else {
+                db.close();
+
+                return true;
+            }
+        }
 //when the employee finishes their assessment the addCompletedAssessnt
-    public boolean addCompletedAssessment(int jobPostID, int employeeID) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(CA_EMP_ID, employeeID);
-        contentValues.put(CA_JP_ID, jobPostID);
-        long result = db.insert(COMPLETED_ASSESSMENTS, null, contentValues);
-        //gives -1 result if there is an error
-        if(result == -1) {
-            db.close();
-            return false;
-        } else {
-            db.close();
+        public boolean addCompletedAssessment ( int jobPostID, int employeeID){
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(CA_EMP_ID, employeeID);
+            contentValues.put(CA_JP_ID, jobPostID);
+            long result = db.insert(COMPLETED_ASSESSMENTS, null, contentValues);
+            //gives -1 result if there is an error
+            if (result == -1) {
+                db.close();
+                return false;
+            } else {
+                db.close();
 
-            return true;
+                return true;
+            }
+        }
+
+        //this will get us all the completed assessment = id jobposts+id for employee
+        //and the employer would be given the employee id
+
+        ArrayList<Integer> getAllCompletedAssessments ( int jobPostID){
+            ArrayList<Integer> employeeList = new ArrayList<>();
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.query(COMPLETED_ASSESSMENTS, new String[]{CA_EMP_ID, CA_JP_ID}, CA_JP_ID + "=?",
+                    new String[]{Integer.toString(jobPostID)}, null, null, null, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    Integer i = new Integer(
+                            Integer.parseInt(cursor.getString(0))
+                    );
+                    employeeList.add(i);
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+            return employeeList;
+        }
+
+
+        public Cursor getAllData () {
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor res = db.rawQuery("select * from " + TABLE_NAME, null);
+            return res;
+        }
+        //EMPLOYEE
+        int update_employee (employee_accounts sa){
+            SQLiteDatabase db = this.getWritableDatabase();
+
+            ContentValues values = new ContentValues();
+            values.put(COL_1, sa.getIdd());//name
+            values.put(COL_2, sa.getPhone());//phone
+            values.put(COL_3, sa.getEmail());//email
+            values.put(COL_4, sa.getPassword());//password
+            values.put(COL_5, sa.getPostal_code());//postalcode
+
+            return db.update(EMPLOYEE_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(sa.getIdd())});
+        }
+        //EMPLOYER
+        int update_employee (employee_accounts sa){
+            SQLiteDatabase db = this.getWritableDatabase();
+
+            ContentValues values = new ContentValues();
+            values.put(EMPR_1, sa.getid_1());//name
+            values.put(EMPR_2, sa.getcompanyname());//phone
+            values.put(EMPR_3, sa.getemail_empr());//email
+            values.put(EMPR_4, sa.password_empr());//password
+            values.put(EMPR_5, sa.postal_code_empr());//postalcode
+
+            return db.update(EMPLOYEE_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(sa.getIdd())});
+        }
+
+
+        //EMPLOYEE
+        public void delete_employee ( int id){
+            SQLiteDatabase db = this.getWritableDatabase();
+            db.delete(EMPLOYEE_NAME, KEY_ID + "=?", new String[]{String.valueOf(id)});
+            db.close();
+        }
+        public void delete_employer ( int id){
+            SQLiteDatabase db = this.getWritableDatabase();
+            db.delete(EMPLOYER_NAME, KEY_IDD + "=?", new String[]{String.valueOf(id)});
+            db.close();
         }
     }
 
-   //this will get us all the completed assessment = id jobposts+id for employee
-    //and the employer would be given the employee id
-
-    ArrayList<Integer> getAllCompletedAssessments(int jobPostID) {
-        ArrayList<Integer> employeeList = new ArrayList<>();
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(COMPLETED_ASSESSMENTS, new String[]{CA_EMP_ID, CA_JP_ID}, CA_JP_ID + "=?",
-                new String[]{ Integer.toString(jobPostID) }, null, null, null, null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                Integer i = new Integer(
-                        Integer.parseInt(cursor.getString(0))
-                );
-                employeeList.add(i);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        return employeeList;
-    }
-
-
-
-    public Cursor getAllData() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
-        return res;
-    }
-    //EMPLOYEE
-    int update_employee(employee_accounts sa) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(COL_1, sa.getIdd());//name
-        values.put(COL_2, sa.getPhone());//phone
-        values.put(COL_3, sa.getEmail());//email
-        values.put(COL_4, sa.getPassword());//password
-        values.put(COL_5, sa.getPostal_code());//postalcode
-
-        return db.update(EMPLOYEE_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(sa.getIdd())});
-    }
-    //EMPLOYEE
-    public void delete_employee(int id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(EMPLOYEE_NAME, KEY_ID + "=?", new String[] {String.valueOf(id)});
-        db.close();
-    }
 }
 

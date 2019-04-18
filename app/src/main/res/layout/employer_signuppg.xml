@@ -128,30 +128,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/employercon_cyte"
-                android:layout_width="339dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="309dp"
-                android:layout_marginEnd="31dp"
-                android:layout_marginRight="31dp"
-                android:layout_marginBottom="235dp"
-                android:background="@drawable/rounded_border"
-                android:ems="10"
-                android:hint="@string/confirm_password"
-                android:inputType="textPassword"
-                android:textColorHint="@color/bckcolor"
-                android:textStyle="italic"
-                tools:layout_editor_absoluteX="14dp"
-                tools:layout_editor_absoluteY="394dp" />
-
-            <EditText
                 android:id="@+id/employer_location_cyte"
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
@@ -162,7 +138,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="26dp"
                 android:layout_marginLeft="26dp"
-                android:layout_marginTop="378dp"
+                android:layout_marginTop="311dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/rounded_border"
