@@ -194,19 +194,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ///////////////
 
         //EMPLOYEE
-        employee_accounts getemployee ( int id){
+        employee_accounts getemployee(int id) {
             // we aren't making any changes so use a readable database, not a writable one.
-            SQLiteDatabase db = this.getReadableDatabase();
+           // SQLiteDatabase db = this.getReadableDatabase();
 
             // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
-            Cursor cursor = db.query(EMPLOYEE_NAME, new String[]{KEY_ID,
-                            COL_1, COL_2, COL_3, COL_4, COL_5}, KEY_ID + "=?",
+            Cursor cursor2 = db.query(EMPLOYEE_NAME, new String[]{KEY_IDD,
+                            COL_1, COL_2, COL_3, COL_4, COL_5}, KEY_IDD + "=?",
                     new String[]{String.valueOf(id)}, null, null, null, null);
-            if (cursor != null) { // If there are non-zero rows returned
-                cursor.moveToFirst(); // go to the first one
+            if (cursor2 != null) { // If there are non-zero rows returned
+                cursor2.moveToFirst(); // go to the first one
             }
-            cursor.close();
-            return new employee_accounts(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+            cursor2.close();
+            return new employee_accounts(cursor2.getString(1), cursor2.getString(2), cursor2.getString(3), cursor2.getString(4), cursor2.getString(5));
         }
 
         employee_accounts getEmployeeByEmail (String email){
@@ -253,14 +253,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getReadableDatabase();
 
             // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
-            Cursor cursor = db.query(EMPLOYER_NAME, new String[]{KEY_IDD,
+            Cursor cursor2 = db.query(EMPLOYER_NAME, new String[]{KEY_IDD,
                             EMPR_1, EMPR_2, EMPR_3, EMPR_4, EMPR_5}, KEY_IDD + "=?",
                     new String[]{String.valueOf(id)}, null, null, null, null);
-            if (cursor != null) { // If there are non-zero rows returned
-                cursor.moveToFirst(); // go to the first one
+            if (cursor2 != null) { // If there are non-zero rows returned
+                cursor2.moveToFirst(); // go to the first one
             }
-            cursor.close();
-            return new employer_accounts(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+            cursor2.close();
+            return new employee_accounts(cursor2.getString(1), cursor2.getString(2), cursor2.getString(3), cursor2.getString(4), cursor2.getString(5));
         }
 
         employer_accounts getEmployerByEmail (String email_empr){

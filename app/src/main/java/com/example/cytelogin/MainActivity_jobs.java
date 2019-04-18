@@ -79,7 +79,7 @@ DatabaseHelper myDb;
 //create an activity with the linear layout to call search posts, follow spaceship example
 
 //something I added this weekend
-        Toast.makeText(getApplicationContext(), "New post is stored", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "New post is stored", Toast.LENGTH_SHORT).show();
 
     }
 

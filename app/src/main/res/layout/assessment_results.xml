@@ -160,7 +160,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="232dp"
         app:cardBackgroundColor="@color/transparent"
         app:cardElevation="15dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
