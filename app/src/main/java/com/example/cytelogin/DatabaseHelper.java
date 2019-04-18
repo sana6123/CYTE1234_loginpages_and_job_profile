@@ -17,7 +17,7 @@ import android.widget.Space;
 import java.util.List;
 
 
-//in the constructor we create a database
+//in the constructor we create a database for jobposts
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "jobs"; //name of the db
     public static final String TABLE_NAME = "jobsTable"; //table name
@@ -26,8 +26,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String INDUSTRY_3 = "INDUSTRY"; //column 3 name
     public static final String CITY_4 = "CITY"; //column 4 name
 
+    //A new table for saving the information for employee
     public static final String EMPLOYEE_NAME="employee_profile";
-    //declaring our table names that would be included in this database
     private static final String KEY_ID = "idd";
     public static final String COL_1="Name";
     public static final String COL_2="Phone";
@@ -35,6 +35,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_4="Password";
     public static final String COL_5="Postal_code";
 
+    //a database for saving the information for employer
+    public static final String EMPLOYER_NAME = "employer_profile";
+    private static final String KEY_IDD = "id";
+    public static final String EMPR_1="Company_Name";
+    public static final String EMPR_2="Email_employer";
+    public static final String EMPR_3="Phone_employer";
+    public static final String EMPR_4="Password_employer";
+    public static final String EMPR_5="Postal_code_employer";
+
+
+
+    //a database for anonymous identity
     private static final String COMPLETED_ASSESSMENTS="completed_assessments";
     public static final String CA_EMP_ID="Employee ID";
     public static final String CA_JP_ID="Job Post ID";
@@ -53,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //where you create a table? metjod that executes when database is called
+        //where you create a table? method that executes when database is called
         db.execSQL(String.format("create table if not exists " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, INDUSTRY TEXT, CITY TEXT)"));
 
         String createJobPostsTable = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + ID_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT)";
@@ -61,6 +73,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String createEmployeeTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"STRING" + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
         db.execSQL(createEmployeeTable);
+
+        String createEmployerTable = " CREATE TABLE IF NOT EXISTS " + EMPLOYER_NAME +("+ KEY_IDD PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "STRING" + EMPR_2+ "STRING" + EMPR_3 +"STRING"+ EMPR_4+ "STRING" + EMPR_5 +"STRING");
 
         //String createEmployerTable =
         //db.execSQL(query1);
@@ -112,8 +126,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return jobsList;
     }
+    //EMPLOYER
+    ArrayList<employer_accounts> getallemployer() {
+        ArrayList<employer_accounts> appsList = new ArrayList<>();
+        // we aren't making any changes so use a readable database, not a writable one.
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // A Cursor is used as a way to navigate a set of rows returned by a query to a database.
+        // Query: SELECT * FROM TABLE_NAME
+        // * is a shorthand for "everything".
+        Cursor cursor = db.rawQuery("SELECT * FROM " + EMPLOYER_NAME, null);
+
+        // If the query returns a non-zero amount of rows, the if block will execute. If nothing was returned,
+        // i.e. the query resulted in 0 matching results, then cursor.moveToFirst() fails and returns false, skipping the if block.
+        if (cursor.moveToFirst()) {
+            // A do-while loop will always execute at least once, whereas a regular while loop checks the condition at the beginning and
+            // can potentially never execute code inside itself.
+            do {
+                // From the row that the Cursor is currently looking at, make a new SpaceshipApplication object and fill in the details using info from the retrieved row
+                employer_accounts spaceshipApplication = new employer_accounts(
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5)
+                );
+
+                appsList.add(spaceshipApplication); // then add it to our list
+            } while (cursor.moveToNext()); // Is there another row after this one? If not, we're done.
+        }
+        cursor.close();
+        db.close();
+        return appsList;
+
+
+    //////////
     //EMPLOYEE
-    ArrayList<employee_accounts> getallemployee() {
+
+    } ArrayList<employee_accounts> getallemployee() {
         ArrayList<employee_accounts> appsList = new ArrayList<>();
         // we aren't making any changes so use a readable database, not a writable one.
         SQLiteDatabase db = this.getReadableDatabase();
@@ -121,7 +171,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // A Cursor is used as a way to navigate a set of rows returned by a query to a database.
         // Query: SELECT * FROM TABLE_NAME
         // * is a shorthand for "everything".
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + EMPLOYEE_NAME, null);
 
         // If the query returns a non-zero amount of rows, the if block will execute. If nothing was returned,
         // i.e. the query resulted in 0 matching results, then cursor.moveToFirst() fails and returns false, skipping the if block.
@@ -144,7 +194,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return appsList;
-    }
+
+        ///////////////
+
     //EMPLOYEE
     employee_accounts getemployee(int id) {
         // we aren't making any changes so use a readable database, not a writable one.
