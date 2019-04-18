@@ -1,12 +1,11 @@
 package com.example.cytelogin;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.EditText;
 
-import java.time.Instant;
 import java.util.ArrayList;
 
 
@@ -48,7 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //constructor //whenever it is called, the database will be created
     //whatever is included in this section is created when db is called
-    public DatabaseHelper(Context context) {
+    public DatabaseHelper(Employer_Profile_Activity context) {
         super(context, DATABASE_NAME, null, 1);
         //creates database and table
         //SQLiteDatabase db = this.getWritableDatabase();
@@ -280,17 +279,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return new employer_accounts(cursor1.getString(1), cursor1.getString(2), cursor1.getString(3), cursor1.getString(4), cursor1.getString(5));
         }
 
-        public boolean addEmployer (String companyname, String email_empr, String phone_empr, String
-        password_empr, String postal_code_empr){
+        public boolean addEmployer (EditText companyname, EditText email_empr, EditText phone_empr, EditText
+        password_empr, EditText postal_code_empr){
 ///insert values
 
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
-            contentValues.put(EMPR_1, companyname);
-            contentValues.put(EMPR_2, email_empr);
-            contentValues.put(EMPR_3, phone_empr);
-            contentValues.put(EMPR_4, password_empr);
-            contentValues.put(EMPR_5, postal_code_empr);
+            contentValues.put(EMPR_1, String.valueOf(companyname));
+            contentValues.put(EMPR_2, String.valueOf(email_empr));
+            contentValues.put(EMPR_3, String.valueOf(phone_empr));
+            contentValues.put(EMPR_4, String.valueOf(password_empr));
+            contentValues.put(EMPR_5, String.valueOf(postal_code_empr));
             long result = db.insert(EMPLOYEE_NAME, null, contentValues);
             //gives -1 result if there is an error
             if (result == -1) {

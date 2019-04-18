@@ -2,15 +2,16 @@ package com.example.cytelogin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Employer_Profile_Activity {
+public class Employer_Profile_Activity extends AppCompatActivity {
     DatabaseHelper emperdb;
 
-    @Override
+   // @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.employer_signuppg);
@@ -22,7 +23,8 @@ public class Employer_Profile_Activity {
         startActivity(new Intent(Employer_Profile_Activity.this, job_profile.class));
         final Button button = (Button) findViewById(R.id.employer_signupbn);
 
-        employer_signupbn.setOnClickListener(new View.OnClickListener() {
+
+        button.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
             // your handler code here
             EditText employer_companyname = (EditText) findViewById(R.id.employer_fname_cyte);
@@ -38,7 +40,7 @@ public class Employer_Profile_Activity {
             String employee_password1 = employer_password.getText().toString();
             String employee_location1 = employer_location.getText().toString();
 
-            emperdb.addEmployer(employer_companyname,employer_phone,employer_email,employer_password, employer_location);
+            emperdb.addEmployer(employer_companyname, employer_phone, employer_email, employer_password, employer_location);
 
 // Send username and password to the database and check
 
@@ -51,4 +53,4 @@ public class Employer_Profile_Activity {
 }
 }
 
-        }
+
