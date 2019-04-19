@@ -26,7 +26,7 @@ public class employer_login extends AppCompatActivity {
         Name = (EditText)findViewById(R.id.employer_company_name);
         Password = (EditText)findViewById(R.id.employer_email);
         info = (TextView) findViewById(R.id.employer_phone_cyte);
-        Login = (TextView) findViewById(R.id.employer_location_cyte);
+        Login = (Button) findViewById(R.id.login);
         //for checking out the values in the database with the values entered
         db = new DatabaseHelper(getApplicationContext());
 
