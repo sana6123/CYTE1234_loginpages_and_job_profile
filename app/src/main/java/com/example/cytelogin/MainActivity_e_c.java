@@ -16,9 +16,6 @@ public class MainActivity_e_c extends AppCompatActivity {
 
         myDb = new DatabaseHelper(getApplicationContext());
 
-        //Temp code that shows employee form
-        Intent intent = new Intent(getApplicationContext(), employee_login.class);
-        startActivity(intent);
 
     }
 }

@@ -4,4 +4,241 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".makeAssessment_employer"/>
+    tools:context=".makeAssessment_employer"
+    android:background="@drawable/searchbackground">
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Enter Question 2:"
+        android:hintStyle="bold|italic"
+        android:hintcolor="bckcolor"
+        android:inputType="textMultiLine"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter First Option"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="549dp" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter Forth Option"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="683dp" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter Third Option"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="643dp" />
+
+    <EditText
+        android:id="@+id/editText10"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter Second Option"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="597dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="549dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="597dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="683dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="645dp" />
+
+    <TextView
+        android:id="@+id/hi123"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="Upload Your Assessment"
+        android:textColor="@color/bckcolor"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="268dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Input Test Questions"
+        android:textColor="@color/yelcolor"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hi123"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <ScrollView
+        android:layout_width="55dp"
+        android:layout_height="57dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="117dp">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Enter Question 1:"
+        android:hintStyle="bold|italic"
+        android:hintcolor="bckcolor"
+        android:inputType="textMultiLine"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.259" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter First Option"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter Forth Option"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="381dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter Third Option"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter Second Option"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="260dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="356dp" />
+
+
+
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
