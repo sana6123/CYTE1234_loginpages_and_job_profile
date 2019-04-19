@@ -20,7 +20,7 @@ public class employee_login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employee_login);
+        setContentView(R.layout.startuppage_username_pass);
 
         Name = (EditText)findViewById(R.id.Loginusername_Cyte);
         Password = (EditText)findViewById(R.id.Loginpassword_Cyte);
