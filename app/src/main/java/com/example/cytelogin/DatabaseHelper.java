@@ -100,27 +100,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 cursor.getString(1), cursor.getString(2), cursor.getString(3));
     }
 
-    ArrayList<Jobposts> getAllApplications(String title, String industry,String city) {
+    Cursor getAllApplications(String title, String industry,String city) {
         ArrayList<Jobposts> jobsList = new ArrayList<>();
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.query(TABLE_NAME, new String[]{ID_1,
-                        TITLE_2, INDUSTRY_3, CITY_4}, ID_1 + "=? AND "+ TITLE_2 + "=?" + " AND " + INDUSTRY_3 + "=?" + " AND " + CITY_4 + "=?",
+                        TITLE_2, INDUSTRY_3, CITY_4},  TITLE_2 + "=?" + " OR " + INDUSTRY_3 + "=?" + " AND " + CITY_4 + "=?",
                 new String[]{ String.valueOf(title), String.valueOf(industry), String.valueOf(city) }, null, null, null, null);
 
-        if (cursor.moveToFirst()) {
-            do {
-                Jobposts sa = new Jobposts(
-                        Integer.parseInt(cursor.getString(0)),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3)
-                );
-                jobsList.add(sa);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        return jobsList;
+            return cursor;
     }
     //EMPLOYER
     ArrayList<employer_accounts> getAllEmployer() {
