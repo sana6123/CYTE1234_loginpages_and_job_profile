@@ -14,7 +14,7 @@ public class links_to_education extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.educatwebsitesassessmentresults);
+        setContentView(R.layout.activity_links_to_education);
 
     }
     public void goto1 (View view) {

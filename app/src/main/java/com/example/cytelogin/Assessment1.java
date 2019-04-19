@@ -163,13 +163,8 @@ public class Assessment1 extends AppCompatActivity {
                 //TODO: Change Intent to Assessment Results when created
                 //TODO: Add onSubmit method to do intent and to change the button text to "Submit"
                 if (questionNum==numOfQuestions){
-<<<<<<< Updated upstream
                     score=score;
                     finishTest();
-=======
-                    startActivity(new Intent(Assessment1.this, assessment_results.class));
-                    Toast.makeText(Assessment1.this, "Score: "+score, Toast.LENGTH_SHORT).show();
->>>>>>> Stashed changes
                 } else {
                     group_assessment.clearCheck();
                     onRun();
