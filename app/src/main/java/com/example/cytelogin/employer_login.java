@@ -21,6 +21,7 @@ public class employer_login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //it would go to this activity
         setContentView(R.layout.startuppage_username_pass);
 
         Name = (EditText)findViewById(R.id.employer_company_name);
