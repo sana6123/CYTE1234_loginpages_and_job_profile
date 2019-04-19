@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -18,7 +19,11 @@ import java.util.ArrayList;
 
 public class MainActivity_jobs extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 DatabaseHelper myDb;
-ArrayList <Jobposts> posts;
+public ArrayList <Jobposts> posts;
+//////////
+ListView jobPostlist;
+
+
 
 
     @Override
@@ -36,14 +41,18 @@ ArrayList <Jobposts> posts;
         final ArrayList <Jobposts> posts = new ArrayList <Jobposts> ();
 
 
-        Runnable run = new Runnable() {
+
+// get content from jobposts?
+//I made run final?
+        final Runnable run = new Runnable() {
             public void run() {
                 //reload content
                 posts.clear();
-                posts.addAll(myDb.getApplication());
+                posts.addAll(myDb.getAllApplications(String title, String industry,String city));
                 adapter.notifyDataSetChanged();
                 jobPostlist.invalidateViews();
                 jobPostlist.refreshDrawableState();
+
             }
         };
 
@@ -67,6 +76,10 @@ ArrayList <Jobposts> posts;
         spinner.setOnItemSelectedListener(this);
         spinner2.setOnItemSelectedListener(this);
 
+
+        jobPostlist.setAdapter(industryAdapter);
+
+
         searchPosts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +94,7 @@ ArrayList <Jobposts> posts;
                     TextView t = new TextView(getApplicationContext());
                     t.setText(sa.toString());
                     final int update_id = sa.getId();
+                    runOnUiThread(run);
                     t.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
 

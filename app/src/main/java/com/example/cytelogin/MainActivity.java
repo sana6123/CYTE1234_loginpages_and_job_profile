@@ -47,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                startActivity(new Intent(MainActivity.this, employee_login.class));
+                Intent intent = new Intent(getApplicationContext(), employee_login.class);
+                intent.putExtra("switch", 0);
+                //0 is employee and 1 is employer
+                startActivity(intent);
             }
         });
 
@@ -55,8 +58,10 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                startActivity(new Intent(MainActivity.this, employer_snpg.class));
-                //why straight to sign up? Create a checking process similar to Sana's code
+                Intent intent = new Intent(getApplicationContext(), employer_login.class);
+                intent.putExtra("switch", 1);
+                //0 is employee and 1 is employer
+                startActivity(intent);
 
             }
         });

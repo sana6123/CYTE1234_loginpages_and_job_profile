@@ -37,7 +37,10 @@ public class employer_login extends AppCompatActivity {
         signup_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                startActivity(new Intent(employer_login.this, employer_snpg.class));
+                Intent intent = new Intent(getApplicationContext(), employer_signuppg.class);
+                intent.putExtra("switch", 1);
+                //0 is employee and 1 is employer
+                startActivity(intent);
             }});
 
         login_button.setOnClickListener(new View.OnClickListener() {
