@@ -7,6 +7,14 @@
     tools:context=".makeAssessment_employer"
     android:background="@drawable/searchbackground">
 
+
+    <ScrollView
+        android:layout_width="55dp"
+        android:layout_height="57dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="117dp">
+
+
     <EditText
         android:id="@+id/editText6"
         android:layout_width="371dp"
@@ -134,11 +142,6 @@
         app:layout_constraintTop_toBottomOf="@+id/hi123"
         app:layout_constraintVertical_bias="0.021" />
 
-    <ScrollView
-        android:layout_width="55dp"
-        android:layout_height="57dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="117dp">
 
     <EditText
         android:id="@+id/editText"
@@ -152,7 +155,6 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Enter Question 1:"
-        android:hintStyle="bold|italic"
         android:hintcolor="bckcolor"
         android:inputType="textMultiLine"
         android:textStyle="bold|italic"
@@ -235,9 +237,9 @@
         tools:layout_editor_absoluteX="20dp"
         tools:layout_editor_absoluteY="356dp" />
 
-
-
-
     </ScrollView>
+
+
+
 
 </android.support.constraint.ConstraintLayout>
