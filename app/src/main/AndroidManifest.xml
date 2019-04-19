@@ -31,7 +31,7 @@
             android:label="EmployeeSignUp" />
 
         <activity android:name=".Assessment1" />
-        <activity android:name=".assessmentpage" />
+        <activity android:name=".links_to_education" />
         <activity android:name=".empleyeedashboard"></activity>
 
     </application>

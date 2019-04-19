@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/everyscreenbackground"
-    tools:context=".assessmentpage"
+    tools:context=".links_to_education"
     >
 
     <TextView

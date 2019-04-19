@@ -9,7 +9,7 @@ import android.app.Activity;
 import android.net.Uri;
 
 
-public class assessmentpage extends AppCompatActivity {
+public class links_to_education extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
