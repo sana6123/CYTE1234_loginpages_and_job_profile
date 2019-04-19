@@ -41,7 +41,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Results"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:textSize="19dp"
         android:textStyle="bold"
         app:fontFamily="sans-serif"

@@ -1,7 +1,9 @@
 package com.example.cytelogin;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,20 +19,37 @@ import java.util.Collections;
 
 public class Assessment1 extends AppCompatActivity {
 
-    //  SharedPreferences myprefs;
+    public static final String MyPrefs = "myprefs";
+    SharedPreferences sharedpreferences;
 
     String correctAns;
     int questionNum=0;
-    int score=0;
+    static int score=0;
     int numOfQuestions;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assessmenttest);
+        setContentView(R.layout.activity_assessment);
 
-        // myprefs = getPreferences(MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(MyPrefs, Context.MODE_PRIVATE);
+
+        //timer
+        new CountDownTimer(60000, 1000){
+            TextView timerText = findViewById(R.id.timerText);
+
+            public void onTick(long millisUntilFinished){
+                timerText.setText("Time left: "+millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                timerText.setText("Time's up!");
+                finishTest();
+            }
+
+        }.start();
+
         onRun();
     }
 
@@ -38,10 +57,11 @@ public class Assessment1 extends AppCompatActivity {
         String[] questionArray = getResources().getStringArray(R.array.question_array);
         numOfQuestions = questionArray.length-1;
 
+
         updateQuestion();
         createQuestion();
         createRadioButtons();
-        onSubmit();
+        onNextQuestion();
     }
 
     private void createQuestion() {
@@ -110,9 +130,9 @@ public class Assessment1 extends AppCompatActivity {
 
     }
 
-    private void onSubmit(){
-        Button submit_assessment = findViewById(R.id.submit_assess);
-        submit_assessment.setOnClickListener(new View.OnClickListener() {
+    private void onNextQuestion(){
+        Button next_question = findViewById(R.id.next_question);
+        next_question.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
@@ -141,9 +161,10 @@ public class Assessment1 extends AppCompatActivity {
                 }
 
                 //TODO: Change Intent to Assessment Results when created
+                //TODO: Add onSubmit method to do intent and to change the button text to "Submit"
                 if (questionNum==numOfQuestions){
-                    //startActivity(new Intent(Assessment1.this, assessmentresults.class));
-                    Toast.makeText(Assessment1.this, "Score: "+score, Toast.LENGTH_SHORT).show();
+                    score=score;
+                    finishTest();
                 } else {
                     group_assessment.clearCheck();
                     onRun();
@@ -163,6 +184,15 @@ public class Assessment1 extends AppCompatActivity {
 
     }
 
+    private void finishTest(){
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putInt("score",score);
+        editor.putInt("questionNum",numOfQuestions);
+        editor.commit();
+        startActivity(new Intent(Assessment1.this, assessment_results.class));
+
+    }
+
     private void updateScore(){
         score++;
     }
@@ -176,15 +206,11 @@ public class Assessment1 extends AppCompatActivity {
 /*
     public void readPreferences (){
         readPreferences();
-        RadioGroup group_assessment = findViewById(R.id.radiogroup_assessment);
-        int idSelected = group_assessment.getCheckedRadioButtonId();
-        RadioButton ans1 = findViewById(idSelected);
-        String userChoice = ans1.getText().toString();
+;
 
         String ch1 = myprefs.getString("keychoice", "");
         ans1.setText(ch1);
-        //Toast.makeText(Assessment1.this, "Chose " + ans1, Toast.LENGTH_SHORT).show();
-    }*/
+    */
 }
 
 

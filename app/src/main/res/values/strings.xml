@@ -22,15 +22,17 @@
     <string name="candidate2">Candidate2</string>
     <string name="cyte2">CYTE2</string>
     <string name="todo1">TODO</string>
-    <string name="assessment_thanks">Thank you for completing this assessment. Please be aware that you might be contacted by an employer to further your employment.</string>
-
+    <string name="links">Links to educational organizations</string>
+    <string name="go_to_profile">Back to profile</string>
     <string name="search">Search</string>
-    <string name="selectTitle"> Job Title</string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="submit">Submit</string>
+    <string name="selectTitle">jobTitle</string>
+    <string name="nextQue">Next Question</string>
     <string name="todo">TODO</string>
     <string name="programmer_assessment">Programmer Assessment</string>
+    <string name="assessment_thanks">Thank you for completing this assessment. You may be contacted within the next 8 business days by an employer for an interview.</string>
+    <string name="assessment">Assessment</string>
+    <string name="results">Results</string>
+    <string name="submit">Submit</string>
 
 </resources>
 

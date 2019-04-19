@@ -4,16 +4,17 @@
     <color name="colorPrimaryDark">#003366</color>
     <color name="colorAccent">#D81B60</color>
     <color name="bckcolor">#000000</color>
-    <color name="yelcolor">#ffdd00</color>
+    <color name="yelcolor">#ffff33</color>
     <drawable name="CyteLogo"/>
-    <color name="ftcolor">#fdfcfbfb</color>
-    <color name="fontColor">#fd000000</color>
+    <color name="ftcolor">#FDFCFBFB</color>
+    <color name="fontColor">#FD000000</color>
     <color name="greycolor">#ced2d6</color>
     <color name="transparent">#00000000</color>
-    <color name="white">#ffffff</color>
     <color name="Black">#000000</color>
     <color name="Gold">#ffd001</color>
+    <color name="score">#d9b930</color>
+    <color name="white">#ffffff</color>
 
->>>>>>> Stashed changes
+
 
 </resources>

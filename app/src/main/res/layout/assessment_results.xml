@@ -38,7 +38,7 @@
         android:layout_marginBottom="8dp"
         android:text="TextView"
         android:textAllCaps="true"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.21"
-        tools:text="Asssessment" />
+        tools:text="Assessment" />
 
     <TextView
         android:id="@+id/textView11"
@@ -78,7 +78,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="TextView"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:textSize="25sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/result"
@@ -144,7 +144,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/assessment_thanks"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:typeface="sans"
         app:layout_constraintBottom_toTopOf="@+id/result"
