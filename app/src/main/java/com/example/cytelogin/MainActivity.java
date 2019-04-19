@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+DatabaseHelper myDb;
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -39,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myDb = new DatabaseHelper(getApplicationContext());
 
-       // mTextMessage = (TextView) findViewById(R.id.message);
+
+        // mTextMessage = (TextView) findViewById(R.id.message);
         //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_home);
         //navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         final Button button = findViewById(R.id.employee_startupbutton);
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // your handler code here
                 Intent intent = new Intent(getApplicationContext(), employee_login.class);
-                intent.putExtra("switch", 0);
+               // intent.putExtra("switch", 0);
                 //0 is employee and 1 is employer
                 startActivity(intent);
             }
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // your handler code here
                 Intent intent = new Intent(getApplicationContext(), employer_login.class);
-                intent.putExtra("switch", 1);
+                //intent.putExtra("switch", 1);
                 //0 is employee and 1 is employer
                 startActivity(intent);
 
