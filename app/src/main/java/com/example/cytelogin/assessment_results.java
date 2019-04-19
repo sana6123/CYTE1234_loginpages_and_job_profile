@@ -18,7 +18,7 @@ public class assessment_results extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assessment_results);
+        setContentView(R.layout.assessment_results);
 
         String MyPrefs = "myprefs";
         SharedPreferences sharedpreferences;
@@ -41,7 +41,12 @@ public class assessment_results extends AppCompatActivity {
 
         result.setText(String.format(Locale.CANADA, "Score: %d%%", finalScore));
 
-        //If score is lower than 80%, refer to educational websites
+        if (finalScore<75){
+            
+        }
+
+
+        //If score is lower than 70%, refer to educational websites
         // a choice to go back to browsing page
 
     }

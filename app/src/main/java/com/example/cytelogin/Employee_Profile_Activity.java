@@ -30,7 +30,7 @@ public class Employee_Profile_Activity extends AppCompatActivity {
         employee_button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                EditText firstnm_input = (EditText) findViewById(R.id.candidate_fname_cyte);
+                EditText firstnm_input = (EditText) findViewById(R.id.candidate_company_name);
                 EditText employee_phone = (EditText) findViewById(R.id.candidate_phone_cyte);
                 EditText employee_email = (EditText) findViewById(R.id.candidate_emailcyte);
                 EditText employee_password = (EditText) findViewById(R.id.candidate_pass_cyte);

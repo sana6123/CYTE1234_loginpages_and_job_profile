@@ -22,14 +22,14 @@ public class employee_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startuppage_username_pass);
 
-        Name = (EditText)findViewById(R.id.Loginusername_Cyte);
-        Password = (EditText)findViewById(R.id.Loginpassword_Cyte);
-        info = (TextView) findViewById(R.id.textView2);
-        Login = (Button) findViewById(R.id.Login_Cyte);
+        Name = (EditText)findViewById(R.id.username);
+        Password = (EditText)findViewById(R.id.password);
+        info = (TextView) findViewById(R.id.textView22);
+        Login = (Button) findViewById(R.id.login);
         //for checking out the values in the database with the values entered
         db = new DatabaseHelper(getApplicationContext());
 
-        final Button login_button = (Button) findViewById(R.id.Login_Cyte);
+        final Button login_button = (Button) findViewById(R.id.login);
         final TextView signup_button = (TextView) findViewById(R.id.signup_main);
 
         signup_button.setOnClickListener(new View.OnClickListener() {
@@ -42,8 +42,8 @@ public class employee_login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get references to text boxes
-                EditText username_input = (EditText) findViewById(R.id.Loginusername_Cyte);
-                EditText password_input = (EditText) findViewById(R.id.Loginpassword_Cyte);
+                EditText username_input = (EditText) findViewById(R.id.username);
+                EditText password_input = (EditText) findViewById(R.id.password);
                 // Pull input from text boxes
                 String email = username_input.getText().toString();
                 String password = password_input.getText().toString();
@@ -53,6 +53,7 @@ public class employee_login extends AppCompatActivity {
                 employee_accounts e = db.getEmployeeByEmail(email);
                 String ePass = e.getPassword();
 
+                /*
                 if (password.contentEquals(ePass)) {
                     // Password and Email match. Successful Login
                     // Make your intent and go to employee profile activity.
@@ -63,6 +64,7 @@ public class employee_login extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
                 }
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
+                */
             }
         });
     }

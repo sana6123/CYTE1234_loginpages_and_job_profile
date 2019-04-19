@@ -31,7 +31,7 @@
 
 
         <EditText
-            android:id="@+id/candidate_fname_cyte"
+            android:id="@+id/candidate_company_name"
             android:layout_width="366dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

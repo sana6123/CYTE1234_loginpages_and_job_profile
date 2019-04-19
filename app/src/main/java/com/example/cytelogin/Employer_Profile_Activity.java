@@ -27,8 +27,8 @@ public class Employer_Profile_Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
             // your handler code here
-            EditText employer_companyname = (EditText) findViewById(R.id.employer_fname_cyte);
-            EditText employer_phone = (EditText) findViewById(R.id.employer_emailcyte);
+            EditText employer_companyname = (EditText) findViewById(R.id.employer_company_name);
+            EditText employer_phone = (EditText) findViewById(R.id.employer_email);
             EditText employer_email = (EditText) findViewById(R.id.employer_phone_cyte);
             EditText employer_password = (EditText) findViewById(R.id.employer_pass_cyte);
             EditText employer_location = (EditText) findViewById(R.id.employer_location_cyte);

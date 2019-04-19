@@ -36,8 +36,8 @@ public class employer_snpg extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get references to text boxes
-                EditText companynm_input = (EditText) findViewById(R.id.employer_fname_cyte);
-                EditText email_input = (EditText) findViewById(R.id.employer_emailcyte);
+                EditText companynm_input = (EditText) findViewById(R.id.employer_company_name);
+                EditText email_input = (EditText) findViewById(R.id.employer_email);
                 EditText employer_phone = (EditText) findViewById(R.id.employer_phone_cyte);
                 EditText employer_password = (EditText) findViewById(R.id.employer_pass_cyte);
                 EditText employer_location = (EditText) findViewById(R.id.employer_location_cyte);

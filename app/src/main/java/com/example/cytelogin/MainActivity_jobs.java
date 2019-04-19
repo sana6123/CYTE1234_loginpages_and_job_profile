@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-
+/*
 public class MainActivity_jobs extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 DatabaseHelper myDb;
 public ArrayList <Jobposts> posts;
@@ -124,8 +124,8 @@ ListView jobPostlist;
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
-    }
-}
+    }*/
+//}
 
 
 
