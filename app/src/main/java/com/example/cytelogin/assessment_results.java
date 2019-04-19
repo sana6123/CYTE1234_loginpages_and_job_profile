@@ -35,8 +35,8 @@ public class assessment_results extends AppCompatActivity {
     }
 
     public void onRun(){
-        TextView result = findViewById(R.id.result);
-        Button linksToEdu = findViewById(R.id.links_to_education);
+        TextView result = findViewById(R.id.score);
+        Button linksToEdu = findViewById(R.id.button2);
 
         float temp = (float)score/(float)questionNum;
         int finalScore = (int)(temp*(float)100);

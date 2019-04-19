@@ -1,6 +1,7 @@
 package com.example.cytelogin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -61,6 +62,10 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
 
                 myDb.addJobPost(id, createTitle, createIndustry, createCity);
                 finish();
+
+
+                Intent intent = new Intent(getApplicationContext(), makeAssessment_employer.class);
+                startActivity(intent);
             }
         });
     }
