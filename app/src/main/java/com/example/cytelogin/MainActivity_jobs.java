@@ -17,12 +17,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/*
+
 public class MainActivity_jobs extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 DatabaseHelper myDb;
 public ArrayList <Jobposts> posts;
-//////////
-ListView jobPostlist;
+ListView jobList;
+JobpostsCursorAdapter jobpostsCursorAdapter;
 
 
 
@@ -39,24 +39,15 @@ ListView jobPostlist;
         myDb = new DatabaseHelper(getApplicationContext());
         Button searchPosts = findViewById(R.id.Search_posts);
         final EditText title = findViewById(R.id.titleEdit);
-        final ListView jobPostlist = findViewById(R.id.jobList);
+        //
+        final ListView jobList = findViewById(R.id.jobList);
         final ArrayList <Jobposts> posts = new ArrayList <Jobposts> ();
 
 
 
 // get content from jobposts?
 //I made run final?
-        final Runnable run = new Runnable() {
-            public void run() {
-                //reload content
-                posts.clear();
-                posts.addAll(myDb.getAllApplications(String title, String industry,String city));
-                adapter.notifyDataSetChanged();
-                jobPostlist.invalidateViews();
-                jobPostlist.refreshDrawableState();
 
-            }
-        };
 
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinnerIndustry);
@@ -79,7 +70,7 @@ ListView jobPostlist;
         spinner2.setOnItemSelectedListener(this);
 
 
-        jobPostlist.setAdapter(industryAdapter);
+
 
 
         searchPosts.setOnClickListener(new View.OnClickListener() {
@@ -91,8 +82,8 @@ ListView jobPostlist;
                 String titleText = title.getText().toString();
 
                 cursor = myDb.getAllApplications(titleText, selectedIndustry, selectedCity);
-
-
+                jobpostsCursorAdapter = new JobpostsCursorAdapter(getApplicationContext(),cursor);
+                jobList.setAdapter(jobpostsCursorAdapter);
 
             }
         });
@@ -112,8 +103,8 @@ ListView jobPostlist;
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
-    }*/
-//}
+    }
+}
 
 
 //cut it out later
