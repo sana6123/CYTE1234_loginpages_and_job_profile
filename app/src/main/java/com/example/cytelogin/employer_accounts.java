@@ -51,7 +51,7 @@ public class employer_accounts {
     public void setphone_empr (String phone_empr) {
         this.phone_empr = phone_empr; }
 
-    public String password_empr() {
+    public String getpassword_empr() {
         return password_empr;
     }
 
@@ -64,6 +64,12 @@ public class employer_accounts {
 
 
     public String postal_code_empr() {
+        return null;
+    }
+
+
+    //recheck this error
+    public String password_empr() {
         return null;
     }
 }

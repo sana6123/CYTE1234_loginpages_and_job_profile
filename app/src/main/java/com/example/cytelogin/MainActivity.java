@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // your handler code here
                 startActivity(new Intent(MainActivity.this, employer_snpg.class));
+                //why straight to sign up? Create a checking process similar to Sana's code
 
             }
         });

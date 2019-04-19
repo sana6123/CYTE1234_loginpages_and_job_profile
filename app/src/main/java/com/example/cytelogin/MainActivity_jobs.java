@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,16 +18,35 @@ import java.util.ArrayList;
 
 public class MainActivity_jobs extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 DatabaseHelper myDb;
+ArrayList <Jobposts> posts;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_jobs);
         //create a new instance/database
-        myDb = new DatabaseHelper(this);
+        myDb = new DatabaseHelper(getApplicationContext());
         Button searchPosts = findViewById(R.id.Search_posts);
         final EditText title = findViewById(R.id.titleEdit);
-        final LinearLayout jobPostlist = findViewById(R.id.jobList);
+        final ListView jobPostlist = findViewById(R.id.jobList);
+        final ArrayList <Jobposts> posts = new ArrayList <Jobposts> ();
+
+
+        Runnable run = new Runnable() {
+            public void run() {
+                //reload content
+                posts.clear();
+                posts.addAll(myDb.getApplication());
+                adapter.notifyDataSetChanged();
+                jobPostlist.invalidateViews();
+                jobPostlist.refreshDrawableState();
+            }
+        };
+
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinnerIndustry);
         // Create an ArrayAdapter using a string array and a default spinner layout
@@ -55,7 +74,7 @@ DatabaseHelper myDb;
                 String selectedCity = spinner2.getSelectedItem().toString();
                 String titleText = title.getText().toString();
 
-                ArrayList<Jobposts> posts =  myDb.getAllApplications(titleText, selectedIndustry, selectedCity);
+                posts = myDb.getAllApplications(titleText, selectedIndustry, selectedCity);
 
                 for (int i = 0; i < posts.size(); i++) {
                     Jobposts sa = posts.get(i);

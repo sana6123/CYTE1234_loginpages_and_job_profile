@@ -17,7 +17,7 @@ public class Employer_Profile_Activity extends AppCompatActivity {
         setContentView(R.layout.employer_signuppg);
 
         //this is from the video, calling out the database whenever this constructor is called
-        emperdb = new DatabaseHelper(this);
+        emperdb = new DatabaseHelper(getApplicationContext());
 
 
         startActivity(new Intent(Employer_Profile_Activity.this, job_profile.class));

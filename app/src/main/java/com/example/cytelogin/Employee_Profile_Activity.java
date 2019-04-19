@@ -18,7 +18,8 @@ public class Employee_Profile_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_employee__profile);
 
         //this is from the video, calling out the database whenever this constructor is called
-        empeedb = new DatabaseHelper(this);
+        ////
+        empeedb = new DatabaseHelper(getApplicationContext());
 
 
         startActivity(new Intent(Employee_Profile_Activity.this, job_profile.class));

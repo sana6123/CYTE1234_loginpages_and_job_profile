@@ -10,15 +10,13 @@ import android.widget.Toast;
 
 public class employer_snpg extends AppCompatActivity {
 
-    database_profile_employer emperdb;
+    employer_accounts emperdb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.employer_signuppg);
 
-
-        emperdb = new database_profile_employer(this);
 
 
 //for declaring the buttons
@@ -51,6 +49,8 @@ public class employer_snpg extends AppCompatActivity {
                 String employer_phonenumber = employer_phone.getText().toString();
                 String employer_password1 = employer_password.getText().toString();
                 String employer_location1 = employer_location.getText().toString();
+
+                emperdb = new employer_accounts(employer_companyname,employer_email,employer_phonenumber,employer_password1, employer_location1);
 
                 // Send username and password to the database and check
                 //login_button.setText(username + " " + password); // Get rid of this

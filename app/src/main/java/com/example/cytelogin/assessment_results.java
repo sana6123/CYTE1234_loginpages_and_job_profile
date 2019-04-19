@@ -42,6 +42,7 @@ public class assessment_results extends AppCompatActivity {
         result.setText(String.format(Locale.CANADA, "Score: %d%%", finalScore));
 
         //If score is lower than 80%, refer to educational websites
+        // a choice to go back to browsing page
 
     }
 
