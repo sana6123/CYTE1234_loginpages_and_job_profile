@@ -15,7 +15,7 @@ public class Employee_Profile_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employee__profile);
+        setContentView(R.layout.activity_employee_signup);
 
         //this is from the video, calling out the database whenever this constructor is called
         ////
