@@ -14,6 +14,7 @@ public class MainActivity_e_c extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //myDb = new DatabaseHelper(getApplicationContext());
 
 
