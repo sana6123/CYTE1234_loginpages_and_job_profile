@@ -1,6 +1,7 @@
 package com.example.cytelogin;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,6 +23,7 @@ DatabaseHelper myDb;
 public ArrayList <Jobposts> posts;
 //////////
 ListView jobPostlist;
+
 
 
 
@@ -83,29 +85,15 @@ ListView jobPostlist;
         searchPosts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Cursor cursor;
                 String selectedIndustry = spinner.getSelectedItem().toString();
                 String selectedCity = spinner2.getSelectedItem().toString();
                 String titleText = title.getText().toString();
 
-                posts = myDb.getAllApplications(titleText, selectedIndustry, selectedCity);
+                cursor = myDb.getAllApplications(titleText, selectedIndustry, selectedCity);
 
-                for (int i = 0; i < posts.size(); i++) {
-                    Jobposts sa = posts.get(i);
-                    TextView t = new TextView(getApplicationContext());
-                    t.setText(sa.toString());
-                    final int update_id = sa.getId();
-                    runOnUiThread(run);
-                    t.setOnClickListener(new View.OnClickListener() {
-                        public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), Assessment1.class);
-                            intent.putExtra("id", update_id);
-                            startActivity(intent);
-                        }});
-                    jobPostlist.addView(t);
-                }
-// what is the Joblist from database then?
-                jobPostlist.postInvalidate();
+
             }
         });
 
@@ -128,4 +116,21 @@ ListView jobPostlist;
 //}
 
 
+//cut it out later
+/*for (int i = 0; i < posts.size(); i++) {
+                    Jobposts sa = posts.get(i);
+                    TextView t = new TextView(getApplicationContext());
+                    t.setText(sa.toString());
+                    final int update_id = sa.getId();
+                    runOnUiThread(run);
+                    t.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
 
+                            Intent intent = new Intent(getApplicationContext(), Assessment1.class);
+                            intent.putExtra("id", update_id);
+                            startActivity(intent);
+                        }});
+                    jobPostlist.addView(t);
+                }
+// what is the Joblist from database then?
+                jobPostlist.postInvalidate();*/
