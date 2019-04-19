@@ -23,21 +23,21 @@ public class employer_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startuppage_username_pass);
 
-        Name = (EditText)findViewById(R.id.username);
-        Password = (EditText)findViewById(R.id.password);
-        info = (TextView) findViewById(R.id.textView22);
-        Login = (Button) findViewById(R.id.login);
+        Name = (EditText)findViewById(R.id.employer_fname_cyte);
+        Password = (EditText)findViewById(R.id.employer_emailcyte);
+        info = (TextView) findViewById(R.id.employer_phone_cyte);
+        Login = (TextView) findViewById(R.id.employer_location_cyte);
         //for checking out the values in the database with the values entered
         db = new DatabaseHelper(getApplicationContext());
 
 
-        final Button login_button = (Button) findViewById(R.id.login);
+        final Button login_button = (Button) findViewById(R.id.Login_Cyte);
         final TextView signup_button = (TextView) findViewById(R.id.signup_main);
 
         signup_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                Intent intent = new Intent(getApplicationContext(), employer_snpg.class);
+                Intent intent = new Intent(getApplicationContext(), employer_signuppg.class);
                 intent.putExtra("switch", 1);
                 //0 is employee and 1 is employer
                 startActivity(intent);
@@ -47,8 +47,8 @@ public class employer_login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get references to text boxes
-                EditText username_input = (EditText) findViewById(R.id.username);
-                EditText password_input = (EditText) findViewById(R.id.password);
+                EditText username_input = (EditText) findViewById(R.id.employer_username);
+                EditText password_input = (EditText) findViewById(R.id.employer_password);
                 // Pull input from text boxes
                 String email = username_input.getText().toString();
                 String password = password_input.getText().toString();
