@@ -21,7 +21,8 @@ public class employer_snpg extends AppCompatActivity {
 
 //for declaring the buttons
         final Button employer_profile = (Button) findViewById(R.id.employer_signupbn);
-        final Button employee_button1 = (Button) findViewById(R.id.employee_button);
+      //  final Button employee_button1 = (Button) findViewById(R.id.employee_button);
+
 
 
 
@@ -56,8 +57,10 @@ public class employer_snpg extends AppCompatActivity {
                 //login_button.setText(username + " " + password); // Get rid of this
                 Toast.makeText(getApplicationContext(), "Data is stored", Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
+                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), employer_add_posts.class));
 
-                startActivity(new Intent(employer_snpg.this, employer_add_posts.class));
             }
         });
     }
