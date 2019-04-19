@@ -9,26 +9,27 @@
 
     <TextView
         android:id="@+id/titletextView"
-        android:layout_width="134dp"
-        android:layout_height="37dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:gravity="center"
         android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textColor="@color/score"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Results" />
+        tools:text="score" />
 
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/links_to_education"
         android:layout_width="299dp"
         android:layout_height="79dp"
         android:layout_marginStart="8dp"
@@ -41,7 +42,6 @@
         android:text="@string/links"
         android:textAllCaps="false"
         android:textSize="25sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="216dp"
         android:text="@string/assessment_thanks"
         android:textColor="@android:color/white"
         android:textSize="20sp"
@@ -68,7 +68,7 @@
     <Button
         android:id="@+id/results_title"
         android:layout_width="match_parent"
-        android:layout_height="103dp"
+        android:layout_height="90dp"
         android:gravity="center"
         android:text="@string/results"
         android:textSize="30sp"
