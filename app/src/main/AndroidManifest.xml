@@ -25,6 +25,7 @@
         <activity android:name=".Employee_Profile_Activity" />
         <activity android:name=".employer_snpg" />
         <activity android:name=".Assessment1" />
+        <activity android:name=".MainActivity_jobs"/>
         <activity android:name=".assessment_results" />
             <activity android:name=".employer_login"/>
     </application>
