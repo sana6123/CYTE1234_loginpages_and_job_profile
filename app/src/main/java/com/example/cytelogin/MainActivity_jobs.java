@@ -34,6 +34,7 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
         myDb = new DatabaseHelper(getApplicationContext());
        // Button searchPosts = findViewById(R.id.Search_posts);
         final EditText title = findViewById(R.id.titleEdit);
+        title.setVisibility(View.GONE);
         //
         final ListView jobList = findViewById(R.id.jobList);
         final ArrayList <Jobposts> posts = new ArrayList <Jobposts> ();
@@ -46,18 +47,19 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
 
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinnerIndustry);
-        // Create an ArrayAdapter using a string array and a default spinner layout
-            ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this,R.array.industry_array, android.R.layout.simple_spinner_item);
+        // Create an ArrayAdapter using a string array and a specified spinner layout
+            ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this,R.array.industry_array, R.layout.spinner_text_colour);
         //Specify the layout to use when the list of choices appears
-        industryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        industryAdapter.setDropDownViewResource(R.layout.spinner_dropdown_colour);
         //Apply adapter to the spinner
         spinner.setAdapter(industryAdapter);
 
+
         final Spinner spinner2 = (Spinner) findViewById(R.id.spinnerCity);
-        // Create an ArrayAdapter using a string array and a default spinner layout
-        ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this,R.array.city_array, android.R.layout.simple_spinner_item);
+        // Create an ArrayAdapter using a string array and a specified spinner layout
+        ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this,R.array.city_array, R.layout.spinner_text_colour);
         //Specify the layout to use when the list of choices appears
-        cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cityAdapter.setDropDownViewResource(R.layout.spinner_dropdown_colour);
         //Apply adapter to the spinner
         spinner2.setAdapter(cityAdapter);
 
@@ -82,7 +84,7 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
                 jobList.setAdapter(jobpostsCursorAdapter);
 
 
-                Intent intent = new Intent(getApplicationContext(), Assessment1.class);
+                Intent intent = new Intent(getApplicationContext(), job_profile.class);
                 startActivity(intent);
 
             }
@@ -96,8 +98,8 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+        Toast.makeText(this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
