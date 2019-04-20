@@ -82,7 +82,7 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
                 jobList.setAdapter(jobpostsCursorAdapter);
 
 
-                Intent intent = new Intent(getApplicationContext(),Assessment1 .class);
+                Intent intent = new Intent(getApplicationContext(), Assessment1.class);
                 startActivity(intent);
 
             }
