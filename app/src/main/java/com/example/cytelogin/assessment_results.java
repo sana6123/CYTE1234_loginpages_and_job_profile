@@ -62,8 +62,8 @@ public class assessment_results extends AppCompatActivity {
         }
 
 
-        //If score is lower than 70%, refer to educational websites
-        // a choice to go back to browsing page
+
+
 
     }
 

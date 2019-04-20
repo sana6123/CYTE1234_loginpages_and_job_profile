@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity android:name=".employer_startuppage"></activity>
         <activity android:name=".makeAssessment_employer" />
         <activity android:name=".employer_add_posts" />
@@ -29,6 +31,16 @@
         <activity android:name=".MainActivity_jobs" />
         <activity android:name=".assessment_results" />
         <activity android:name=".employer_login" />
+        <activity android:name=".WhenClickItem" />
+        <activity android:name=".MainActivity_e_c" />
+        <activity android:name=".links_to_education" />
+        <activity android:name=".Employer_Profile_Activity" />
+        <activity android:name=".empleyeedashboard" />
+        <activity android:name=".skill_Test" />
+
+
+
+
     </application>
 
 </manifest>
