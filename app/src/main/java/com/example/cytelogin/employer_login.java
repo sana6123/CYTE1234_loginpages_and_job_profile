@@ -33,15 +33,13 @@ public class employer_login extends AppCompatActivity {
 
 
         final Button login_button = (Button) findViewById(R.id.login);
-        final TextView signup = (TextView) findViewById(R.id.signup_main);
+        TextView signup = (TextView) findViewById(R.id.signup_main);
 
         signup.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), employer_snpg.class);
+                Intent intent = new Intent(getApplicationContext(), Employer_Profile_Activity.class);
                 startActivity(intent);
-
-                //intent.putExtra("switch", 1);
-                //0 is employee and 1 is employer
             }});
 
         login_button.setOnClickListener(new View.OnClickListener() {
@@ -57,18 +55,21 @@ public class employer_login extends AppCompatActivity {
                 //login_button.setText(username + " " + password); // Get rid of this
 
                 employer_accounts e = db.getEmployerByEmail(email);
-                String ePass = e.getpassword_empr();
+                String ePass = e.password_empr();
+
 
                 if (password.contentEquals(ePass)) {
                     // Password and Email match. Successful Login
                     // Make your intent and go to employee profile activity.
-                    Intent i = new Intent(getApplicationContext(), employer_add_posts.class);
+                    Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
                     startActivity(i);
                     // Remember to put ".class" at the end of the activity name!
                 } else {
                     Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
+
                 }
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
+
             }
         });
     }
