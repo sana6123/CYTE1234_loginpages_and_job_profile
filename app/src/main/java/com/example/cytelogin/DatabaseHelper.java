@@ -64,17 +64,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String createJobPostsTable = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + ID_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT)";
         db.execSQL(createJobPostsTable);
 
-        String createEmployeeTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+KEY_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+COL_1+"TEXT" + COL_2 + "INTEGER"+ COL_3 + "TEXT" +  COL_4 + "TEXT" + COL_5 +"TEXT)";
+        String createEmployeeTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+KEY_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+COL_1+"TEXT" + COL_2 + "TEXT"+ COL_3 + "TEXT" +  COL_4 + "TEXT" + COL_5 +"TEXT)";
         db.execSQL(createEmployeeTable);
 
-        String createEmployerTable = "CREATE TABLE IF NOT EXISTS " + EMPLOYER_NAME +"("+ KEY_IDD+" INTEGER PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "TEXT" + EMPR_2+ "TEXT" + EMPR_3 +"INTEGER"+ EMPR_4+ "TEXT" + EMPR_5 +"TEXT)";
+        String createEmployerTable = "CREATE TABLE IF NOT EXISTS " + EMPLOYER_NAME +"("+ KEY_IDD+" INTEGER PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "TEXT" + EMPR_2+ "TEXT" + EMPR_3 +"TEXT"+ EMPR_4+ "TEXT" + EMPR_5 +"TEXT)";
         db.execSQL(createEmployerTable);
 
 
 
         //String createEmployerTable =
         //db.execSQL(query1);
-        String createCompletedAssessmentsTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"TEXT" + COL_2 + "INTEGER"+ COL_3 + "TEXT" +  COL_4 + "INTEGER" + COL_5 +"TEXT)";
+        String createCompletedAssessmentsTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"TEXT" + COL_2 + "TEXT"+ COL_3 + "TEXT" +  COL_4 + "TEXT" + COL_5 +"TEXT)";
         db.execSQL(createCompletedAssessmentsTable);
     }
 
