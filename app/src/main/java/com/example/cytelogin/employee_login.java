@@ -63,6 +63,7 @@ public class employee_login extends AppCompatActivity {
                     // Remember to put ".class" at the end of the activity name!
                 } else {
                     Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
+
                 }
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
 

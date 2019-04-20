@@ -1,6 +1,7 @@
 package com.example.cytelogin;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -47,6 +48,8 @@ public class skill_Test extends AppCompatActivity {
             public void onClick(View v) {
                 if (mcheckcalculation.isChecked())
                     mresult.add("Calculation -Using basic arithmetic skills including adding, subtracting, multiplication and division");
+
+
                 else
                     mresult.remove("Calculation -Using basic arithmetic skills including adding, subtracting, multiplication and division");
 
@@ -169,9 +172,21 @@ public class skill_Test extends AppCompatActivity {
 
                 mresulttextview.setText(stringBuilder.toString());
                 mresulttextview.setEnabled(false);
+
+
+
             }
         });
-
+        final Button button1 = findViewById(R.id.button_Select);
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // your handler code here
+                Intent intent = new Intent(getApplicationContext(), Assessment1.class);
+                // intent.putExtra("switch", 0);
+                //0 is employee and 1 is employer
+                startActivity(intent);
+            }
+        });
 
 
 

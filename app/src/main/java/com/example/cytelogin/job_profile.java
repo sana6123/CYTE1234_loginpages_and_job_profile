@@ -19,7 +19,7 @@ public class job_profile extends AppCompatActivity {
         Going_toassessment.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                Intent intent = new Intent(getApplicationContext(), Assessment1.class);
+                Intent intent = new Intent(getApplicationContext(), skill_Test.class);
                 startActivity(intent);
 
 
