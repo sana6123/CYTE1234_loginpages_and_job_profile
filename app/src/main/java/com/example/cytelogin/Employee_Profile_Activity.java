@@ -22,13 +22,12 @@ public class Employee_Profile_Activity extends AppCompatActivity {
         empeedb = new DatabaseHelper(getApplicationContext());
 
 
-        startActivity(new Intent(Employee_Profile_Activity.this, job_profile.class));
+        //startActivity(new Intent(Employee_Profile_Activity.this, job_profile.class));
         final Button button = (Button) findViewById(R.id.candidate_signupdn);
-       // final Button employee_button1 = (Button) findViewById(R.id.employee_button);
-
-
         button.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
+
                 // your handler code here
                 EditText firstnm_input = (EditText) findViewById(R.id.candidate_company_name);
                 EditText employee_phone = (EditText) findViewById(R.id.candidate_phone_cyte);
@@ -43,18 +42,22 @@ public class Employee_Profile_Activity extends AppCompatActivity {
                 String employee_password1 = employee_password.getText().toString();
                 String employee_location1 = employee_location.getText().toString();
 
-                empeedb.addEmployee(employee_name1,employee_phone1,employee_email1,employee_password1, employee_location1);
+                empeedb.addEmployee(employee_name1, employee_phone1, employee_email1, employee_password1, employee_location1);
 
 // Send username and password to the database and check
-                Intent intent = new Intent(getApplicationContext(),MainActivity_jobs .class);
-                startActivity(intent);
+                // Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                // startActivity(intent);
 
                 //login_button.setText(username + " " + password); // Get rid of this
                 Toast.makeText(getApplicationContext(), "Your data is stored", Toast.LENGTH_SHORT).show();
 
-                //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
+                Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                startActivity(intent);
             }
-        });
+        });  //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
     }
-}
+        };
 
+
+
+// final Button employee_button1 = (Button) findViewById(R.id.employee_button);

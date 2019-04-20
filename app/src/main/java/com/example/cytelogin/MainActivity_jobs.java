@@ -25,19 +25,14 @@ ListView jobList;
 JobpostsCursorAdapter jobpostsCursorAdapter;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_jobs);
+
         //create a new instance/database
         myDb = new DatabaseHelper(getApplicationContext());
-        Button searchPosts = findViewById(R.id.Search_posts);
+       // Button searchPosts = findViewById(R.id.Search_posts);
         final EditText title = findViewById(R.id.titleEdit);
         //
         final ListView jobList = findViewById(R.id.jobList);
@@ -72,6 +67,7 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
 
 
 
+        final Button searchPosts = (Button) findViewById(R.id.Search_posts);
 
         searchPosts.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,9 +81,8 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
                 jobpostsCursorAdapter = new JobpostsCursorAdapter(getApplicationContext(),cursor);
                 jobList.setAdapter(jobpostsCursorAdapter);
 
+
                 Intent intent = new Intent(getApplicationContext(),Assessment1 .class);
-                //intent.putExtra("switch", 1);
-                //0 is employee and 1 is employer
                 startActivity(intent);
 
             }

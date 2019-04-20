@@ -67,9 +67,6 @@ DatabaseHelper myDb;
 
             }
         });
-
-
-
     }
 
 }

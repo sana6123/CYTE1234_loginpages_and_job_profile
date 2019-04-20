@@ -30,12 +30,13 @@ public class employee_login extends AppCompatActivity {
         db = new DatabaseHelper(getApplicationContext());
 
         final Button login_button = (Button) findViewById(R.id.login);
-        final TextView signup_button = (TextView) findViewById(R.id.signup_main);
+        TextView signup = (TextView) findViewById(R.id.signup_main);
 
-
-        signup_button.setOnClickListener(new View.OnClickListener() {
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Employee_Profile_Activity.class));
+                Intent intent = new Intent(getApplicationContext(), Employee_Profile_Activity.class);
+                startActivity(intent);
             }});
 
         login_button.setOnClickListener(new View.OnClickListener() {
