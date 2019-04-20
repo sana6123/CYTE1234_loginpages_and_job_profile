@@ -55,4 +55,5 @@
         <item>2</item>
     </string-array>
 
+    <string name="trait_start_button">Select Skillsets</string>
 </resources>
