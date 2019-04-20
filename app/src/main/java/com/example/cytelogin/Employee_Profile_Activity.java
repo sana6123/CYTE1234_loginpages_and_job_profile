@@ -24,10 +24,10 @@ public class Employee_Profile_Activity extends AppCompatActivity {
 
         startActivity(new Intent(Employee_Profile_Activity.this, job_profile.class));
         final Button button = (Button) findViewById(R.id.candidate_signupdn);
-        final Button employee_button1 = (Button) findViewById(R.id.employee_button);
+       // final Button employee_button1 = (Button) findViewById(R.id.employee_button);
 
 
-        employee_button1.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
                 EditText firstnm_input = (EditText) findViewById(R.id.candidate_company_name);
@@ -46,6 +46,8 @@ public class Employee_Profile_Activity extends AppCompatActivity {
                 empeedb.addEmployee(employee_name1,employee_phone1,employee_email1,employee_password1, employee_location1);
 
 // Send username and password to the database and check
+                Intent intent = new Intent(getApplicationContext(),MainActivity_jobs .class);
+                startActivity(intent);
 
                 //login_button.setText(username + " " + password); // Get rid of this
                 Toast.makeText(getApplicationContext(), "Your data is stored", Toast.LENGTH_SHORT).show();
