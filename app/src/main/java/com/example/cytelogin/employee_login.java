@@ -35,7 +35,9 @@ public class employee_login extends AppCompatActivity {
 
         signup.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Employee_Profile_Activity.class));
+                Intent intent = new Intent(getApplicationContext(), Employee_Profile_Activity.class);
+                startActivity(intent);
+
             }});
 
         login_button.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +54,10 @@ public class employee_login extends AppCompatActivity {
 
                 employee_accounts e = db.getEmployeeByEmail(email);
                 String ePass = e.getPassword();
+//activity mainjobs-assessment1--assessmentresults
+                Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                startActivity(intent);
+
 
                 /*
                 if (password.contentEquals(ePass)) {
