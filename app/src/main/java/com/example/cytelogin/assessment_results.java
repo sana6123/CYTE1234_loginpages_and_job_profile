@@ -1,6 +1,7 @@
 package com.example.cytelogin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,9 @@ public class assessment_results extends AppCompatActivity {
 
     int score;
     int questionNum;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,14 @@ public class assessment_results extends AppCompatActivity {
     public void onRun(){
         TextView result = findViewById(R.id.score);
         Button linksToEdu = findViewById(R.id.button2);
+
+        linksToEdu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // your handler code here
+                Intent intent = new Intent(getApplicationContext(), links_to_education.class);
+                startActivity(intent);
+            }
+            });
 
         float temp = (float)score/(float)questionNum;
         int finalScore = (int)(temp*(float)100);
