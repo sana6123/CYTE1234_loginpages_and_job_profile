@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".employer_startuppage"
+    tools:context="com.example.cytelogin.employer_login"
     android:background="@drawable/cytebackground_with_circle">
     >
 

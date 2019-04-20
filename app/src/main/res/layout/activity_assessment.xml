@@ -57,7 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/radiogroup_assessment"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_alignLeft="@+id/radiogroup_assessment" />
 
             <RadioButton
                 android:id="@+id/radio3"
