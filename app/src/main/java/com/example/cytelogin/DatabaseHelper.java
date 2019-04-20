@@ -74,7 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //String createEmployerTable =
         //db.execSQL(query1);
-        String createCompletedAssessmentsTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"STRING" + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
+        String createCompletedAssessmentsTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"TEXT" + COL_2 + "INTEGER"+ COL_3 + "TEXT" +  COL_4 + "INTEGER" + COL_5 +"TEXT)";
         db.execSQL(createCompletedAssessmentsTable);
     }
 
