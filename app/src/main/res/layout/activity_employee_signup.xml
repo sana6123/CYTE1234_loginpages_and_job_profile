@@ -9,89 +9,43 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/employer_button2"
-        android:layout_width="159dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/transparent"
-        android:text="employer"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.995"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
-
     <TextView
         android:id="@+id/signuptitle4"
         android:layout_width="141dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="SIGN UP"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/employee_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/employee_button"
-        android:layout_width="165dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/transparent"
-        android:text="candidate"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/employer_button2"
-        app:layout_constraintHorizontal_bias="0.275"
+        android:gravity="center"
+        android:text="SIGN UP"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="365dp"
-        android:layout_height="445dp"
+        android:layout_height="431dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/semitransparentbackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="495dp">
+            android:layout_height="450dp">
 
             <EditText
                 android:id="@+id/candidate_company_name"
@@ -104,7 +58,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
-                android:layout_marginTop="42dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="13dp"
                 android:layout_marginRight="13dp"
                 android:layout_marginBottom="8dp"
@@ -133,7 +87,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="14dp"
                 android:layout_marginLeft="14dp"
-                android:layout_marginTop="167dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="8dp"
@@ -151,7 +105,7 @@
                 app:layout_constraintVertical_bias="0.292" />
 
             <EditText
-                android:id="@+id/candidate_location_cyte"
+                android:id="@+id/candidate_phone_cyte"
                 android:layout_width="366dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -161,21 +115,19 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="13dp"
                 android:layout_marginLeft="13dp"
-                android:layout_marginTop="292dp"
+                android:layout_marginTop="130dp"
                 android:layout_marginEnd="11dp"
                 android:layout_marginRight="11dp"
                 android:background="@drawable/rounded_border"
                 android:ems="10"
-                android:hint="Postal Address"
-                android:inputType="textPostalAddress"
+                android:hint="Phone Number"
+                android:inputType="phone"
                 android:textColorHint="@color/bckcolor"
                 android:textStyle="italic"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.476"
+                app:layout_constraintHorizontal_bias="0.275"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.904" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/candidate_pass_cyte"
@@ -188,7 +140,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="14dp"
                 android:layout_marginLeft="14dp"
-                android:layout_marginTop="229dp"
+                android:layout_marginTop="190dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="8dp"
@@ -206,7 +158,7 @@
                 app:layout_constraintVertical_bias="0.47" />
 
             <EditText
-                android:id="@+id/candidate_phone_cyte"
+                android:id="@+id/candidate_location_cyte"
                 android:layout_width="366dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -216,19 +168,21 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="13dp"
                 android:layout_marginLeft="13dp"
-                android:layout_marginTop="103dp"
+                android:layout_marginTop="250dp"
                 android:layout_marginEnd="11dp"
                 android:layout_marginRight="11dp"
                 android:background="@drawable/rounded_border"
                 android:ems="10"
-                android:hint="Phone Number"
-                android:inputType="phone"
+                android:hint="Postal Address"
+                android:inputType="textPostalAddress"
                 android:textColorHint="@color/bckcolor"
                 android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.275"
+                app:layout_constraintHorizontal_bias="0.476"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.904" />
 
             <Button
                 android:id="@+id/candidate_signupdn"
@@ -239,7 +193,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
-                android:layout_marginTop="379dp"
+                android:layout_marginTop="330dp"
                 android:layout_marginEnd="97dp"
                 android:layout_marginRight="97dp"
                 android:background="@drawable/rounded_border"
@@ -253,7 +207,11 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -262,6 +220,19 @@
             </ScrollView>
         </RelativeLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/greycolor"
+        android:text="@string/sign_up"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
 
