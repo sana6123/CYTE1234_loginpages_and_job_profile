@@ -168,6 +168,7 @@ public class Assessment1 extends AppCompatActivity {
                 } else {
                     group_assessment.clearCheck();
                     onRun();
+
                 }
 
 
@@ -189,7 +190,10 @@ public class Assessment1 extends AppCompatActivity {
         editor.putInt("score",score);
         editor.putInt("questionNum",numOfQuestions);
         editor.commit();
-        startActivity(new Intent(Assessment1.this, assessment_results.class));
+
+        //startActivity(new Intent(Assessment1.this, assessment_results.class));
+        Intent intent = new Intent(getApplicationContext(), assessment_results.class);
+        startActivity(intent);
 
     }
 

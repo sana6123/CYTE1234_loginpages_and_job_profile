@@ -1,6 +1,7 @@
 package com.example.cytelogin;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -42,28 +43,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COMPLETED_ASSESSMENTS="completed_assessments";
     public static final String CA_EMP_ID="Employee ID";
     public static final String CA_JP_ID="Job Post ID";
-
+    private static final int DATABASE_VERSION = 1;
 
 
     //constructor //whenever it is called, the database will be created
     //whatever is included in this section is created when db is called
-    public DatabaseHelper(Employer_Profile_Activity context) {
-        super(context, DATABASE_NAME, null, 1);
+  
         //creates database and table
         //SQLiteDatabase db = this.getWritableDatabase();
-    }
 
-    public DatabaseHelper(Employee_Profile_Activity context) {
-        super(context, DATABASE_NAME, null, 1);
-        //creates database and table
-        //SQLiteDatabase db = this.getWritableDatabase();
+    public  DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-    public DatabaseHelper(MainActivity_jobs context) {
-        super(context, DATABASE_NAME, null, 1);
-        //creates database and table
-        //SQLiteDatabase db = this.getWritableDatabase();
-    }
-
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -109,27 +100,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 cursor.getString(1), cursor.getString(2), cursor.getString(3));
     }
 
-    ArrayList<Jobposts> getAllApplications(String title, String industry,String city) {
+    Cursor getAllApplications(String title, String industry,String city) {
         ArrayList<Jobposts> jobsList = new ArrayList<>();
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.query(TABLE_NAME, new String[]{ID_1,
-                        TITLE_2, INDUSTRY_3, CITY_4}, ID_1 + "=? AND "+ TITLE_2 + "=?" + " AND " + INDUSTRY_3 + "=?" + " AND " + CITY_4 + "=?",
+                        TITLE_2, INDUSTRY_3, CITY_4},  TITLE_2 + "=?" + " OR " + INDUSTRY_3 + "=?" + " AND " + CITY_4 + "=?",
                 new String[]{ String.valueOf(title), String.valueOf(industry), String.valueOf(city) }, null, null, null, null);
 
-        if (cursor.moveToFirst()) {
-            do {
-                Jobposts sa = new Jobposts(
-                        Integer.parseInt(cursor.getString(0)),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3)
-                );
-                jobsList.add(sa);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        return jobsList;
+            return cursor;
     }
     //EMPLOYER
     ArrayList<employer_accounts> getAllEmployer() {

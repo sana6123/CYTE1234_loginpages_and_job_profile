@@ -6,27 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class job_profile extends AppCompatActivity {
+public class makeAssessment_employer extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.job_profile);
+        setContentView(R.layout.activity_make_assessment_employer);
 
-        final Button Going_toassessment = (Button) findViewById(R.id.assessmentButton);
+        final Button SubmitAssessmenmt =(Button) findViewById(R.id.Submit_assessment);
 
-
-        Going_toassessment.setOnClickListener(new View.OnClickListener() {
+        SubmitAssessmenmt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                Intent intent = new Intent(getApplicationContext(), Assessment1.class);
+                Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
                 startActivity(intent);
+            }});
 
-
-            }
-
-
-        });
     }
 }
-

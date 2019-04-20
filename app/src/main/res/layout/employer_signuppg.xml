@@ -21,9 +21,10 @@
         android:background="@drawable/semitransparentbackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.606">
 
 
         <RelativeLayout
@@ -33,7 +34,7 @@
             tools:layout_editor_absoluteY="118dp">
 
             <EditText
-                android:id="@+id/employer_fname_cyte"
+                android:id="@+id/employer_company_name"
                 android:layout_width="339dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -60,10 +61,10 @@
                 app:layout_constraintVertical_bias="0.215" />
 
             <EditText
-                android:id="@+id/employer_emailcyte"
+                android:id="@+id/employer_email"
                 android:layout_width="338dp"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/employer_fname_cyte"
+                android:layout_alignEnd="@+id/employer_company_name"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="107dp"
                 android:layout_marginEnd="-3dp"
@@ -79,15 +80,19 @@
                 app:layout_constraintHorizontal_bias="0.483"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.292" />
+                app:layout_constraintVertical_bias="0.292"
+                android:layout_marginRight="-3dp"
+                android:layout_alignRight="@+id/employer_company_name" />
 
             <EditText
                 android:id="@+id/employer_pass_cyte"
                 android:layout_width="339dp"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/employer_fname_cyte"
+                android:layout_alignStart="@+id/employer_company_name"
+                android:layout_alignLeft="@+id/employer_company_name"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="-4dp"
+                android:layout_marginLeft="-4dp"
                 android:layout_marginTop="240dp"
                 android:background="@drawable/rounded_border"
                 android:ems="10"

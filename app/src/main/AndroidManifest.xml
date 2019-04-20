@@ -5,35 +5,28 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/cyte"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".employer_add_posts"></activity>
-        <activity android:name=".MainActivity_jobs"></activity>
+        <activity android:name=".makeAssessment_employer"></activity>
+        <activity android:name=".employer_add_posts" />
         <activity android:name=".job_profile" />
         <activity android:name=".employee_login" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/cyte">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Employee_Profile_Activity"
-            android:label="EmployeeProfileActivity" />
-        <activity
-            android:name=".employer_snpg"
-            android:label="EmployeeSignUp" />
-
+        <activity android:name=".Employee_Profile_Activity" />
+        <activity android:name=".employer_snpg" />
         <activity android:name=".Assessment1" />
-        <activity android:name=".links_to_education" />
-        <activity android:name=".empleyeedashboard"></activity>
-
+        <activity android:name=".assessment_results" />
+            <activity android:name=".employer_login"/>
     </application>
 
 </manifest>

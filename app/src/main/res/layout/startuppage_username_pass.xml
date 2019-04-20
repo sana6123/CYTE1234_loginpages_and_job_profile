@@ -9,7 +9,7 @@
     android:background="@drawable/cytebackground_with_circle">
 
     <EditText
-        android:id="@+id/Loginpassword_Cyte"
+        android:id="@+id/username"
         android:layout_width="223dp"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
@@ -20,38 +20,39 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_border_edittext"
         android:ems="10"
-        android:hint=" Password"
-        android:inputType="textPassword"
+        android:hint="Username"
+        android:inputType="textEmailAddress|textPersonName"
         android:textColorHint="@color/bckcolor"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
+        app:layout_constraintVertical_bias="0.963" />
 
     <EditText
-        android:id="@+id/Loginusername_Cyte"
+        android:id="@+id/password"
         android:layout_width="223dp"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_border_edittext"
         android:ems="10"
-        android:hint=" Username"
-        android:inputType="textEmailAddress|textPersonName"
+        android:hint="Password"
+        android:inputType="textPassword"
         android:textColorHint="@color/bckcolor"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.555" />
 
     <Button
-        android:id="@+id/Login_Cyte"
+        android:id="@+id/login"
         android:layout_width="93dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
@@ -74,8 +75,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="102dp"
-        android:layout_height="102dp"
+        android:layout_width="112dp"
+        android:layout_height="116dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -90,7 +91,7 @@
         app:srcCompat="@drawable/cyte_logo" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView22"
         android:layout_width="211dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -105,7 +106,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.771" />
@@ -127,7 +128,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.806"
+        app:layout_constraintHorizontal_bias="0.834"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.766" />

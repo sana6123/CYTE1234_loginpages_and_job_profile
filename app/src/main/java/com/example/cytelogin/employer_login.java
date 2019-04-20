@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class employee_login extends AppCompatActivity {
+public class employer_login extends AppCompatActivity {
     private DatabaseHelper db;
     private EditText Name;
     private EditText Password;
@@ -17,25 +17,30 @@ public class employee_login extends AppCompatActivity {
     private TextView info;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //it would go to this activity
         setContentView(R.layout.startuppage_username_pass);
 
-        Name = (EditText)findViewById(R.id.username);
-        Password = (EditText)findViewById(R.id.password);
-        info = (TextView) findViewById(R.id.textView22);
+        Name = (EditText)findViewById(R.id.employer_company_name);
+        Password = (EditText)findViewById(R.id.employer_email);
+        info = (TextView) findViewById(R.id.employer_phone_cyte);
         Login = (Button) findViewById(R.id.login);
         //for checking out the values in the database with the values entered
         db = new DatabaseHelper(getApplicationContext());
 
+
         final Button login_button = (Button) findViewById(R.id.login);
-        TextView signup = (TextView) findViewById(R.id.signup_main);
+        final TextView signup = (TextView) findViewById(R.id.signup_main);
 
         signup.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Employee_Profile_Activity.class);
+                // your handler code here
+                Intent intent = new Intent(getApplicationContext(), employer_snpg.class);
+                intent.putExtra("switch", 1);
+                //0 is employee and 1 is employer
                 startActivity(intent);
             }});
 
@@ -51,21 +56,19 @@ public class employee_login extends AppCompatActivity {
                 // Send username and password to the database and check
                 //login_button.setText(username + " " + password); // Get rid of this
 
-                employee_accounts e = db.getEmployeeByEmail(email);
-                String ePass = e.getPassword();
+                employer_accounts e = db.getEmployerByEmail(email);
+                String ePass = e.getpassword_empr();
 
-                /*
                 if (password.contentEquals(ePass)) {
                     // Password and Email match. Successful Login
                     // Make your intent and go to employee profile activity.
-                    Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                    Intent i = new Intent(getApplicationContext(), employer_add_posts.class);
                     startActivity(i);
                     // Remember to put ".class" at the end of the activity name!
                 } else {
                     Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
                 }
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
-                */
             }
         });
     }

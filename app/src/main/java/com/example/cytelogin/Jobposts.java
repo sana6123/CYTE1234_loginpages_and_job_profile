@@ -1,6 +1,25 @@
 package com.example.cytelogin;
 
+import android.content.Context;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Jobposts {
+
+    private List<Jobposts> posts;
+    private Context mContext;
+
+
+    public Jobposts(final Context context, final List<Jobposts> mData) {
+        this.posts = posts;
+        this.mContext = context;
+    }
+
+    public List<Jobposts> getData() {
+        return posts;
+    }
+
 
     public Jobposts(int id, String title, String industry, String city) {
         this.id = id;
