@@ -80,12 +80,15 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
                 String titleText = title.getText().toString();
 
                 cursor = myDb.getAllApplications(titleText, selectedIndustry, selectedCity);
-                jobpostsCursorAdapter = new JobpostsCursorAdapter(getApplicationContext(),cursor);
-                jobList.setAdapter(jobpostsCursorAdapter);
+                //jobpostsCursorAdapter = new JobpostsCursorAdapter(getApplicationContext(),cursor);
+                //jobList.setAdapter(jobpostsCursorAdapter);
 
 
-                Intent intent = new Intent(getApplicationContext(), job_profile.class);
-                startActivity(intent);
+                startActivity(new Intent(MainActivity_jobs.this, job_profile.class));
+
+
+                //Intent intent = new Intent(getApplicationContext(), job_profile.class);
+                //startActivity(intent);
 
             }
         });
@@ -99,7 +102,6 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-        Toast.makeText(this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

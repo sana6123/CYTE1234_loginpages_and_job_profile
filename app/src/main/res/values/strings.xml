@@ -33,6 +33,25 @@
     <string name="assessment">Assessment</string>
     <string name="results">Results</string>
     <string name="submit">Submit</string>
+    <string name="CheckBox_1">Calculation -Using basic arithmetic skills including adding, subtracting, multiplication and division</string>
+    <string name="CheckBox_2">Public Speaking- addressing or delivering a speech to a group or audience.</string>
+    <string name="CheckBox_3">Problem solving - defining a problem, seeking alternatives, selecting a solution.</string>
+    <string name="Button_T1">Continue</string>
+    <string name="tV_1">Select Maximum 6 Skills That Apply To You</string>
+    <string name="cb1_android">Calculation -Using basic arithmetic skills including adding, subtracting, multiplication and division</string>
+    <string name="cb2_android">Public Speaking- addressing or delivering a speech to a group or audience.</string>
+    <string name="check_Calculation">Calculation -Using basic arithmetic skills including adding, subtracting, multiplication and division.</string>
+    <string name="resulttextview">Click Maximum Top Six Skills That Apply To You</string>
+    <string name="check_public">Public Speaking- addressing or delivering a speech to a group or audience.</string>
+    <string name="check_Problem">Problem solving - defining a problem, seeking alternatives, selecting a solution.</string>
+    <string name="check_Assessing">Assessing - correctly determining the nature of a situation or issue.</string>
+    <string name="check_Classifying">Classifying - using and adapting a complex organization system for the storage and efficient retrieval of information.</string>
+    <string name="check_Technological">Technological - understanding and performing basic computer tasks and logical technology skills.</string>
+    <string name="check_Quality">Assessing quality - correctly determining the worth of the work you are performing.</string>
+    <string name="check_Displaying">Designing/displaying - organizing spaces, products, objects, colours or images creatively.</string>
+    <string name="check_Elaboration">Elaboration: Connecting new ideas to what you already know.</string>
+    <string name="check_Analytical">Analytical skills. Identifying a problem and coming up with a technological solution to address it.</string>
+    <string name="select_skills_button">Select Skills</string>
 
 </resources>
 
