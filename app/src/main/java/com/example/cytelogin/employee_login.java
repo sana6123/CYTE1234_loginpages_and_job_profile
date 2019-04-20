@@ -32,6 +32,7 @@ public class employee_login extends AppCompatActivity {
         final Button login_button = (Button) findViewById(R.id.login);
         final TextView signup_button = (TextView) findViewById(R.id.signup_main);
 
+
         signup_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), Employee_Profile_Activity.class));

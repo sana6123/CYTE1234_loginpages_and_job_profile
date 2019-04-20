@@ -45,8 +45,8 @@ DatabaseHelper myDb;
         // mTextMessage = (TextView) findViewById(R.id.message);
         //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_home);
         //navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        final Button button = findViewById(R.id.employee_startupbutton);
-        button.setOnClickListener(new View.OnClickListener() {
+        final Button button1 = findViewById(R.id.employee_startupbutton);
+        button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
                 Intent intent = new Intent(getApplicationContext(), employee_login.class);

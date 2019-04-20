@@ -19,10 +19,8 @@ public class employer_snpg extends AppCompatActivity {
 
 
 
-//for declaring the buttons
+//for declaring the buttons and telling the buttons where to link the next screen if the user clickson this screen
         final Button employer_profile = (Button) findViewById(R.id.employer_signupbn);
-      //  final Button employee_button1 = (Button) findViewById(R.id.employee_button);
-
 
 
 
@@ -36,6 +34,9 @@ public class employer_snpg extends AppCompatActivity {
         employer_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
+                startActivity(intent);
+
                 // Get references to text boxes
                 EditText companynm_input = (EditText) findViewById(R.id.employer_company_name);
                 EditText email_input = (EditText) findViewById(R.id.employer_email);
@@ -57,8 +58,7 @@ public class employer_snpg extends AppCompatActivity {
                 //login_button.setText(username + " " + password); // Get rid of this
                 Toast.makeText(getApplicationContext(), "Data is stored", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
-                startActivity(intent);
+
                 startActivity(new Intent(getApplicationContext(), employer_add_posts.class));
 
             }

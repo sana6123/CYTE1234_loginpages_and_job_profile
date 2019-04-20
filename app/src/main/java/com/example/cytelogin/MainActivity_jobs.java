@@ -85,6 +85,11 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
                 jobpostsCursorAdapter = new JobpostsCursorAdapter(getApplicationContext(),cursor);
                 jobList.setAdapter(jobpostsCursorAdapter);
 
+                Intent intent = new Intent(getApplicationContext(),Assessment1 .class);
+                //intent.putExtra("switch", 1);
+                //0 is employee and 1 is employer
+                startActivity(intent);
+
             }
         });
 
