@@ -60,10 +60,10 @@ DatabaseHelper myDb;
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                //Intent intent = new Intent(getApplicationContext(), employer_login.class);
+                Intent intent = new Intent(getApplicationContext(), employer_startuppage.class);
                 //intent.putExtra("switch", 1);
                 //0 is employee and 1 is employer
-                //startActivity(intent);
+                startActivity(intent);
 
             }
         });
