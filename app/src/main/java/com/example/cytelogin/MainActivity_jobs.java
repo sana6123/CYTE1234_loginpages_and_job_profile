@@ -25,16 +25,11 @@ ListView jobList;
 JobpostsCursorAdapter jobpostsCursorAdapter;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_jobs);
+
         //create a new instance/database
         myDb = new DatabaseHelper(getApplicationContext());
         Button searchPosts = findViewById(R.id.Search_posts);

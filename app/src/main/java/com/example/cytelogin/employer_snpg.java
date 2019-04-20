@@ -34,7 +34,7 @@ public class employer_snpg extends AppCompatActivity {
         employer_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
+                Intent intent = new Intent(getApplicationContext(), makeAssessment_employer.class);
                 startActivity(intent);
 
                 // Get references to text boxes
@@ -59,7 +59,7 @@ public class employer_snpg extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Data is stored", Toast.LENGTH_SHORT).show();
 
 
-                startActivity(new Intent(getApplicationContext(), employer_add_posts.class));
+                startActivity(new Intent(getApplicationContext(), makeAssessment_employer.class));
 
             }
         });
