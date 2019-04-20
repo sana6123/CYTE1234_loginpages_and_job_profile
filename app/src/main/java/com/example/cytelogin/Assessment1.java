@@ -113,7 +113,6 @@ public class Assessment1 extends AppCompatActivity {
             ans1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //Toast.makeText(Assessment1.this, "Clicked" + ansChoice, Toast.LENGTH_SHORT).show();
 
                 }
             });
@@ -127,7 +126,6 @@ public class Assessment1 extends AppCompatActivity {
     private void onNextQuestion(){
         Button next_question = findViewById(R.id.next_question);
         next_question.setOnClickListener(new View.OnClickListener() {
-
 
             @Override
             public void onClick(View v) {
@@ -146,36 +144,30 @@ public class Assessment1 extends AppCompatActivity {
                 //takes correct ans from array
                 correctAns = arrayText.get(questionNum);
 
-                //check answer, compares userChoice with ans
+                //checks answer; if correct, updates the score
                 if(userChoice.equals(correctAns)){
-                    Toast.makeText(Assessment1.this, "Correct!", Toast.LENGTH_SHORT).show();
                     updateScore();
-                } else {
-                    Toast.makeText(Assessment1.this, "Incorrect!", Toast.LENGTH_SHORT).show();
                 }
 
-                //TODO: Change Intent to Assessment Results when created
                 //TODO: Add onSubmit method to do intent and to change the button text to "Submit"
                 if (questionNum==numOfQuestions){
                     score=score;
                     finishTest();
+                } else if (questionNum==numOfQuestions-1){
+                    submitButton();
                 } else {
                     group_assessment.clearCheck();
                     onRun();
-
                 }
-
-
-
-                /*
-                //start sharedpreferences editor
-                SharedPreferences.Editor editor = myprefs.edit();
-                editor.putString("keychoice",userChoice);
-                editor.commit();
-*/
-
+                
             }
         });
+
+    }
+
+    private void submitButton(){
+        Button submit = findViewById(R.id.next_question);
+        submit.setText("@string/submit");
 
     }
 
@@ -185,10 +177,8 @@ public class Assessment1 extends AppCompatActivity {
         editor.putInt("questionNum",numOfQuestions);
         editor.commit();
 
-        //startActivity(new Intent(Assessment1.this, assessment_results.class));
         Intent intent = new Intent(getApplicationContext(), assessment_results.class);
         startActivity(intent);
-
     }
 
     private void updateScore(){
