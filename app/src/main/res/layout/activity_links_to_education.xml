@@ -9,7 +9,7 @@
     >
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/resultTitle"
         android:layout_width="wrap_content"
         android:layout_height="23dp"
         android:layout_marginStart="8dp"
@@ -30,7 +30,7 @@
         app:layout_constraintVertical_bias="0.086" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/reultdetails_button"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="169dp"
         android:layout_height="40dp"
@@ -54,7 +54,7 @@
         app:layout_constraintVertical_bias="0.191" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/Ed_websitesTitle"
         android:layout_width="316dp"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
@@ -98,7 +98,7 @@
             android:layout_height="459dp">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/textforBow"
                 android:layout_width="218dp"
                 android:layout_height="156dp"
                 android:layout_alignParentStart="true"
@@ -117,7 +117,7 @@
                 tools:layout_editor_absoluteX="114dp" />
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardview1"
+                android:id="@+id/bowvalley_card"
                 android:layout_width="357dp"
                 android:layout_height="164dp"
                 android:layout_alignParentTop="true"
@@ -139,14 +139,14 @@
                 tools:layout_editor_absoluteY="225dp">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/bowvalleylogo"
                     android:layout_width="116dp"
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/bowvalleylogo" />
             </android.support.v7.widget.CardView>
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/bowvalley_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -186,11 +186,11 @@
                 android:text="Qualified SAIT instructors will teach you the basics of object oriented programming and go on to creation of GUIs, JDO, Java EE, AJAX, EJB, and more.  "
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/textforBow"
                 tools:layout_editor_absoluteX="114dp" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/ont_collage_textview"
                 android:layout_width="232dp"
                 android:layout_height="182dp"
                 android:layout_alignParentStart="true"
@@ -207,11 +207,11 @@
                 android:text="Offers computer programmer and analyst courses intended to prepare students with knowledge of business systems, database development, data communications and  more of which can be applied to a number of real-world careers."
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/textforBow"
                 tools:layout_editor_absoluteX="114dp" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/sait_textView"
                 android:layout_width="83dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -234,7 +234,7 @@
                 tools:layout_editor_absoluteY="628dp" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/ont_collages_textView"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -257,7 +257,7 @@
                 tools:layout_editor_absoluteY="628dp" />
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardview3"
+                android:id="@+id/ontariocollage_card"
                 android:layout_width="350dp"
                 android:layout_height="213dp"
                 android:layout_alignParentStart="true"
@@ -275,14 +275,14 @@
                 app:cardElevation="15dp">
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/ontariocollegelogo"
                     android:layout_width="104dp"
                     android:layout_height="214dp"
                     app:srcCompat="@drawable/ontariocollagelogo" />
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardview2"
+                android:id="@+id/sait_card"
                 android:layout_width="352dp"
                 android:layout_height="152dp"
                 android:layout_alignParentStart="true"
@@ -302,7 +302,7 @@
                 tools:layout_editor_absoluteY="354dp">
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/saitlogo"
                     android:layout_width="108dp"
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/saitlogo" />
@@ -310,7 +310,7 @@
 
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/starforReview1"
                 android:layout_width="52dp"
                 android:layout_height="53dp"
                 android:layout_alignParentTop="true"
@@ -323,7 +323,7 @@
                 tools:ignore="ContentDescription" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/starforReview2"
                 android:layout_width="52dp"
                 android:layout_height="53dp"
                 android:layout_alignParentTop="true"
@@ -336,7 +336,7 @@
                 tools:ignore="ContentDescription" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/starforReview3"
                 android:layout_width="52dp"
                 android:layout_height="53dp"
                 android:layout_alignParentTop="true"
