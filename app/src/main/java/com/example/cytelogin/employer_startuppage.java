@@ -14,9 +14,19 @@ public class employer_startuppage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employer_startuppage);
 
-        final Button button2 = findViewById(R.id.);
-        final
-        button2.setOnClickListener(new View.OnClickListener() {
+
+//to go to job posts page
+        final Button login_empr = findViewById(R.id.login_empr);
+        login_empr.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
+                startActivity(intent);
+            }
+        });
+
+        final Button signup_empr =findViewById(R.id.signup_main_empr);
+        signup_empr.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
         Intent intent = new Intent(getApplicationContext(), employer_snpg.class);

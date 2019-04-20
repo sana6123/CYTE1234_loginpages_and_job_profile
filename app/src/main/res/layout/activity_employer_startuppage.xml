@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.555" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/login_empr"
         android:layout_width="93dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
@@ -112,7 +112,7 @@
         app:layout_constraintVertical_bias="0.771" />
 
     <TextView
-        android:id="@+id/signup_main"
+        android:id="@+id/signup_main_empr"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
