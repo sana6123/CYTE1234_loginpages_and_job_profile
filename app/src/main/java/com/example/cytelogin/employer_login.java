@@ -22,7 +22,7 @@ public class employer_login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //it would go to this activity
-        setContentView(R.layout.startuppage_username_pass);
+        setContentView(R.layout.activity_employer_startuppage);
 
         Name = (EditText)findViewById(R.id.employer_company_name);
         Password = (EditText)findViewById(R.id.employer_email);
