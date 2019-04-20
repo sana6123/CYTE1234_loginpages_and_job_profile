@@ -14,14 +14,14 @@ import java.util.ArrayList;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "jobs"; //name of the db
     public static final String TABLE_NAME = "jobsTable"; //table name
-    public static final String ID_1 = "ID"; //column 1 name
+    public static final String ID_1 = "id"; //column 1 name
     public static final String TITLE_2 = "TITLE"; //column 2 name
     public static final String INDUSTRY_3 = "INDUSTRY"; //column 3 name
     public static final String CITY_4 = "CITY"; //column 4 name
 
     //A new table for saving the information for employee
     public static final String EMPLOYEE_NAME="employee_profile";
-    private static final String KEY_ID = "idd";
+    private static final String KEY_ID = "id";
     public static final String COL_1="Name";
     public static final String COL_2="Phone";
     public static final String COL_3="Email";
@@ -64,10 +64,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String createJobPostsTable = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + ID_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT)";
         db.execSQL(createJobPostsTable);
 
-        String createEmployeeTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+KEY_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+COL_1+"STRING" + COL_2 + "INTEGER"+ COL_3 + "STRING" +  COL_4 + "INTEGER" + COL_5 +"STRING)";
+        String createEmployeeTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+KEY_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+COL_1+"TEXT" + COL_2 + "INTEGER"+ COL_3 + "TEXT" +  COL_4 + "TEXT" + COL_5 +"TEXT)";
         db.execSQL(createEmployeeTable);
 
-        String createEmployerTable = "CREATE TABLE IF NOT EXISTS " + EMPLOYER_NAME +"("+ KEY_IDD+" INTEGER PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "STRING" + EMPR_2+ "STRING" + EMPR_3 +"STRING"+ EMPR_4+ "STRING" + EMPR_5 +"STRING)";
+        String createEmployerTable = "CREATE TABLE IF NOT EXISTS " + EMPLOYER_NAME +"("+ KEY_IDD+" INTEGER PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "TEXT" + EMPR_2+ "TEXT" + EMPR_3 +"INTEGER"+ EMPR_4+ "TEXT" + EMPR_5 +"TEXT)";
         db.execSQL(createEmployerTable);
 
 
