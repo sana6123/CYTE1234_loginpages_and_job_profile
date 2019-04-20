@@ -73,8 +73,8 @@
         app:layout_constraintVertical_bias="0.077" />
 
     <ScrollView
-        android:layout_width="367dp"
-        android:layout_height="414dp"
+        android:layout_width="365dp"
+        android:layout_height="445dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -239,7 +239,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
-                android:layout_marginTop="358dp"
+                android:layout_marginTop="379dp"
                 android:layout_marginEnd="97dp"
                 android:layout_marginRight="97dp"
                 android:background="@drawable/rounded_border"
