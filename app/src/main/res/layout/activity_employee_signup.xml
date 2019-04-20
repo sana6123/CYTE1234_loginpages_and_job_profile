@@ -5,35 +5,18 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cytesignupbackgroundnotext"
+    android:background="@drawable/signupbackground"
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/signuptitle4"
-        android:layout_width="141dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:gravity="center"
-        android:text="SIGN UP"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ScrollView
         android:layout_width="365dp"
         android:layout_height="431dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/semitransparentbackground"
@@ -45,7 +28,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="450dp">
+            android:layout_height="match_parent"
+            >
 
             <EditText
                 android:id="@+id/candidate_company_name"
@@ -220,19 +204,6 @@
             </ScrollView>
         </RelativeLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="36dp"
-        android:background="@color/greycolor"
-        android:text="@string/sign_up"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
 
