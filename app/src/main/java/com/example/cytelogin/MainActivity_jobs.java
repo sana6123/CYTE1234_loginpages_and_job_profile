@@ -1,6 +1,6 @@
 package com.example.cytelogin;
 
-import android.content.Intent;
+//import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
+//import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
+//import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class MainActivity_jobs extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 DatabaseHelper myDb;
-public ArrayList <Jobposts> posts;
+//public ArrayList <Jobposts> posts;
 ListView jobList;
 JobpostsCursorAdapter jobpostsCursorAdapter;
 
@@ -37,7 +37,7 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
         title.setVisibility(View.GONE);
         //
         final ListView jobList = findViewById(R.id.jobList);
-        final ArrayList <Jobposts> posts = new ArrayList <Jobposts> ();
+        //final ArrayList <Jobposts> posts = new ArrayList <Jobposts> ();
 
 
 
