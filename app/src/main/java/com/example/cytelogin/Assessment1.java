@@ -57,7 +57,6 @@ public class Assessment1 extends AppCompatActivity {
         String[] questionArray = getResources().getStringArray(R.array.question_array);
         numOfQuestions = questionArray.length-1;
 
-
         updateQuestion();
         createQuestion();
         createRadioButtons();
@@ -110,9 +109,6 @@ public class Assessment1 extends AppCompatActivity {
             ans1.setText(arrayText.get(x));
 
 
-            //TODO: NEED THIS??
-            final String ansChoice = answerChoices[x];
-
             //TODO: Set on-click callbacks
             ans1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,8 +120,6 @@ public class Assessment1 extends AppCompatActivity {
 
 
             //TODO: NEED THIS??
-            //Add to radio group
-            //group_assessment.addView(ans1);
         }
 
     }
