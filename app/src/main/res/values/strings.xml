@@ -41,7 +41,7 @@
     <string name="cb1_android">Calculation -Using basic arithmetic skills including adding, subtracting, multiplication and division</string>
     <string name="cb2_android">Public Speaking- addressing or delivering a speech to a group or audience.</string>
     <string name="check_Calculation">Calculation -Using basic arithmetic skills including adding, subtracting, multiplication and division.</string>
-    <string name="resulttextview">Click Maximum Top Six Skills That Apply To You</string>
+    <string name="resulttextview">Mental Skills Test</string>
     <string name="check_public">Public Speaking- addressing or delivering a speech to a group or audience.</string>
     <string name="check_Problem">Problem solving - defining a problem, seeking alternatives, selecting a solution.</string>
     <string name="check_Assessing">Assessing - correctly determining the nature of a situation or issue.</string>
@@ -52,6 +52,6 @@
     <string name="check_Elaboration">Elaboration: Connecting new ideas to what you already know.</string>
     <string name="check_Analytical">Analytical skills. Identifying a problem and coming up with a technological solution to address it.</string>
     <string name="select_skills_button">Select Skills</string>
-
+    <string name="mentaltestdescription">Click the 6 skills that apply to you</string>
 </resources>
 
