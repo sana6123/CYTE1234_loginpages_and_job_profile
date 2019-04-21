@@ -10,15 +10,16 @@
 
     <TextView
         android:id="@+id/hi123"
-        android:layout_width="410dp"
-        android:layout_height="49dp"
+        android:layout_width="134dp"
+        android:layout_height="41dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="Upload Assessments"
+        android:text="CYTE"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="30sp"
-        app:fontFamily="monospace"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,8 +27,8 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="242dp"
-        android:layout_height="48dp"
+        android:layout_width="217dp"
+        android:layout_height="52dp"
         android:layout_alignBottom="@+id/editText6"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -41,27 +42,27 @@
         android:layout_marginBottom="202dp"
         android:text="Input Test Questions"
         android:textColor="@color/yelcolor"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintVertical_bias="0.161" />
 
     <ScrollView
         android:id="@+id/scrollView4"
-        android:layout_width="372dp"
-        android:layout_height="420dp"
+        android:layout_width="385dp"
+        android:layout_height="449dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="104dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/semitransparentbackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

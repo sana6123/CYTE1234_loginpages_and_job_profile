@@ -9,11 +9,9 @@
     tools:context=".MainActivity">
 
 
-
-
     <ScrollView
-        android:layout_width="365dp"
-        android:layout_height="431dp"
+        android:layout_width="390dp"
+        android:layout_height="446dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="100dp"
@@ -28,8 +26,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <EditText
                 android:id="@+id/candidate_company_name"
@@ -178,8 +175,8 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="330dp"
-                android:layout_marginEnd="97dp"
-                android:layout_marginRight="97dp"
+                android:layout_marginEnd="113dp"
+                android:layout_marginRight="113dp"
                 android:background="@drawable/rounded_border"
                 android:text="Sign Up"
                 android:textSize="17sp"

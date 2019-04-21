@@ -35,7 +35,6 @@
 
         <activity android:name=".links_to_education" />
         <activity android:name=".Employer_Profile_Activity" />
-        <activity android:name=".empleyeedashboard" />
         <activity android:name=".skill_Test" />
 
 
