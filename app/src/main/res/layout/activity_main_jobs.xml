@@ -43,7 +43,7 @@
         android:ems="10"
         android:hint="Job Title"
         android:inputType="textPersonName"
-        android:textColor="@color/Black"
+        android:textColor="@color/ftcolor"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +129,7 @@
             <ListView
                 android:id="@+id/jobList"
                 android:layout_width="370dp"
-                android:layout_height="176dp"
+                android:layout_height="209dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginEnd="8dp"
