@@ -74,7 +74,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //String createEmployerTable =
         //db.execSQL(query1);
-        String createCompletedAssessmentsTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+"KEY_ID PRIMARY KEY AUTOINCREMENT,"+COL_1+"TEXT" + COL_2 + "TEXT"+ COL_3 + "TEXT" +  COL_4 + "TEXT" + COL_5 +"TEXT)";
+        String createCompletedAssessmentsTable =  "CREATE TABLE IF NOT EXISTS " + COMPLETED_ASSESSMENTS +"("+ KEY_IDD+" INTEGER PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "TEXT" + EMPR_2+ "TEXT" + EMPR_3 +"TEXT"+ EMPR_4+ "TEXT" + EMPR_5 +"TEXT)";
+
         db.execSQL(createCompletedAssessmentsTable);
     }
 
@@ -144,10 +145,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return appsList;
 
 
-    //////////
+
     //EMPLOYEE
 
-    } ArrayList<employee_accounts> getallemployee() {
+    } ArrayList<employee_accounts> getAllEmployee() {
         ArrayList<employee_accounts> appsList = new ArrayList<>();
         // we aren't making any changes so use a readable database, not a writable one.
         SQLiteDatabase db = this.getReadableDatabase();
@@ -180,7 +181,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return appsList;
     }
-        ///////////////
+
 
         //EMPLOYEE
         employee_accounts getemployee(int id) {
