@@ -54,19 +54,18 @@ public class employee_login extends AppCompatActivity {
                 employee_accounts e = db.getEmployeeByEmail(email);
                 String ePass = e.getPassword();
 
-
-               /* if (password.contentEquals(ePass)) {
+                if (password.equals(ePass)) {
                     // Password and Email match. Successful Login
                     // Make your intent and go to employee profile activity.
-                    Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
-                    startActivity(i);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                    startActivity(intent);
                     // Remember to put ".class" at the end of the activity name!
                 } else {
                     Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
 
                 }
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
-*/
+
             }
         });
     }

@@ -85,11 +85,11 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
                 //jobList.setAdapter(jobpostsCursorAdapter);
 
 
-                startActivity(new Intent(MainActivity_jobs.this, job_profile.class));
+                //startActivity(new Intent(MainActivity_jobs.this, job_profile.class));
 
 
-                //Intent intent = new Intent(getApplicationContext(), job_profile.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), job_profile.class);
+                startActivity(intent);
 
             }
         });

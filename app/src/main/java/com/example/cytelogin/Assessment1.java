@@ -167,7 +167,9 @@ public class Assessment1 extends AppCompatActivity {
 
     private void submitButton(){
         Button submit = findViewById(R.id.next_question);
-        submit.setText("@string/submit");
+        submit.setText("Submit");
+        Intent intent = new Intent(getApplicationContext(), assessment_results.class);
+        startActivity(intent);
 
     }
 
@@ -177,8 +179,7 @@ public class Assessment1 extends AppCompatActivity {
         editor.putInt("questionNum",numOfQuestions);
         editor.commit();
 
-        Intent intent = new Intent(getApplicationContext(), assessment_results.class);
-        startActivity(intent);
+
     }
 
     private void updateScore(){
