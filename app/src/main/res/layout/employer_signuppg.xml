@@ -116,7 +116,7 @@
                 android:background="@drawable/rounded_border"
                 android:ems="10"
                 android:hint="Email"
-                android:inputType="textPassword"
+                android:inputType="textEmailAddress"
                 android:textColorHint="@color/bckcolor"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
