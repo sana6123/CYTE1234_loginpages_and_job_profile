@@ -41,7 +41,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_border"
-        android:text="Job Posts"
+        android:text="Done"
         android:textAllCaps="true"
         android:textColor="@color/Gold"
         android:textSize="17sp"
