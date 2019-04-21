@@ -18,7 +18,7 @@ public class makeAssessment_employer extends AppCompatActivity {
         SubmitAssessmenmt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }});
 

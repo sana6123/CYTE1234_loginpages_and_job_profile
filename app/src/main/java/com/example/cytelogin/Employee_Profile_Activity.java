@@ -22,7 +22,7 @@ public class Employee_Profile_Activity extends AppCompatActivity {
         empeedb = new DatabaseHelper(getApplicationContext());
 
 
-        startActivity(new Intent(Employee_Profile_Activity.this, MainActivity_jobs.class));
+       // startActivity(new Intent(Employee_Profile_Activity.this, MainActivity_jobs.class));
         final Button button = (Button) findViewById(R.id.candidate_signupdn);
        // final Button employee_button1 = (Button) findViewById(R.id.employee_button);
 

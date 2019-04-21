@@ -20,12 +20,14 @@ public class Employer_Profile_Activity extends AppCompatActivity {
         emperdb = new DatabaseHelper(getApplicationContext());
 
 
-        startActivity(new Intent(Employer_Profile_Activity.this, job_profile.class));
+        //startActivity(new Intent(Employer_Profile_Activity.this, job_profile.class));
         final Button button = (Button) findViewById(R.id.employer_signupbn);
-
 
         button.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
+                    startActivity(intent);
+
             // your handler code here
             EditText employer_companyname = (EditText) findViewById(R.id.employer_company_name);
             EditText employer_phone = (EditText) findViewById(R.id.employer_email);

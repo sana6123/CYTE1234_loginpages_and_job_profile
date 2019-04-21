@@ -45,6 +45,7 @@ public class employer_login extends AppCompatActivity {
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Get references to text boxes
                 EditText username_input = (EditText) findViewById(R.id.username);
                 EditText password_input = (EditText) findViewById(R.id.password);
@@ -56,8 +57,6 @@ public class employer_login extends AppCompatActivity {
 
                 employer_accounts e = db.getEmployerByEmail(email);
                 String ePass = e.password_empr();
-
-
 
                 startActivity(new Intent(employer_login.this, Employee_Profile_Activity.class));
 

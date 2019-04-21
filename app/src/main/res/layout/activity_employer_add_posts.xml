@@ -57,11 +57,10 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="332dp"
+        android:layout_marginBottom="108dp"
         android:background="@drawable/semitransparentbackground"
         app:layout_constraintBottom_toTopOf="@+id/post"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
