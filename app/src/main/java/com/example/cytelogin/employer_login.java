@@ -24,16 +24,16 @@ public class employer_login extends AppCompatActivity {
         //it would go to this activity
         setContentView(R.layout.activity_employer_startuppage);
 
-        Name = (EditText)findViewById(R.id.employer_company_name);
+      /*  Name = (EditText)findViewById(R.id.employer_company_name);
         Password = (EditText)findViewById(R.id.employer_email);
         info = (TextView) findViewById(R.id.employer_phone_cyte);
-        Login = (Button) findViewById(R.id.login);
+        Login = (Button) findViewById(R.id.login_empr);
         //for checking out the values in the database with the values entered
         db = new DatabaseHelper(getApplicationContext());
+      */
 
-
-        final Button login_button = (Button) findViewById(R.id.login);
-        TextView signup = (TextView) findViewById(R.id.signup_main);
+        final Button login_button = (Button) findViewById(R.id.login_empr);
+        TextView signup = (TextView) findViewById(R.id.signup_main_empr);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +58,10 @@ public class employer_login extends AppCompatActivity {
                 String ePass = e.password_empr();
 
 
-                if (password.contentEquals(ePass)) {
+
+                startActivity(new Intent(employer_login.this, Employee_Profile_Activity.class));
+
+                /*if (password.contentEquals(ePass)) {
                     // Password and Email match. Successful Login
                     // Make your intent and go to employee profile activity.
                     Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
@@ -69,7 +72,7 @@ public class employer_login extends AppCompatActivity {
 
                 }
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
-
+*/
             }
         });
     }
