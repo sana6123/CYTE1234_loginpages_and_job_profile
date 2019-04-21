@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.app.Activity;
 import android.net.Uri;
@@ -21,6 +22,17 @@ public class links_to_education extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_links_to_education);
+
+        final Button button1 = findViewById(R.id.Job_Posts);
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // your handler code here
+                Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                // intent.putExtra("switch", 0);
+                //0 is employee and 1 is employer
+                startActivity(intent);
+            }
+        });
 
     }
     public void goto1 (View view) {
@@ -49,6 +61,7 @@ public class links_to_education extends AppCompatActivity {
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
     }
+
 
 }
 

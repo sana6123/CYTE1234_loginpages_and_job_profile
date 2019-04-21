@@ -30,7 +30,7 @@
         app:layout_constraintVertical_bias="0.086" />
 
     <Button
-        android:id="@+id/reultdetails_button"
+        android:id="@+id/Job_Posts"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="169dp"
         android:layout_height="40dp"
@@ -41,7 +41,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_border"
-        android:text="Result Details"
+        android:text="Done"
         android:textAllCaps="true"
         android:textColor="@color/Gold"
         android:textSize="17sp"
