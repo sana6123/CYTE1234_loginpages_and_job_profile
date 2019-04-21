@@ -35,7 +35,6 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
         myDb = new DatabaseHelper(getApplicationContext());
        // Button searchPosts = findViewById(R.id.Search_posts);
         final EditText title = findViewById(R.id.titleEdit);
-        title.setVisibility(View.GONE);
         //
         final ListView jobList = findViewById(R.id.jobList);
         //final ArrayList <Jobposts> posts = new ArrayList <Jobposts> ();

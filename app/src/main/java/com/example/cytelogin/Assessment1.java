@@ -110,15 +110,9 @@ public class Assessment1 extends AppCompatActivity {
 
 
             //TODO: Set on-click callbacks
-            ans1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+           // ans1.setOnClickListener(new View.OnClickListener() {
 
-                }
-            });
-
-
-            //TODO: NEED THIS??
+            //});
         }
 
     }
@@ -149,17 +143,13 @@ public class Assessment1 extends AppCompatActivity {
                     updateScore();
                 }
 
-                //TODO: Add onSubmit method to do intent and to change the button text to "Submit"
                 if (questionNum==numOfQuestions){
-                    score=score;
-                    finishTest();
-                } else if (questionNum==numOfQuestions-1){
                     submitButton();
                 } else {
                     group_assessment.clearCheck();
                     onRun();
                 }
-                
+
             }
         });
 
@@ -168,9 +158,14 @@ public class Assessment1 extends AppCompatActivity {
     private void submitButton(){
         Button submit = findViewById(R.id.next_question);
         submit.setText("Submit");
-        Intent intent = new Intent(getApplicationContext(), assessment_results.class);
-        startActivity(intent);
 
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            finishTest();
+
+            }
+        });
     }
 
     private void finishTest(){
@@ -179,7 +174,8 @@ public class Assessment1 extends AppCompatActivity {
         editor.putInt("questionNum",numOfQuestions);
         editor.commit();
 
-
+        Intent intent = new Intent(getApplicationContext(), assessment_results.class);
+        startActivity(intent);
     }
 
     private void updateScore(){
