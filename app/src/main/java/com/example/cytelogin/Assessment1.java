@@ -76,6 +76,12 @@ public class Assessment1 extends AppCompatActivity {
         String question = arrayText.get(questionNum);
         questionView1.setText(question);
 
+
+
+        if (questionNum==numOfQuestions){
+            submitButton();
+        }
+
     }
 
     private void createRadioButtons (){
@@ -143,8 +149,9 @@ public class Assessment1 extends AppCompatActivity {
                     updateScore();
                 }
 
+
                 if (questionNum==numOfQuestions){
-                    submitButton();
+                    finishTest();
                 } else {
                     group_assessment.clearCheck();
                     onRun();
