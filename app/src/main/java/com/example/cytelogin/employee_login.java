@@ -29,7 +29,6 @@ public class employee_login extends AppCompatActivity {
         //for checking out the values in the database with the values entered
         db = new DatabaseHelper(getApplicationContext());
 
-        final Button login_button = (Button) findViewById(R.id.login);
         TextView signup = (TextView) findViewById(R.id.signup_main);
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -39,11 +38,14 @@ public class employee_login extends AppCompatActivity {
                 startActivity(intent);
             }});
 
+        final Button login_button = (Button) findViewById(R.id.login);
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                startActivity(intent);
                 // Get references to text boxes
-                EditText username_input = (EditText) findViewById(R.id.username);
+              /*  EditText username_input = (EditText) findViewById(R.id.username);
                 EditText password_input = (EditText) findViewById(R.id.password);
                 // Pull input from text boxes
                 String email = username_input.getText().toString();
@@ -65,7 +67,7 @@ public class employee_login extends AppCompatActivity {
 
                 }
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
-
+*/
             }
         });
     }

@@ -45,8 +45,9 @@ public class employer_login extends AppCompatActivity {
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // Get references to text boxes
+                Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                startActivity(i);
+              /*  // Get references to text boxes
                 EditText username_input = (EditText) findViewById(R.id.username);
                 EditText password_input = (EditText) findViewById(R.id.password);
                 // Pull input from text boxes
