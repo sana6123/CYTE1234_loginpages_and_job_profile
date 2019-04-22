@@ -39,7 +39,7 @@ public class Assessment1 extends AppCompatActivity {
         sharedpreferences.edit().clear().apply();
 
         //start timer
-        new CountDownTimer(600000, 1000) { //set for 60 secs, count down by 1 second intervals
+        new CountDownTimer(60000, 1000) { //set timer for 60 secs, count down by 1 second intervals
             TextView timerText = findViewById(R.id.timerText);
 
             public void onTick(long millisUntilFinished) {
@@ -148,7 +148,6 @@ public class Assessment1 extends AppCompatActivity {
 
                 //checks answer; if correct, updates the score
                 if (userChoice.equals(correctAns)) {
-                    score=score;
                     updateScore();
                 }
 
