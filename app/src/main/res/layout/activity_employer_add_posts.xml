@@ -30,7 +30,7 @@
     <Spinner
         android:id="@+id/createIndustry"
         android:layout_width="370dp"
-        android:layout_height="38dp"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="195dp"
@@ -45,7 +45,7 @@
     <Spinner
         android:id="@+id/createCity"
         android:layout_width="370dp"
-        android:layout_height="41dp"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
