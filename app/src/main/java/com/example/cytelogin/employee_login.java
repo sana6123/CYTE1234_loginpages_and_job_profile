@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class employee_login extends AppCompatActivity {
     private DatabaseHelper db;
+    //initialize variables
     private EditText Username;
     private EditText Password;
     private Button Login;
@@ -33,11 +34,11 @@ public class employee_login extends AppCompatActivity {
         //for checking out the values in the database with the values entered
         db = new DatabaseHelper(getApplicationContext());
 
-        //if textview signup clicked
+        //if signup textview clicked
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //switch to employee_profile_activity
+                //switch to employee_profile_activity for employee to sign up
                 Intent intent = new Intent(getApplicationContext(), Employee_Profile_Activity.class);
                 startActivity(intent);
             }
@@ -50,6 +51,7 @@ public class employee_login extends AppCompatActivity {
 
                 //Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
                 //startActivity(intent);
+
                 // Get references to text boxes
                 EditText username_input = findViewById(R.id.username);
                 EditText password_input = findViewById(R.id.password);
@@ -65,16 +67,11 @@ public class employee_login extends AppCompatActivity {
                 if (password.equals(ePass)) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
                     startActivity(intent);
-                    // Remember to put ".class" at the end of the activity name!
                 } else {
                     Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
 
                 }
 
-                // Intent intentlogin = new Intent(getApplicationContext(),)
-                // startActivity(intentlogin);
-
-                //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
 
             }
         });
