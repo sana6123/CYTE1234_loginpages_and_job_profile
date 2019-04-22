@@ -25,15 +25,15 @@ public class assessment_results extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.assessment_results);
 
-        String MyPrefs = "myprefs";
+        String MyPrefs = "Assessment";
         SharedPreferences sharedpreferences;
         sharedpreferences = getSharedPreferences(MyPrefs, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
 
 
         score = sharedpreferences.getInt("score",0);
-        questionNum = sharedpreferences.getInt("questionNum",1);
-
+        //questionNum = sharedpreferences.getInt("questionNum",1);
+        questionNum=4;
         onRun();
 
     }
