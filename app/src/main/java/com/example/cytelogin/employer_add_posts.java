@@ -14,9 +14,9 @@ import android.widget.Spinner;
 
 public class employer_add_posts extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     DatabaseHelper myDb;
-    SharedPreferences sharedpreferences;
-    public static final String MyPREFERENCES = "MyPrefs";
-    public static final String NEXT_ID = "ID_Key";
+    SharedPreferences sharedpreferences; //the class that helps save things on the phone
+    public static final String MyPREFERENCES = "MyPrefs"; //the 'folder' where the app data is saved on the phone
+    public static final String NEXT_ID = "ID_Key"; //the 'file' where the app data is saved on the phone
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,41 +29,50 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
         Button posts = findViewById(R.id.post);
         final EditText title = findViewById(R.id.createTitle);
 
-        final Spinner spinner = (Spinner) findViewById(R.id.createIndustry);
+        final Spinner spinner = findViewById(R.id.createIndustry);
+
         // Create an ArrayAdapter using a string array and a default spinner layout
-        ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this,R.array.industry_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this,R.array.industry_array, R.layout.spinner_text_colour);
+
         //Specify the layout to use when the list of choices appears
-        industryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        industryAdapter.setDropDownViewResource(R.layout.spinner_dropdown_colour);
+
         //Apply adapter to the spinner
         spinner.setAdapter(industryAdapter);
 
         final Spinner spinner2 = (Spinner) findViewById(R.id.createCity);
+
         // Create an ArrayAdapter using a string array and a default spinner layout
-        ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this,R.array.city_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this,R.array.city_array, R.layout.spinner_text_colour);
+
         //Specify the layout to use when the list of choices appears
-        cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cityAdapter.setDropDownViewResource(R.layout.spinner_dropdown_colour);
+
         //Apply adapter to the spinner
         spinner2.setAdapter(cityAdapter);
 
         spinner.setOnItemSelectedListener(this);
         spinner2.setOnItemSelectedListener(this);
 
-
+        //if posts button clicked
         posts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String createIndustry = spinner.getSelectedItem().toString();
                 String createCity = spinner2.getSelectedItem().toString();
                 String createTitle = title.getText().toString();
+
+                //put information into shared preferences
                 int id = sharedpreferences.getInt(NEXT_ID, 0); //K4
                 SharedPreferences.Editor editor = sharedpreferences.edit(); //K5
                 editor.putInt(NEXT_ID, id+1);
-                editor.commit();
+                editor.apply();
 
+                //put job post information into database
                 myDb.addJobPost(id, createTitle, createIndustry, createCity);
                 finish();
 
-
+                //create a new intent, switch activity to makeAssessment_employer
                 Intent intent = new Intent(getApplicationContext(), makeAssessment_employer.class);
                 startActivity(intent);
             }
@@ -73,12 +82,9 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
 
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-    }
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {    }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }

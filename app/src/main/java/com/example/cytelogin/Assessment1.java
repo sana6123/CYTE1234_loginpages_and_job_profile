@@ -19,12 +19,13 @@ import java.util.Collections;
 
 public class Assessment1 extends AppCompatActivity {
 
-    public static final String MyPrefs = "myprefs";
-    SharedPreferences sharedpreferences;
+    public static final String MyPREFERENCES = "Assessment"; //the 'folder' where the app data is saved on the phone
+    SharedPreferences sharedpreferences; //The class that helps save things to the phone
 
+    //initialize variables
     String correctAns;
-    int questionNum=0;
-    static int score=0;
+    int questionNum = 0;
+    static int score = 0;
     int numOfQuestions;
 
 
@@ -33,30 +34,36 @@ public class Assessment1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assessment);
 
-        sharedpreferences = getSharedPreferences(MyPrefs, Context.MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        //clear shared preferences
+        sharedpreferences.edit().clear().apply();
 
-        //timer
-        new CountDownTimer(60000, 1000){
+        //start timer
+        new CountDownTimer(60000, 1000) { //set timer for 60 secs, count down by 1 second intervals
             TextView timerText = findViewById(R.id.timerText);
 
-            public void onTick(long millisUntilFinished){
-                timerText.setText("Time left: "+millisUntilFinished / 1000);
+            public void onTick(long millisUntilFinished) {
+                timerText.setText("Time left: " + millisUntilFinished / 1000);
             }
 
             public void onFinish() {
+                //when timer is up, shows text
                 timerText.setText("Time's up!");
                 finishTest();
             }
 
         }.start();
 
+        //call method onRun
         onRun();
     }
 
-    private void onRun(){
+    private void onRun() {
+        //find how many questions there are in the question_array
         String[] questionArray = getResources().getStringArray(R.array.question_array);
-        numOfQuestions = questionArray.length-1;
+        numOfQuestions = questionArray.length - 1;
 
+        //call the following methods
         updateQuestion();
         createQuestion();
         createRadioButtons();
@@ -68,7 +75,6 @@ public class Assessment1 extends AppCompatActivity {
 
         //get items from question_array
         String[] questionArray = getResources().getStringArray(R.array.question_array);
-
         ArrayList<String> arrayText = new ArrayList<>();
         Collections.addAll(arrayText, questionArray);
 
@@ -76,14 +82,20 @@ public class Assessment1 extends AppCompatActivity {
         String question = arrayText.get(questionNum);
         questionView1.setText(question);
 
+        //if on last question of the assessment, calls function submitButton
+        if (questionNum == numOfQuestions) {
+            submitButton();
+        }
     }
 
-    private void createRadioButtons (){
+    private void createRadioButtons() {
         RadioGroup group_assessment = findViewById(R.id.radiogroup_assessment);
-        String [] answerChoices = {"", "", "", ""};
 
-        //get items from answer_array1
-        switch(questionNum){
+        //create array for answer choices
+        String[] answerChoices = {"", "", "", ""};
+
+        //based on what the question number is, will use a different answer_array
+        switch (questionNum) {
             case 1:
                 answerChoices = getResources().getStringArray(R.array.answer_array1);
                 break;
@@ -103,35 +115,25 @@ public class Assessment1 extends AppCompatActivity {
         //get number of views (radio buttons) within the radiogroup
         final int childCount = group_assessment.getChildCount();
 
-        for (int x=0; x<childCount; x++) {
-            //set text of radiobuttons to text in answer_array1
-            RadioButton ans1 = (RadioButton) group_assessment.getChildAt(x);
-            ans1.setText(arrayText.get(x));
-
-
-            //TODO: Set on-click callbacks
-            ans1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
-
-
-            //TODO: NEED THIS??
+        for (int x = 0; x < childCount; x++) {
+            //set text of radiobuttons to text in chosen answer_array
+            RadioButton ans = (RadioButton) group_assessment.getChildAt(x);
+            ans.setText(arrayText.get(x));
         }
 
     }
 
-    private void onNextQuestion(){
+    private void onNextQuestion() {
         Button next_question = findViewById(R.id.next_question);
+
+        //when user clicks next question button
         next_question.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 RadioGroup group_assessment = findViewById(R.id.radiogroup_assessment);
 
-                //retrieve information of what button selected
+                //retrieve information of what answer the button selected
                 int idSelected = group_assessment.getCheckedRadioButtonId();
                 RadioButton ans1 = findViewById(idSelected);
                 String userChoice = ans1.getText().toString();
@@ -141,65 +143,63 @@ public class Assessment1 extends AppCompatActivity {
                 ArrayList<String> arrayText = new ArrayList<>();
                 Collections.addAll(arrayText, ans);
 
-                //takes correct ans from array
+                //takes correct ans from correct_answers array
                 correctAns = arrayText.get(questionNum);
 
                 //checks answer; if correct, updates the score
-                if(userChoice.equals(correctAns)){
+                if (userChoice.equals(correctAns)) {
                     updateScore();
                 }
 
-                //TODO: Add onSubmit method to do intent and to change the button text to "Submit"
-                if (questionNum==numOfQuestions){
-                    score=score;
+                //if it is the last question, call method finishTest
+                //if it isn't the last question, clear the radio buttons and run again
+                if (questionNum == numOfQuestions) {
                     finishTest();
-                } else if (questionNum==numOfQuestions-1){
-                    submitButton();
                 } else {
                     group_assessment.clearCheck();
                     onRun();
                 }
-                
             }
         });
 
     }
 
-    private void submitButton(){
+    private void submitButton() {
         Button submit = findViewById(R.id.next_question);
+        //change the text of the button to submit
         submit.setText("Submit");
+
+        //if the button is clicked, call method finishTest
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishTest();
+            }
+        });
+    }
+
+    private void finishTest() {
+        //put score and question number values into shared preferences
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putInt("score", score);
+        editor.putInt("questionNum", numOfQuestions);
+        editor.apply();
+
+        //switch activity to assessment_results activity
         Intent intent = new Intent(getApplicationContext(), assessment_results.class);
         startActivity(intent);
-
     }
 
-    private void finishTest(){
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putInt("score",score);
-        editor.putInt("questionNum",numOfQuestions);
-        editor.commit();
-
-
+    private void updateScore() {
+        //adds one to the score
+        score=score++;
     }
 
-    private void updateScore(){
-        score++;
-    }
-
-    private void updateQuestion(){
+    private void updateQuestion() {
+        //adds one to the question number
         questionNum++;
     }
 
-
-
-/*
-    public void readPreferences (){
-        readPreferences();
-;
-
-        String ch1 = myprefs.getString("keychoice", "");
-        ans1.setText(ch1);
-    */
 }
 
 

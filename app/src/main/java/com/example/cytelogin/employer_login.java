@@ -10,12 +10,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class employer_login extends AppCompatActivity {
+    //initializes variables
     private DatabaseHelper db;
     private EditText Name;
     private EditText Password;
     private Button Login;
     private TextView info;
-
 
 
     @Override
@@ -32,47 +32,53 @@ public class employer_login extends AppCompatActivity {
         db = new DatabaseHelper(getApplicationContext());
       */
 
-        final Button login_button = (Button) findViewById(R.id.login_empr);
-        TextView signup = (TextView) findViewById(R.id.signup_main_empr);
+        final Button login_button = findViewById(R.id.login_empr);
+        TextView signup = findViewById(R.id.signup_main_empr);
 
+        //if signup button clicked
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //creates new intent, switches activity to Employer_Profile_Activity
                 Intent intent = new Intent(getApplicationContext(), Employer_Profile_Activity.class);
                 startActivity(intent);
             }});
 
+        //if login_button clicked
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //TODO: IF ABLE TO MAKE THE PASSWORD WORK, TAKE THIS OUT
+                //creates new intent, switches activity to MainActivity_jobs (job listings screen)
                 Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
                 startActivity(i);
-              /* // Get references to text boxes
-                EditText username_input = (EditText) findViewById(R.id.username);
-                EditText password_input = (EditText) findViewById(R.id.password);
+
+                // Get references to text boxes
+                EditText username_input = findViewById(R.id.username);
+                EditText password_input = findViewById(R.id.password);
+
                 // Pull input from text boxes
                 String email = username_input.getText().toString();
                 String password = password_input.getText().toString();
+
                 // Send username and password to the database and check
                 //login_button.setText(username + " " + password); // Get rid of this
 
                 employer_accounts e = db.getEmployerByEmail(email);
-                String ePass = e.password_empr();
+                String employer_Password = e.password_empr();
 
-                startActivity(new Intent(employer_login.this, Employee_Profile_Activity.class));
+              //  startActivity(new Intent(employer_login.this, Employee_Profile_Activity.class));
 
-                /*if (password.contentEquals(ePass)) {
+                if (password.contentEquals(employer_Password)) {
                     // Password and Email match. Successful Login
                     // Make your intent and go to employee profile activity.
-                    Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
-                    startActivity(i);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                    startActivity(intent);
                     // Remember to put ".class" at the end of the activity name!
                 } else {
                     Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
-
                 }
-                //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
-*/
+
             }
         });
     }

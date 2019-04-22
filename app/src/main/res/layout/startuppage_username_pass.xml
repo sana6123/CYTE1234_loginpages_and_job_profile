@@ -20,7 +20,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_border_edittext"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="textEmailAddress|textPersonName"
         android:textColorHint="@color/bckcolor"
         android:textSize="18sp"

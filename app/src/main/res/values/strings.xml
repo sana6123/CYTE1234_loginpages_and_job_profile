@@ -53,5 +53,6 @@
     <string name="check_Analytical">Analytical skills. Identifying a problem and coming up with a technological solution to address it.</string>
     <string name="select_skills_button">Select Skills</string>
     <string name="mentaltestdescription">Click the 6 skills that apply to you</string>
+    <string name="backtoposts">Back to job posts</string>
 </resources>
 

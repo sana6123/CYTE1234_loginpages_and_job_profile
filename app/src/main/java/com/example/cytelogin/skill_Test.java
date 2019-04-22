@@ -48,8 +48,6 @@ public class skill_Test extends AppCompatActivity {
             public void onClick(View v) {
                 if (mcheckcalculation.isChecked())
                     mresult.add("Calculation -Using basic arithmetic skills including adding, subtracting, multiplication and division");
-
-
                 else
                     mresult.remove("Calculation -Using basic arithmetic skills including adding, subtracting, multiplication and division");
 
@@ -162,7 +160,6 @@ public class skill_Test extends AppCompatActivity {
         });
 
 
-
         mselectedskillbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,18 +169,16 @@ public class skill_Test extends AppCompatActivity {
 
                 mresulttextview.setText(stringBuilder.toString());
                 mresulttextview.setEnabled(false);
-
-
-
             }
         });
-        final Button button1 = findViewById(R.id.button_Select);
-        button1.setOnClickListener(new View.OnClickListener() {
+
+        final Button select = findViewById(R.id.button_Select);
+
+        //when user finishes checking off skills, clicks button select
+        select.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // your handler code here
+                //creates new intent, switches activity to Assessment1
                 Intent intent = new Intent(getApplicationContext(), Assessment1.class);
-                // intent.putExtra("switch", 0);
-                //0 is employee and 1 is employer
                 startActivity(intent);
             }
         });

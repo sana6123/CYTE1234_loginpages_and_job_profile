@@ -20,14 +20,15 @@ public class JobpostsCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView AdapterTitleText = (TextView) view.findViewById(R.id.AdapterTitleText);
-        TextView AdapterIndustryText = (TextView) view.findViewById(R.id.AdapterIndustryText);
-        TextView AdapterCityText = (TextView) view.findViewById(R.id.AdapterCityText);
+        TextView AdapterTitleText = view.findViewById(R.id.AdapterTitleText);
+        TextView AdapterIndustryText = view.findViewById(R.id.AdapterIndustryText);
+        TextView AdapterCityText = view.findViewById(R.id.AdapterCityText);
 
         // Extract properties from cursor
         String CursorTitle = cursor.getString(cursor.getColumnIndexOrThrow("TITLE"));
         String CursorIndustry = cursor.getString(cursor.getColumnIndexOrThrow("INDUSTRY"));
         String CursorCity = cursor.getString(cursor.getColumnIndexOrThrow("CITY"));
+
         // Populate fields with extracted properties
         AdapterTitleText.setText(CursorTitle);
         AdapterIndustryText.setText(CursorIndustry);

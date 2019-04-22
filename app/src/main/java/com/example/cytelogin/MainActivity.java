@@ -48,7 +48,6 @@ DatabaseHelper myDb;
         final Button button1 = findViewById(R.id.employee_startupbutton);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // your handler code here
                 Intent intent = new Intent(getApplicationContext(), employee_login.class);
                // intent.putExtra("switch", 0);
                 //0 is employee and 1 is employer
@@ -59,7 +58,6 @@ DatabaseHelper myDb;
         final Button button2 = findViewById(R.id.employer_startupbuttton);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // your handler code here
                 Intent intent = new Intent(getApplicationContext(), employer_login.class);
                 //intent.putExtra("switch", 1);
                 //0 is employee and 1 is employer

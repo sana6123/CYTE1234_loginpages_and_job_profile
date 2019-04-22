@@ -12,29 +12,24 @@ import android.net.Uri;
 
 public class links_to_education extends AppCompatActivity {
 
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_links_to_education);
 
-        final Button button1 = findViewById(R.id.Job_Posts);
-        button1.setOnClickListener(new View.OnClickListener() {
+        final Button toJobs = findViewById(R.id.Job_Posts);
+
+        //if button toJobs clicked
+        toJobs.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // your handler code here
+                //create new intent, switch activity to MainAcitivity_jobs
                 Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
-                // intent.putExtra("switch", 0);
-                //0 is employee and 1 is employer
                 startActivity(intent);
             }
         });
 
     }
+
     public void goto1 (View view) {
         goToUrl ( "https://bowvalleycollege.ca/programs-courses/creative-technologies/software-development");
     }
@@ -58,6 +53,8 @@ public class links_to_education extends AppCompatActivity {
 
     private void goToUrl (String url) {
         Uri uriUrl = Uri.parse(url);
+
+        //creates new intent, launches the link specified above
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
     }

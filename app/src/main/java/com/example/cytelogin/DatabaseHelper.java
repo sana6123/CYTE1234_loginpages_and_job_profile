@@ -87,6 +87,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //onCreate(db);
     }
 
+
+
     Jobposts getApplication ( int id){
         SQLiteDatabase db = this.getReadableDatabase();
 

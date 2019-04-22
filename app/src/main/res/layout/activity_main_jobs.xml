@@ -30,13 +30,13 @@
 
     <EditText
         android:id="@+id/titleEdit"
-        android:layout_width="367dp"
+        android:layout_width="300dp"
         android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="108dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
         android:layout_marginBottom="8dp"
         android:autofillHints="@string/selectTitle"
         android:background="@drawable/rounded_border"
@@ -72,7 +72,7 @@
 
     <Spinner
         android:id="@+id/spinnerCity"
-        android:layout_width="364dp"
+        android:layout_width="365dp"
         android:layout_height="50dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
@@ -204,6 +204,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageButton
+        android:id="@+id/speechButton"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/titleEdit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/speechtotextimage" />
 
 
 </android.support.constraint.ConstraintLayout>
