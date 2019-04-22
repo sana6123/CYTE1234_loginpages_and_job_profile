@@ -6,8 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.EditText;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 //in the constructor we create a database for jobposts
@@ -59,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //where you create a table? method that executes when database is called
-        db.execSQL(String.format("create table if not exists " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, INDUSTRY TEXT, CITY TEXT)"));
+      // db.execSQL(String.format("create table if not exists " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, INDUSTRY TEXT, CITY TEXT)"));
 
         String createJobPostsTable = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + ID_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT)";
         db.execSQL(createJobPostsTable);
@@ -83,13 +83,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-    //db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
-    //onCreate(db);
+    db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
+    onCreate(db);
     }
 
 
 
-    Jobposts getApplication ( int id){
+    /*Jobposts getApplication ( int id){
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_NAME, new String[]{ID_1,
@@ -112,7 +112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 new String[]{ String.valueOf(title), String.valueOf(industry), String.valueOf(city) }, null, null, null, null);
 
             return cursor;
-    }
+    }*/
     //EMPLOYER
     ArrayList<employer_accounts> getAllEmployer() {
         ArrayList<employer_accounts> appsList = new ArrayList<>();
@@ -295,7 +295,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 return true;
             }
         }
-
+/*
 
         public boolean addJobPost ( int id, String title, String industry, String city){
 ///insert values
@@ -317,7 +317,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 return true;
             }
-        }
+        }*/
 //when the employee finishes their assessment the addCompletedAssessnt
         public boolean addCompletedAssessment ( int jobPostID, int employeeID){
             SQLiteDatabase db = this.getWritableDatabase();
@@ -403,6 +403,83 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.delete(EMPLOYER_NAME, KEY_IDD + "=?", new String[]{String.valueOf(id)});
             db.close();
         }
+
+
+
+
+
+
+
+        ///////////HashMap
+        // Adding new Job Details
+        void insertJobDetails(String name, String location, String designation){
+            //Get the Data Repository in write mode
+            SQLiteDatabase db = this.getWritableDatabase();
+            //Create a new map of values, where column names are the keys
+            ContentValues cValues = new ContentValues();
+            cValues.put(TITLE_2, name);
+            cValues.put(INDUSTRY_3, location);
+            cValues.put(CITY_4, designation);
+            // Insert the new row, returning the primary key value of the new row
+            long newRowId = db.insert(TABLE_NAME,null, cValues);
+            db.close();
+        }
+
+    // Get Job Details
+    public ArrayList<HashMap<String, String>> GetJobs(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> userList = new ArrayList<>();
+        String query = "SELECT name, location, designation FROM "+ TABLE_NAME;
+        Cursor cursor = db.rawQuery(query,null);
+        while (cursor.moveToNext()){
+            HashMap<String,String> user = new HashMap<>();
+            user.put("name",cursor.getString(cursor.getColumnIndex(TITLE_2)));
+            user.put("designation",cursor.getString(cursor.getColumnIndex(INDUSTRY_3)));
+            user.put("location",cursor.getString(cursor.getColumnIndex(CITY_4)));
+            userList.add(user);
+        }
+        cursor.close();
+        return  userList;
+    }
+
+
+
+
+
+    // Get Job Details based on userid
+    public ArrayList<HashMap<String, String>> GetJobByJobId(int userid){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> userList = new ArrayList<>();
+        String query = "SELECT name, location, designation FROM "+ TABLE_NAME;
+        Cursor cursor = db.query(TABLE_NAME, new String[]{TITLE_2, INDUSTRY_3, CITY_4}, KEY_ID+ "=?",new String[]{String.valueOf(userid)},null, null, null, null);
+        if (cursor.moveToNext()){
+            HashMap<String,String> user = new HashMap<>();
+            user.put("name",cursor.getString(cursor.getColumnIndex(TITLE_2)));
+            user.put("designation",cursor.getString(cursor.getColumnIndex(INDUSTRY_3)));
+            user.put("location",cursor.getString(cursor.getColumnIndex(CITY_4)));
+            userList.add(user);
+        }
+        cursor.close();
+        return  userList;
+    }
+    // Delete Job Details
+    public void DeleteJob(int userid){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, KEY_ID+" = ?",new String[]{String.valueOf(userid)});
+        db.close();
+    }
+    // Update User Details
+    public int UpdateJobDetails(String location, String designation, int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cVals = new ContentValues();
+        cVals.put(INDUSTRY_3, location);
+        cVals.put(CITY_4, designation);
+        int count = db.update(TABLE_NAME, cVals, KEY_ID+" = ?",new String[]{String.valueOf(id)});
+        return  count;
+    }
+
+
+
     }
 
 
