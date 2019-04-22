@@ -47,7 +47,7 @@ public class employer_login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
                 startActivity(i);
-              /* // Get references to text boxes
+              // Get references to text boxes
                 EditText username_input = (EditText) findViewById(R.id.username);
                 EditText password_input = (EditText) findViewById(R.id.password);
                 // Pull input from text boxes
@@ -57,22 +57,22 @@ public class employer_login extends AppCompatActivity {
                 //login_button.setText(username + " " + password); // Get rid of this
 
                 employer_accounts e = db.getEmployerByEmail(email);
-                String ePass = e.password_empr();
+                String employer_Password = e.password_empr();
 
-                startActivity(new Intent(employer_login.this, Employee_Profile_Activity.class));
+              //  startActivity(new Intent(employer_login.this, Employee_Profile_Activity.class));
 
-                /*if (password.contentEquals(ePass)) {
+                if (password.contentEquals(employer_Password)) {
                     // Password and Email match. Successful Login
                     // Make your intent and go to employee profile activity.
-                    Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
-                    startActivity(i);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                    startActivity(intent);
                     // Remember to put ".class" at the end of the activity name!
                 } else {
                     Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
 
                 }
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
-*/
+
             }
         });
     }

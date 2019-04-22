@@ -61,8 +61,6 @@ public class employee_login extends AppCompatActivity {
                 String ePass = e.getPassword();
 
                 if (password.equals(ePass)) {
-                    // Password and Email match. Successful Login
-                    // Make your intent and go to employee profile activity.
                     Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
                     startActivity(intent);
                     // Remember to put ".class" at the end of the activity name!
