@@ -1,9 +1,11 @@
 package com.example.cytelogin;
 
 //import android.content.Intent;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,44 +13,60 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 //import android.widget.ListAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 //import android.widget.TextView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class MainActivity_jobs extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-DatabaseHelper myDb;
-//public ArrayList <Jobposts> posts;
-ListView jobList;
-JobpostsCursorAdapter jobpostsCursorAdapter;
+    DatabaseHelper myDb;
+    //public ArrayList <Jobposts> posts;
+    ListView jobList;
+    JobpostsCursorAdapter jobpostsCursorAdapter;
 
+    private TextView title;
+    private ImageButton speakButton;
+    private final int REQ_CODE_SPEECH_INPUT = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_jobs);
 
+        speakButton = findViewById(R.id.speechButton);
+
+        speakButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                askSpeechInput();
+            }
+        });
+
         //create a new instance/database
         myDb = new DatabaseHelper(getApplicationContext());
-       // Button searchPosts = findViewById(R.id.Search_posts);
-        final EditText title = findViewById(R.id.titleEdit);
+        // Button searchPosts = findViewById(R.id.Search_posts);
+        title = findViewById(R.id.titleEdit);
         //
         final ListView jobList = findViewById(R.id.jobList);
         //final ArrayList <Jobposts> posts = new ArrayList <Jobposts> ();
-
 
 
 // get content from jobposts?
 //I made run final?
 
 
-
         final Spinner spinner = (Spinner) findViewById(R.id.spinnerIndustry);
         // Create an ArrayAdapter using a string array and a specified spinner layout
-            ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this,R.array.industry_array, R.layout.spinner_text_colour);
+        ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this, R.array.industry_array, R.layout.spinner_text_colour);
         //Specify the layout to use when the list of choices appears
         industryAdapter.setDropDownViewResource(R.layout.spinner_dropdown_colour);
         //Apply adapter to the spinner
@@ -57,7 +75,7 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
 
         final Spinner spinner2 = (Spinner) findViewById(R.id.spinnerCity);
         // Create an ArrayAdapter using a string array and a specified spinner layout
-        ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this,R.array.city_array, R.layout.spinner_text_colour);
+        ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this, R.array.city_array, R.layout.spinner_text_colour);
         //Specify the layout to use when the list of choices appears
         cityAdapter.setDropDownViewResource(R.layout.spinner_dropdown_colour);
         //Apply adapter to the spinner
@@ -65,8 +83,6 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
 
         spinner.setOnItemSelectedListener(this);
         spinner2.setOnItemSelectedListener(this);
-
-
 
 
         final Button searchPosts = (Button) findViewById(R.id.Search_posts);
@@ -108,9 +124,45 @@ JobpostsCursorAdapter jobpostsCursorAdapter;
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
+    // Showing google speech input dialog
+
+    private void askSpeechInput() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+                "Hi speak something");
+        try {
+            startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+        } catch (ActivityNotFoundException a) {
+
+        }
+    }
+
+    // Receiving speech input
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REQ_CODE_SPEECH_INPUT: {
+                if (resultCode == RESULT_OK && null != data) {
+
+                    ArrayList<String> result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    title.setText(result.get(0));
+                }
+                break;
+            }
+
+        }
+    }
+
 }
-
-
 //cut it out later
 /*for (int i = 0; i < posts.size(); i++) {
                     Jobposts sa = posts.get(i);
