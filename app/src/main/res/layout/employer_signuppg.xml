@@ -6,30 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/cytesignupbackgroundnotext">
+    android:background="@drawable/signupbackground">
 
-
-    <Button
-        android:id="@+id/employee_button"
-        android:layout_width="169dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/transparentbackground"
-        android:text="@string/candidate"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
-        android:typeface="sans"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.035"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -205,50 +183,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </RelativeLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/employer_button2"
-        android:layout_width="153dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/transparent"
-        android:text="@string/employer"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
-        android:typeface="sans"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="118dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="SIGN UP"
-        android:textColor="@color/ftcolor"
-
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.013" />
 
 
 </android.support.constraint.ConstraintLayout>
