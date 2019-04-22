@@ -48,7 +48,8 @@ public class assessment_results extends AppCompatActivity {
         //print the score in the textview
         result.setText(String.format(Locale.CANADA, "Score: %d%%", finalScore));
 
-        //if the final score is less than 75%, show links to education button
+        //if the final score is less than 75%, show both links to education button and back to job posts button
+        //if the final score is more than 75%, show only the back to job posts button
         if (finalScore<75){
             linksToEdu.setVisibility(View.VISIBLE);
             backToPosts.setVisibility(View.VISIBLE);
@@ -57,6 +58,7 @@ public class assessment_results extends AppCompatActivity {
             backToPosts.setVisibility(View.VISIBLE);
         }
 
+        //when links to education button clicked
         linksToEdu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Create intent to switch to links to education activity
@@ -65,7 +67,7 @@ public class assessment_results extends AppCompatActivity {
             }
         });
 
-
+        //when back to job posts button clicked
         backToPosts.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Create intent to switch to back to job posts activity
@@ -73,5 +75,5 @@ public class assessment_results extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-            }
+        }
 }

@@ -22,26 +22,28 @@ public class employee_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startuppage_username_pass);
 
+        Username = findViewById(R.id.username);
+        Password = findViewById(R.id.password);
+        info = findViewById(R.id.textView22);
+        Login = findViewById(R.id.login);
+        TextView signup = findViewById(R.id.signup_main);
+        final Button login_button = findViewById(R.id.login);
 
-        Username = (EditText) findViewById(R.id.username);
-        Password = (EditText) findViewById(R.id.password);
-        info = (TextView) findViewById(R.id.textView22);
-        Login = (Button) findViewById(R.id.login);
+
         //for checking out the values in the database with the values entered
         db = new DatabaseHelper(getApplicationContext());
 
-        TextView signup = (TextView) findViewById(R.id.signup_main);
-
-
+        //if textview signup clicked
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //switch to employee_profile_activity
                 Intent intent = new Intent(getApplicationContext(), Employee_Profile_Activity.class);
                 startActivity(intent);
             }
         });
 
-        final Button login_button = (Button) findViewById(R.id.login);
+        //if login button clicked
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,8 +51,8 @@ public class employee_login extends AppCompatActivity {
                 //Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
                 //startActivity(intent);
                 // Get references to text boxes
-                EditText username_input = (EditText) findViewById(R.id.username);
-                EditText password_input = (EditText) findViewById(R.id.password);
+                EditText username_input = findViewById(R.id.username);
+                EditText password_input = findViewById(R.id.password);
                 // Pull input from text boxes
                 String email = username_input.getText().toString();
                 String password = password_input.getText().toString();

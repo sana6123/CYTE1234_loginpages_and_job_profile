@@ -21,19 +21,21 @@ public class Employer_Profile_Activity extends AppCompatActivity {
 
 
         //startActivity(new Intent(Employer_Profile_Activity.this, job_profile.class));
-        final Button button = (Button) findViewById(R.id.employer_signupbn);
+        final Button employer_signup = (Button) findViewById(R.id.employer_signupbn);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        //if employer_signup button clicked
+        employer_signup.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
-                    startActivity(intent);
+            //creates new intent, switches activity to employer_add_posts
+            Intent intent = new Intent(getApplicationContext(), employer_add_posts.class);
+            startActivity(intent);
 
             // your handler code here
-            EditText employer_companyname = (EditText) findViewById(R.id.employer_company_name);
-            EditText employer_phone = (EditText) findViewById(R.id.employer_email);
-            EditText employer_email = (EditText) findViewById(R.id.employer_phone_cyte);
-            EditText employer_password = (EditText) findViewById(R.id.employer_pass_cyte);
-            EditText employer_location = (EditText) findViewById(R.id.employer_location_cyte);
+            EditText employer_companyname = findViewById(R.id.employer_company_name);
+            EditText employer_phone = findViewById(R.id.employer_email);
+            EditText employer_email = findViewById(R.id.employer_phone_cyte);
+            EditText employer_password = findViewById(R.id.employer_pass_cyte);
+            EditText employer_location = findViewById(R.id.employer_location_cyte);
 
             // Pull input from text boxes
             String employee_name1 = employer_companyname.getText().toString();
@@ -44,12 +46,11 @@ public class Employer_Profile_Activity extends AppCompatActivity {
 
             emperdb.addEmployer(employer_companyname, employer_phone, employer_email, employer_password, employer_location);
 
-// Send username and password to the database and check
+            // Send username and password to the database and check
 
             //login_button.setText(username + " " + password); // Get rid of this
             Toast.makeText(getApplicationContext(), "Your data is stored", Toast.LENGTH_SHORT).show();
 
-            //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
         }
     });
 }

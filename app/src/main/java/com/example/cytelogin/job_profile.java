@@ -13,12 +13,12 @@ public class job_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.job_profile);
 
-        final Button Going_toassessment = (Button) findViewById(R.id.assessmentButton);
+        final Button GoToAssessment = findViewById(R.id.assessmentButton);
 
-
-        Going_toassessment.setOnClickListener(new View.OnClickListener() {
+        //if GoToAssessment button clicked
+        GoToAssessment.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // your handler code here
+                //switch activity to skill_test
                 Intent intent = new Intent(getApplicationContext(), skill_Test.class);
                 startActivity(intent);
 

@@ -18,31 +18,24 @@ public class employer_snpg extends AppCompatActivity {
         setContentView(R.layout.employer_signuppg);
 
 
-
 //for declaring the buttons and telling the buttons where to link the next screen if the user clickson this screen
-        final Button employer_profile = (Button) findViewById(R.id.employer_signupbn);
+        final Button employer_signup = (Button) findViewById(R.id.employer_signupbn);
 
 
-
-//for connecting the screens using buttons
-//signup_button.setOnClickListener(new View.OnClickListener() {
-//public void onClick(View v) {
- // your handler code here
- //startActivity(new Intent(employee_login.this, employer_snpg.class));
- // }});
-
-        employer_profile.setOnClickListener(new View.OnClickListener() {
+        //if employer_signup button clicked
+        employer_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //creates new intent, changes activity ot makeAssessment_employer
                 Intent intent = new Intent(getApplicationContext(), makeAssessment_employer.class);
                 startActivity(intent);
 
                 // Get references to text boxes
-                EditText companynm_input = (EditText) findViewById(R.id.employer_company_name);
-                EditText email_input = (EditText) findViewById(R.id.employer_email);
-                EditText employer_phone = (EditText) findViewById(R.id.employer_phone_cyte);
-                EditText employer_password = (EditText) findViewById(R.id.employer_pass_cyte);
-                EditText employer_location = (EditText) findViewById(R.id.employer_location_cyte);
+                EditText companynm_input = findViewById(R.id.employer_company_name);
+                EditText email_input = findViewById(R.id.employer_email);
+                EditText employer_phone = findViewById(R.id.employer_phone_cyte);
+                EditText employer_password = findViewById(R.id.employer_pass_cyte);
+                EditText employer_location = findViewById(R.id.employer_location_cyte);
 
 
                 // Pull input from text boxes
@@ -57,9 +50,6 @@ public class employer_snpg extends AppCompatActivity {
                 // Send username and password to the database and check
                 //login_button.setText(username + " " + password); // Get rid of this
                 Toast.makeText(getApplicationContext(), "Data is stored", Toast.LENGTH_SHORT).show();
-
-
-                startActivity(new Intent(getApplicationContext(), makeAssessment_employer.class));
 
             }
         });

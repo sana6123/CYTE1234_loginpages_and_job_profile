@@ -13,11 +13,12 @@ public class makeAssessment_employer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_assessment_employer);
 
-        final Button SubmitAssessmenmt =(Button) findViewById(R.id.Submit_assessment);
+        final Button submitAssessment = findViewById(R.id.Submit_assessment);
 
-        SubmitAssessmenmt.setOnClickListener(new View.OnClickListener() {
+        //if button submitAssessment clicked
+        submitAssessment.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // your handler code here
+                //creates new intent, switches activity to MainActivity
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }});

@@ -42,7 +42,7 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
         setContentView(R.layout.activity_main_jobs);
 
         speakButton = findViewById(R.id.speechButton);
-
+        //if speakButton clicked, call method askSpeechInput
         speakButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -64,7 +64,7 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
 //I made run final?
 
 
-        final Spinner spinner = (Spinner) findViewById(R.id.spinnerIndustry);
+        final Spinner spinner =findViewById(R.id.spinnerIndustry);
         // Create an ArrayAdapter using a string array and a specified spinner layout
         ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this, R.array.industry_array, R.layout.spinner_text_colour);
         //Specify the layout to use when the list of choices appears
@@ -73,7 +73,7 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
         spinner.setAdapter(industryAdapter);
 
 
-        final Spinner spinner2 = (Spinner) findViewById(R.id.spinnerCity);
+        final Spinner spinner2 = findViewById(R.id.spinnerCity);
         // Create an ArrayAdapter using a string array and a specified spinner layout
         ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this, R.array.city_array, R.layout.spinner_text_colour);
         //Specify the layout to use when the list of choices appears
@@ -85,7 +85,7 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
         spinner2.setOnItemSelectedListener(this);
 
 
-        final Button searchPosts = (Button) findViewById(R.id.Search_posts);
+        final Button searchPosts = findViewById(R.id.Search_posts);
 
         searchPosts.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,7 +127,6 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
 
 
     // Showing google speech input dialog
-
     private void askSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -143,7 +142,6 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
     }
 
     // Receiving speech input
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
