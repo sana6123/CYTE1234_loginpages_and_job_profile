@@ -38,27 +38,39 @@ public class assessment_results extends AppCompatActivity {
 
     }
 
-    public void onRun(){
+    public void onRun() {
         TextView result = findViewById(R.id.score);
-        Button linksToEdu = findViewById(R.id.button2);
+        Button linksToEdu = findViewById(R.id.links_to_edu);
+        Button backToPosts = findViewById(R.id.back_to_posts);
 
-        linksToEdu.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // your handler code here
-                Intent intent = new Intent(getApplicationContext(), links_to_education.class);
-                startActivity(intent);
-            }
-            });
-
-        float temp = (float)score/(float)questionNum;
-        int finalScore = (int)(temp*(float)100);
+        float temp = (float) score / (float) questionNum;
+        int finalScore = (int) (temp * (float) 100);
 
         result.setText(String.format(Locale.CANADA, "Score: %d%%", finalScore));
 
+        linksToEdu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Create intent to switch to links to education activity
+                Intent intent = new Intent(getApplicationContext(), links_to_education.class);
+                startActivity(intent);
+            }
+        });
+
+
+        backToPosts.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Create intent to switch to back to job posts activity
+                Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                startActivity(intent);
+            }
+        });
+
         if (finalScore<75){
             linksToEdu.setVisibility(View.VISIBLE);
+            backToPosts.setVisibility(View.GONE);
         } else {
             linksToEdu.setVisibility(View.GONE);
+            backToPosts.setVisibility(View.VISIBLE);
         }
 
 
