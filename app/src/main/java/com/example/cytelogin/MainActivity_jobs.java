@@ -65,10 +65,13 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
 
 
         final Spinner spinner =findViewById(R.id.spinnerIndustry);
+
         // Create an ArrayAdapter using a string array and a specified spinner layout
         ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this, R.array.industry_array, R.layout.spinner_text_colour);
+
         //Specify the layout to use when the list of choices appears
         industryAdapter.setDropDownViewResource(R.layout.spinner_dropdown_colour);
+
         //Apply adapter to the spinner
         spinner.setAdapter(industryAdapter);
 

@@ -32,10 +32,10 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
         final Spinner spinner = findViewById(R.id.createIndustry);
 
         // Create an ArrayAdapter using a string array and a default spinner layout
-        ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this,R.array.industry_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> industryAdapter = ArrayAdapter.createFromResource(this,R.array.industry_array, R.layout.spinner_text_colour);
 
         //Specify the layout to use when the list of choices appears
-        industryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        industryAdapter.setDropDownViewResource(R.layout.spinner_dropdown_colour);
 
         //Apply adapter to the spinner
         spinner.setAdapter(industryAdapter);
@@ -43,10 +43,10 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
         final Spinner spinner2 = (Spinner) findViewById(R.id.createCity);
 
         // Create an ArrayAdapter using a string array and a default spinner layout
-        ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this,R.array.city_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this,R.array.city_array, R.layout.spinner_text_colour);
 
         //Specify the layout to use when the list of choices appears
-        cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cityAdapter.setDropDownViewResource(R.layout.spinner_dropdown_colour);
 
         //Apply adapter to the spinner
         spinner2.setAdapter(cityAdapter);
