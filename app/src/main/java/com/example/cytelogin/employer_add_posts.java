@@ -11,8 +11,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class employer_add_posts extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    EditText title;
+    Spinner spinner, spinner2;
+    Button saveBtn;
+    Intent intent;
+
+
+
     DatabaseHelper myDb;
     SharedPreferences sharedpreferences; //the class that helps save things on the phone
     public static final String MyPREFERENCES = "MyPrefs"; //the 'folder' where the app data is saved on the phone
@@ -26,7 +34,7 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         myDb = new DatabaseHelper(this);
-        Button posts = findViewById(R.id.post);
+        Button saveBtn = findViewById(R.id.post);
         final EditText title = findViewById(R.id.createTitle);
 
         final Spinner spinner = findViewById(R.id.createIndustry);
@@ -55,26 +63,17 @@ public class employer_add_posts extends AppCompatActivity implements AdapterView
         spinner2.setOnItemSelectedListener(this);
 
         //if posts button clicked
-        posts.setOnClickListener(new View.OnClickListener() {
+        saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String createIndustry = spinner.getSelectedItem().toString();
-                String createCity = spinner2.getSelectedItem().toString();
-                String createTitle = title.getText().toString();
-
-                //put information into shared preferences
-                int id = sharedpreferences.getInt(NEXT_ID, 0); //K4
-                SharedPreferences.Editor editor = sharedpreferences.edit(); //K5
-                editor.putInt(NEXT_ID, id+1);
-                editor.apply();
-
-                //put job post information into database
-                myDb.addJobPost(id, createTitle, createIndustry, createCity);
-                finish();
-
-                //create a new intent, switch activity to makeAssessment_employer
-                Intent intent = new Intent(getApplicationContext(), makeAssessment_employer.class);
+                String username = title.getText().toString()+"\n";
+                String location = spinner.getSelectedItem().toString();
+                String designation = spinner2.getSelectedItem().toString();
+                DatabaseHelper dbHandler = new DatabaseHelper(employer_add_posts.this);
+                dbHandler.insertJobDetails(username,location,designation);
+                intent = new Intent(employer_add_posts.this,makeAssessment_employer.class);
                 startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Details Inserted Successfully",Toast.LENGTH_SHORT).show();
             }
         });
     }

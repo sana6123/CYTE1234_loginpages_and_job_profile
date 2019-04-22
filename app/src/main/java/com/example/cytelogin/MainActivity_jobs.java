@@ -3,7 +3,6 @@ package com.example.cytelogin;
 //import android.content.Intent;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,14 +10,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-//import android.widget.ListAdapter;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Spinner;
-//import android.widget.TextView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.HashMap;
 
 import org.w3c.dom.Text;
 
@@ -28,6 +27,7 @@ import java.util.Locale;
 
 public class MainActivity_jobs extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     DatabaseHelper myDb;
+    Intent intent;
     //public ArrayList <Jobposts> posts;
     ListView jobList;
     JobpostsCursorAdapter jobpostsCursorAdapter;
@@ -51,17 +51,24 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
             }
         });
 
+
+
+
+
         //create a new instance/database
         myDb = new DatabaseHelper(getApplicationContext());
         // Button searchPosts = findViewById(R.id.Search_posts);
         title = findViewById(R.id.titleEdit);
-        //
-        final ListView jobList = findViewById(R.id.jobList);
         //final ArrayList <Jobposts> posts = new ArrayList <Jobposts> ();
 
 
-// get content from jobposts?
-//I made run final?
+
+
+        ArrayList<HashMap<String, String>> userList = myDb.GetJobs();
+        ListView lv = (ListView) findViewById(R.id.jobList);
+        ListAdapter adapter = new SimpleAdapter(MainActivity_jobs.this, userList, R.layout.list_row, new String[]{"name", "designation", "location"}, new int[]{R.id.name, R.id.designation, R.id.location});
+        lv.setAdapter(adapter);
+
 
 
         final Spinner spinner =findViewById(R.id.spinnerIndustry);
@@ -90,7 +97,7 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
 
         final Button searchPosts = findViewById(R.id.Search_posts);
 
-        searchPosts.setOnClickListener(new View.OnClickListener() {
+      /*  searchPosts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Cursor cursor;
@@ -110,7 +117,7 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
                 startActivity(intent);
 
             }
-        });
+        });*/
 
 //create an activity with the linear layout to call search posts, follow spaceship example
 
