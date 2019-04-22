@@ -35,7 +35,8 @@ public class Assessment1 extends AppCompatActivity {
         setContentView(R.layout.activity_assessment);
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        sharedpreferences.edit().clear().commit();
+        //clear shared preferences
+        sharedpreferences.edit().clear().apply();
 
         //start timer
         new CountDownTimer(600000, 1000) { //set for 60 secs, count down by 1 second intervals
@@ -53,13 +54,16 @@ public class Assessment1 extends AppCompatActivity {
 
         }.start();
 
+        //call method onRun
         onRun();
     }
 
     private void onRun() {
+        //find how many questions there are in the question_array
         String[] questionArray = getResources().getStringArray(R.array.question_array);
         numOfQuestions = questionArray.length - 1;
 
+        //call the following methods
         updateQuestion();
         createQuestion();
         createRadioButtons();
@@ -147,6 +151,9 @@ public class Assessment1 extends AppCompatActivity {
                     score=score;
                     updateScore();
                 }
+
+                //if it is the last question, call method finishTest
+                //if it isn't the last question, clear the radio buttons and run again
                 if (questionNum == numOfQuestions) {
                     finishTest();
                 } else {
@@ -160,8 +167,10 @@ public class Assessment1 extends AppCompatActivity {
 
     private void submitButton() {
         Button submit = findViewById(R.id.next_question);
+        //change the text of the button to submit
         submit.setText("Submit");
 
+        //if the button is clicked, call method finishTest
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,22 +180,24 @@ public class Assessment1 extends AppCompatActivity {
     }
 
     private void finishTest() {
+        //put score and question number values into shared preferences
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putInt("score", score);
-        //editor.putInt("questionNum", numOfQuestions);
+        editor.putInt("questionNum", numOfQuestions);
         editor.apply();
 
+        //switch activity to assessment_results activity
         Intent intent = new Intent(getApplicationContext(), assessment_results.class);
         startActivity(intent);
     }
 
     private void updateScore() {
         //adds one to the score
-        score++;
+        score=score++;
     }
 
     private void updateQuestion() {
-        //updates the question number
+        //adds one to the question number
         questionNum++;
     }
 

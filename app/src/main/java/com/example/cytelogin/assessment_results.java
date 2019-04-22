@@ -14,28 +14,26 @@ import java.util.Locale;
 
 public class assessment_results extends AppCompatActivity {
 
+    //initialize variables
     int score;
     int questionNum;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.assessment_results);
 
+
         String MyPrefs = "Assessment";
         SharedPreferences sharedpreferences;
         sharedpreferences = getSharedPreferences(MyPrefs, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedpreferences.edit();
 
-
+        //get score and question number data from shared preferences
         score = sharedpreferences.getInt("score",0);
-        //questionNum = sharedpreferences.getInt("questionNum",1);
-        questionNum=4;
-        onRun();
+        questionNum = sharedpreferences.getInt("questionNum",1);
 
+        //call method onRun
+        onRun();
     }
 
     public void onRun() {
@@ -43,10 +41,21 @@ public class assessment_results extends AppCompatActivity {
         Button linksToEdu = findViewById(R.id.links_to_edu);
         Button backToPosts = findViewById(R.id.back_to_posts);
 
+        //find the score as a percentage
         float temp = (float) score / (float) questionNum;
         int finalScore = (int) (temp * (float) 100);
 
+        //print the score in the textview
         result.setText(String.format(Locale.CANADA, "Score: %d%%", finalScore));
+
+        //if the final score is less than 75%, show links to education button
+        if (finalScore<75){
+            linksToEdu.setVisibility(View.VISIBLE);
+            backToPosts.setVisibility(View.VISIBLE);
+        } else {
+            linksToEdu.setVisibility(View.GONE);
+            backToPosts.setVisibility(View.VISIBLE);
+        }
 
         linksToEdu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -64,20 +73,5 @@ public class assessment_results extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        if (finalScore<75){
-            linksToEdu.setVisibility(View.VISIBLE);
-            backToPosts.setVisibility(View.GONE);
-        } else {
-            linksToEdu.setVisibility(View.GONE);
-            backToPosts.setVisibility(View.VISIBLE);
-        }
-
-
-
-
-
-    }
-
-
+            }
 }
