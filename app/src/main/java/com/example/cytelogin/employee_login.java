@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class employee_login extends AppCompatActivity {
     private DatabaseHelper db;
-    private EditText Name;
+    private EditText Username;
     private EditText Password;
     private Button Login;
     private TextView info;
@@ -22,8 +22,9 @@ public class employee_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startuppage_username_pass);
 
-        Name = (EditText)findViewById(R.id.username);
-        Password = (EditText)findViewById(R.id.password);
+
+        Username = (EditText) findViewById(R.id.username);
+        Password = (EditText) findViewById(R.id.password);
         info = (TextView) findViewById(R.id.textView22);
         Login = (Button) findViewById(R.id.login);
         //for checking out the values in the database with the values entered
@@ -31,21 +32,24 @@ public class employee_login extends AppCompatActivity {
 
         TextView signup = (TextView) findViewById(R.id.signup_main);
 
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Employee_Profile_Activity.class);
                 startActivity(intent);
-            }});
+            }
+        });
 
         final Button login_button = (Button) findViewById(R.id.login);
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
-                startActivity(intent);
+
+                //Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                //startActivity(intent);
                 // Get references to text boxes
-              /*  EditText username_input = (EditText) findViewById(R.id.username);
+                EditText username_input = (EditText) findViewById(R.id.username);
                 EditText password_input = (EditText) findViewById(R.id.password);
                 // Pull input from text boxes
                 String email = username_input.getText().toString();
@@ -66,8 +70,12 @@ public class employee_login extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
 
                 }
+
+                // Intent intentlogin = new Intent(getApplicationContext(),)
+                // startActivity(intentlogin);
+
                 //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
-*/
+
             }
         });
     }
