@@ -43,7 +43,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp" />
 
             <CheckBox
                 android:id="@+id/check_Calculation"
@@ -58,7 +60,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="14dp" />
 
             <CheckBox
                 android:id="@+id/check_Analytical"
@@ -73,7 +77,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp" />
 
             <CheckBox
                 android:id="@+id/check_Elaboration"
@@ -88,7 +94,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp" />
 
             <CheckBox
                 android:id="@+id/check_Displaying"
@@ -103,7 +111,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp" />
 
             <CheckBox
                 android:id="@+id/check_Quality"
@@ -118,7 +128,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="8dp" />
 
             <CheckBox
                 android:id="@+id/check_Technological"
@@ -133,7 +145,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="14dp" />
 
             <CheckBox
                 android:id="@+id/check_Classifying"
@@ -148,7 +162,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="11dp" />
 
             <CheckBox
                 android:id="@+id/check_Problem"
@@ -163,7 +179,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="13dp" />
 
             <CheckBox
                 android:id="@+id/check_Assessing"
@@ -178,7 +196,9 @@
                 android:textColor="@color/Black"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp" />
+                tools:layout_editor_absoluteY="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="11dp" />
 
             <Button
                 android:id="@+id/button_Select"

@@ -43,7 +43,7 @@
         android:ems="10"
         android:hint="Job Title"
         android:inputType="textPersonName"
-        android:textColor="@color/ftcolor"
+        android:textColor="@color/bckcolor"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

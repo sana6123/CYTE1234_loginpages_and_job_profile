@@ -29,8 +29,8 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
     DatabaseHelper myDb;
     Intent intent;
     //public ArrayList <Jobposts> posts;
-    ListView jobList;
-    JobpostsCursorAdapter jobpostsCursorAdapter;
+    ListView lv;
+   // JobpostsCursorAdapter jobpostsCursorAdapter;
 
     private TextView title;
     private ImageButton speakButton;
@@ -64,9 +64,9 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
 
 
 
-        ArrayList<HashMap<String, String>> userList = myDb.GetJobs();
+        ArrayList<HashMap<String, String>> jobList = myDb.GetJobs();
         ListView lv = (ListView) findViewById(R.id.jobList);
-        ListAdapter adapter = new SimpleAdapter(MainActivity_jobs.this, userList, R.layout.list_row, new String[]{"name", "designation", "location"}, new int[]{R.id.name, R.id.designation, R.id.location});
+        ListAdapter adapter = new SimpleAdapter(MainActivity_jobs.this, jobList, R.layout.list_row, new String[]{"name", "designation", "location"}, new int[]{R.id.name, R.id.designation, R.id.location});
         lv.setAdapter(adapter);
 
 
