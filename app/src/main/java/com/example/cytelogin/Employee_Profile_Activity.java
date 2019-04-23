@@ -46,7 +46,7 @@ public class Employee_Profile_Activity extends AppCompatActivity {
                 empeedb.addEmployee(employee_name1,employee_phone1,employee_email1,employee_password1, employee_location1);
 
 // Send username and password to the database and check
-                Intent intent = new Intent(getApplicationContext(),DetailsActivity.class);
+                Intent intent = new Intent(getApplicationContext(),MainActivity_jobs.class);
                 startActivity(intent);
 
                 //login_button.setText(username + " " + password); // Get rid of this

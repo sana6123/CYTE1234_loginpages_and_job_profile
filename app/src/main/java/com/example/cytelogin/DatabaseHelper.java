@@ -296,29 +296,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
 
-  /*
 
-        public boolean addJobPost ( int id, String title, String industry, String city){
-///insert values
-            SQLiteDatabase db = this.getWritableDatabase();
-            ContentValues contentValues = new ContentValues();
-            contentValues.put(ID_1, id);
-            contentValues.put(TITLE_2, title);
-            contentValues.put(INDUSTRY_3, industry);
-            contentValues.put(CITY_4, city);
-            long result = db.insert(TABLE_NAME, null, contentValues);
-            //gives -1 result if there is an error
-            if (result == -1) {
-
-
-                db.close();
-                return false;
-            } else {
-                db.close();
-
-                return true;
-            }
-        }*/
 //when the employee finishes their assessment the addCompletedAssessnt
         public boolean addCompletedAssessment ( int jobPostID, int employeeID){
             SQLiteDatabase db = this.getWritableDatabase();
@@ -419,12 +397,7 @@ public boolean CheckEr(String email, String password) {
     // selection arguments
     String[] selectionArgs = {email, password};
 
-    // query user table with conditions
-    /**
-     * Here query function is used to fetch records from user table this function works like we use sql query.
-     * SQL query equivalent to this query function is
-     * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
-     */
+
     Cursor cursor = db.query(EMPLOYER_NAME, //Table to query
             columns,                    //columns to return
             selection,                  //columns for the WHERE clause
