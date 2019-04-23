@@ -22,11 +22,12 @@ public class employee_login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startuppage_username_pass);
-
+/*
         Username = findViewById(R.id.username);
         Password = findViewById(R.id.password);
         info = findViewById(R.id.textView22);
         Login = findViewById(R.id.login);
+        */
         TextView signup = findViewById(R.id.signup_main);
         final Button login_button = findViewById(R.id.login);
 
@@ -56,19 +57,17 @@ public class employee_login extends AppCompatActivity {
                 EditText username_input = findViewById(R.id.username);
                 EditText password_input = findViewById(R.id.password);
                 // Pull input from text boxes
-                String email = username_input.getText().toString();
-                String password = password_input.getText().toString();
+
                 // Send username and password to the database and check
                 //login_button.setText(username + " " + password); // Get rid of this
 
-                employee_accounts e = db.getEmployeeByEmail(email);
-                String ePass = e.getPassword();
 
-                if (password.equals(ePass)) {
+
+                if (db.checkEe(username_input.getText().toString(), password_input.getText().toString())) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Incorrect email or password", Toast.LENGTH_SHORT).show();
 
                 }
 

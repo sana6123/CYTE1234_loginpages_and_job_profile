@@ -43,16 +43,19 @@ public class Employee_Profile_Activity extends AppCompatActivity {
                 String employee_password1 = employee_password.getText().toString();
                 String employee_location1 = employee_location.getText().toString();
 
-                empeedb.addEmployee(employee_name1,employee_phone1,employee_email1,employee_password1, employee_location1);
+                if (empeedb.addEmployee(employee_name1, employee_phone1, employee_email1, employee_password1, employee_location1)) {
 
 // Send username and password to the database and check
-                Intent intent = new Intent(getApplicationContext(),DetailsActivity.class);
-                startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(), employee_login.class);
+                    startActivity(intent);
 
-                //login_button.setText(username + " " + password); // Get rid of this
-                Toast.makeText(getApplicationContext(), "Your data is stored", Toast.LENGTH_SHORT).show();
+                    //login_button.setText(username + " " + password); // Get rid of this
+                    Toast.makeText(getApplicationContext(), "Your data is stored", Toast.LENGTH_SHORT).show();
 
-                //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
+                    //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

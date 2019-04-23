@@ -12,16 +12,19 @@ import java.util.HashMap;
 
 //in the constructor we create a database for jobposts
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "jobs"; //name of the db
+    public static final String DATABASE_NAME = "DataManager.db"; //name of the db
+    private static final int DATABASE_VERSION = 1;
+
+
     public static final String TABLE_NAME = "jobsTable"; //table name
-    public static final String ID_1 = "id"; //column 1 name
+    public static final String JOB_ID = "job_id"; //column 1 name
     public static final String TITLE_2 = "TITLE"; //column 2 name
     public static final String INDUSTRY_3 = "INDUSTRY"; //column 3 name
     public static final String CITY_4 = "CITY"; //column 4 name
 
     //A new table for saving the information for employee
-    public static final String EMPLOYEE_NAME="employee_profile";
-    private static final String KEY_ID = "id";
+    public static final String EMPLOYEE_NAME="employee";
+    private static final String EMPLOYEE_ID = "employee_id";
     public static final String COL_1="Name";
     public static final String COL_2="Phone";
     public static final String COL_3="Email";
@@ -29,21 +32,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_5="Postal_code";
 
     //a database for saving the information for employer
-    public static final String EMPLOYER_NAME = "employer_profile";
-    private static final String KEY_IDD = "id";
+    public static final String EMPLOYER_NAME = "employer";
+    private static final String EMPLOYER_ID = "employer_id";
     public static final String EMPR_1="Company_Name";
     public static final String EMPR_2="Email_employer";
     public static final String EMPR_3="Phone_employer";
     public static final String EMPR_4="Password_employer";
     public static final String EMPR_5="Postal_code_employer";
 
+    private String createJobPostsTable = "CREATE TABLE " + TABLE_NAME + " (" + JOB_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT" + ")";
+
+
+    private String createEmployeeTable = "CREATE TABLE " + EMPLOYEE_NAME + " (" + EMPLOYEE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COL_1 + " TEXT," + COL_2 + " TEXT,"+ COL_3 + " TEXT," +  COL_4 + " TEXT," + COL_5 + " TEXT" + ")";
+
+
+    private String createEmployerTable = "CREATE TABLE " + EMPLOYER_NAME + " (" + EMPLOYER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + EMPR_1 + " TEXT," + EMPR_2 + " TEXT," + EMPR_3 +" TEXT,"+ EMPR_4 + " TEXT," + EMPR_5 + " TEXT" + ")";
+
+    private String dropJobPostsTable = "DROP TABLE IF EXISTS " + TABLE_NAME;
+    private String dropEmployeeTable = "DROP TABLE IF EXISTS " + EMPLOYEE_NAME;
+    private String dropEmployerTable = "DROP TABLE IF EXISTS " + EMPLOYER_NAME;
 
 
     //a database for anonymous identity
-    private static final String COMPLETED_ASSESSMENTS="completed_assessments";
-    public static final String CA_EMP_ID="Employee ID";
-    public static final String CA_JP_ID="Job Post ID";
-    private static final int DATABASE_VERSION = 1;
+  //  private static final String COMPLETED_ASSESSMENTS="completed_assessments";
+  //  public static final String CA_EMP_ID="Employee ID";
+ //   public static final String CA_JP_ID="Job Post ID";
+
 
 
     //constructor //whenever it is called, the database will be created
@@ -52,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //creates database and table
         //SQLiteDatabase db = this.getWritableDatabase();
 
-    public  DatabaseHelper(Context context) {
+    public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -60,30 +74,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //where you create a table? method that executes when database is called
       // db.execSQL(String.format("create table if not exists " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, INDUSTRY TEXT, CITY TEXT)"));
-
-        String createJobPostsTable = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + ID_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE_2 + " TEXT," + INDUSTRY_3 + " TEXT," + CITY_4 + " TEXT)";
         db.execSQL(createJobPostsTable);
-
-        String createEmployeeTable = "CREATE TABLE IF NOT EXISTS " +EMPLOYEE_NAME+"("+KEY_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+COL_1+"TEXT" + COL_2 + "TEXT"+ COL_3 + "TEXT" +  COL_4 + "TEXT" + COL_5 +"TEXT)";
         db.execSQL(createEmployeeTable);
-
-        String createEmployerTable = "CREATE TABLE IF NOT EXISTS " + EMPLOYER_NAME +"("+ KEY_IDD+" INTEGER PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "TEXT" + EMPR_2+ "TEXT" + EMPR_3 +"TEXT"+ EMPR_4+ "TEXT" + EMPR_5 +"TEXT)";
         db.execSQL(createEmployerTable);
-
 
 
         //String createEmployerTable =
         //db.execSQL(query1);
-        String createCompletedAssessmentsTable =  "CREATE TABLE IF NOT EXISTS " + COMPLETED_ASSESSMENTS +"("+ KEY_IDD+" INTEGER PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "TEXT" + EMPR_2+ "TEXT" + EMPR_3 +"TEXT"+ EMPR_4+ "TEXT" + EMPR_5 +"TEXT)";
+        //String createCompletedAssessmentsTable =  "CREATE TABLE IF NOT EXISTS " + COMPLETED_ASSESSMENTS +"("+ KEY_IDD+" INTEGER PRIMARY KEY AUTOINCREMENT,"+EMPR_1+ "TEXT" + EMPR_2+ "TEXT" + EMPR_3 +"TEXT"+ EMPR_4+ "TEXT" + EMPR_5 +"TEXT)";
 
-        db.execSQL(createCompletedAssessmentsTable);
+      //  db.execSQL(createCompletedAssessmentsTable);
     }
 
 
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-    db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
+    db.execSQL(dropJobPostsTable);
+    db.execSQL(dropEmployeeTable);
+    db.execSQL(dropEmployerTable);
     onCreate(db);
     }
 
@@ -192,8 +201,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
 
-            Cursor cursor2 = db.query(EMPLOYEE_NAME, new String[]{KEY_IDD,
-                            COL_1, COL_2, COL_3, COL_4, COL_5}, KEY_IDD + "=?",
+            Cursor cursor2 = db.query(EMPLOYEE_NAME, new String[]{EMPLOYEE_ID,
+                            COL_1, COL_2, COL_3, COL_4, COL_5}, EMPLOYEE_ID + "=?",
                     new String[]{String.valueOf(id)}, null, null, null, null);
             if (cursor2 != null) { // If there are non-zero rows returned
                 cursor2.moveToFirst(); // go to the first one
@@ -207,7 +216,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getReadableDatabase();
 
             // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
-            Cursor cursor = db.query(EMPLOYEE_NAME, new String[]{KEY_ID,
+            Cursor cursor = db.query(EMPLOYEE_NAME, new String[]{EMPLOYEE_ID,
                             COL_1, COL_2, COL_3, COL_4, COL_5}, COL_3 + "=?",
                     new String[]{email}, null, null, null, null);
             if (cursor != null) { // If there are non-zero rows returned
@@ -228,15 +237,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             contentValues.put(COL_4, password);
             contentValues.put(COL_5, postalCode);
             long result = db.insert(EMPLOYEE_NAME, null, contentValues);
+            db.close();
             //gives -1 result if there is an error
             if (result == -1) {
-
-
-                db.close();
                 return false;
             } else {
-                db.close();
-
                 return true;
             }
         }
@@ -246,8 +251,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getReadableDatabase();
 
             // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
-            Cursor cursor2 = db.query(EMPLOYER_NAME, new String[]{KEY_IDD,
-                            EMPR_1, EMPR_2, EMPR_3, EMPR_4, EMPR_5}, KEY_IDD + "=?",
+            Cursor cursor2 = db.query(EMPLOYER_NAME, new String[]{EMPLOYER_ID,
+                            EMPR_1, EMPR_2, EMPR_3, EMPR_4, EMPR_5}, EMPLOYER_ID + "=?",
                     new String[]{String.valueOf(id)}, null, null, null, null);
             if (cursor2 != null) { // If there are non-zero rows returned
                 cursor2.moveToFirst(); // go to the first one
@@ -261,7 +266,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getReadableDatabase();
 
             // AKA from TABLE_NAME, with details from these columns, I want to select the row with this ID
-            Cursor cursor1 = db.query(EMPLOYER_NAME, new String[]{KEY_IDD,
+            Cursor cursor1 = db.query(EMPLOYER_NAME, new String[]{EMPLOYER_ID,
                             EMPR_1, EMPR_2, EMPR_3, EMPR_4, EMPR_5}, EMPR_2 + "=?",
                     new String[]{email_empr}, null, null, null, null);
             if (cursor1 != null) { // If there are non-zero rows returned
@@ -271,27 +276,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return new employer_accounts(cursor1.getString(1), cursor1.getString(2), cursor1.getString(3), cursor1.getString(4), cursor1.getString(5));
         }
 
-        public boolean addEmployer (EditText companyname, EditText email_empr, EditText phone_empr, EditText
-        password_empr, EditText postal_code_empr){
+        public boolean addEmployer (String companyname, String email_empr, String phone_empr, String
+        password_empr, String postal_code_empr){
 ///insert values
 
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
-            contentValues.put(EMPR_1, String.valueOf(companyname));
-            contentValues.put(EMPR_2, String.valueOf(email_empr));
-            contentValues.put(EMPR_3, String.valueOf(phone_empr));
-            contentValues.put(EMPR_4, String.valueOf(password_empr));
-            contentValues.put(EMPR_5, String.valueOf(postal_code_empr));
-            long result = db.insert(EMPLOYEE_NAME, null, contentValues);
+            contentValues.put(EMPR_1, companyname);
+            contentValues.put(EMPR_2, email_empr);
+            contentValues.put(EMPR_3, phone_empr);
+            contentValues.put(EMPR_4, password_empr);
+            contentValues.put(EMPR_5, postal_code_empr);
+            long result = db.insert(EMPLOYER_NAME, null, contentValues);
+            db.close();
             //gives -1 result if there is an error
             if (result == -1) {
-
-
-                db.close();
                 return false;
             } else {
-                db.close();
-
                 return true;
             }
         }
@@ -318,7 +319,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 return true;
             }
-        }*/
+        }
 //when the employee finishes their assessment the addCompletedAssessnt
         public boolean addCompletedAssessment ( int jobPostID, int employeeID){
             SQLiteDatabase db = this.getWritableDatabase();
@@ -336,6 +337,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 return true;
             }
         }
+
 
         //this will get us all the completed assessment = id jobposts+id for employee
         //and the employer would be given the employee id
@@ -358,7 +360,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor.close();
             return employeeList;
         }
-
+*/
 
         public Cursor getAllData () {
             SQLiteDatabase db = this.getWritableDatabase();
@@ -376,7 +378,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(COL_4, sa.getPassword());//password
             values.put(COL_5, sa.getPostal_code());//postalcode
 
-            return db.update(EMPLOYEE_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(sa.getIdd())});
+            return db.update(EMPLOYEE_NAME, values, EMPLOYEE_ID + "=?", new String[]{String.valueOf(sa.getIdd())});
         }
         //EMPLOYER
         int update_employer (employer_accounts sa){
@@ -389,28 +391,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(EMPR_4, sa.password_empr());//password
             values.put(EMPR_5, sa.postal_code_empr());//postalcode
 
-            return db.update(EMPLOYER_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(sa.getid_1())});
+            return db.update(EMPLOYER_NAME, values, EMPLOYER_ID + "=?", new String[]{String.valueOf(sa.getid_1())});
         }
 
 
         //EMPLOYEE
         public void delete_employee ( int id){
             SQLiteDatabase db = this.getWritableDatabase();
-            db.delete(EMPLOYEE_NAME, KEY_ID + "=?", new String[]{String.valueOf(id)});
+            db.delete(EMPLOYEE_NAME, EMPLOYEE_ID + "=?", new String[]{String.valueOf(id)});
             db.close();
         }
         public void delete_employer ( int id){
             SQLiteDatabase db = this.getWritableDatabase();
-            db.delete(EMPLOYER_NAME, KEY_IDD + "=?", new String[]{String.valueOf(id)});
+            db.delete(EMPLOYER_NAME, EMPLOYER_ID + "=?", new String[]{String.valueOf(id)});
             db.close();
         }
 
 //CHECK EMPLOYER EMAIL AND PASSWORD
-public boolean CheckEr(String email, String password) {
+public boolean checkEr(String email, String password) {
 
     // array of columns to fetch
     String[] columns = {
-            KEY_IDD
+            EMPLOYER_ID
     };
     SQLiteDatabase db = this.getReadableDatabase();
     // selection criteria
@@ -444,15 +446,15 @@ public boolean CheckEr(String email, String password) {
     return false;
 }
 //CHECK EMPLOYES EMAIL AND PASSWORD
-public boolean CheckEe(String email, String password) {
+public boolean checkEe(String email, String password) {
 
     // array of columns to fetch
     String[] columns = {
-            KEY_IDD
+            EMPLOYEE_ID
     };
     SQLiteDatabase db = this.getReadableDatabase();
     // selection criteria
-    String selection = EMPR_2 + " = ?" + " AND " + EMPR_4 + " = ?";
+    String selection = COL_3 + " = ?" + " AND " + COL_4 + " = ?";
 
     // selection arguments
     String[] selectionArgs = {email, password};
@@ -463,7 +465,7 @@ public boolean CheckEe(String email, String password) {
      * SQL query equivalent to this query function is
      * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
      */
-    Cursor cursor = db.query(EMPLOYER_NAME, //Table to query
+    Cursor cursor = db.query(EMPLOYEE_NAME, //Table to query
             columns,                    //columns to return
             selection,                  //columns for the WHERE clause
             selectionArgs,              //The values for the WHERE clause
@@ -527,7 +529,7 @@ public boolean CheckEe(String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<HashMap<String, String>> jobList = new ArrayList<>();
         String query = "SELECT TITLE, INDUSTRY, CITY FROM "+ TABLE_NAME;
-        Cursor cursor = db.query(TABLE_NAME, new String[]{TITLE_2, INDUSTRY_3, CITY_4}, KEY_ID+ "=?",new String[]{String.valueOf(jobid)},null, null, null, null);
+        Cursor cursor = db.query(TABLE_NAME, new String[]{TITLE_2, INDUSTRY_3, CITY_4}, JOB_ID+ "=?",new String[]{String.valueOf(jobid)},null, null, null, null);
         if (cursor.moveToNext()){
             HashMap<String,String> job = new HashMap<>();
             job.put("TITLE",cursor.getString(cursor.getColumnIndex(TITLE_2)));
@@ -541,7 +543,7 @@ public boolean CheckEe(String email, String password) {
     // Delete Job Details
     public void DeleteJob(int jobid){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME, KEY_ID+" = ?",new String[]{String.valueOf(jobid)});
+        db.delete(TABLE_NAME, JOB_ID+" = ?",new String[]{String.valueOf(jobid)});
         db.close();
     }
     // Update User Details
@@ -550,7 +552,7 @@ public boolean CheckEe(String email, String password) {
         ContentValues cVals = new ContentValues();
         cVals.put(INDUSTRY_3, location);
         cVals.put(CITY_4, designation);
-        int count = db.update(TABLE_NAME, cVals, KEY_ID+" = ?",new String[]{String.valueOf(id)});
+        int count = db.update(TABLE_NAME, cVals, JOB_ID+" = ?",new String[]{String.valueOf(id)});
         return  count;
     }
 

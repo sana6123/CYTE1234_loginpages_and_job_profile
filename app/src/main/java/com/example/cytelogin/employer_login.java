@@ -31,7 +31,7 @@ public class employer_login extends AppCompatActivity {
         //for checking out the values in the database with the values entered
         db = new DatabaseHelper(getApplicationContext());
       */
-
+        db = new DatabaseHelper(getApplicationContext());
         final Button login_button = findViewById(R.id.login_empr);
         TextView signup = findViewById(R.id.signup_main_empr);
 
@@ -50,33 +50,26 @@ public class employer_login extends AppCompatActivity {
             public void onClick(View v) {
                 //TODO: IF ABLE TO MAKE THE PASSWORD WORK, TAKE THIS OUT
                 //creates new intent, switches activity to MainActivity_jobs (job listings screen)
-                Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
-                startActivity(i);
+               // Intent i = new Intent(getApplicationContext(), MainActivity_jobs.class);
+                //startActivity(i);
 
                 // Get references to text boxes
                 EditText username_input = findViewById(R.id.username);
                 EditText password_input = findViewById(R.id.password);
 
-                // Pull input from text boxes
-                String email = username_input.getText().toString();
-                String password = password_input.getText().toString();
+
 
                 // Send username and password to the database and check
                 //login_button.setText(username + " " + password); // Get rid of this
 
-                employer_accounts e = db.getEmployerByEmail(email);
-                String employer_Password = e.password_empr();
-
-              //  startActivity(new Intent(employer_login.this, Employee_Profile_Activity.class));
-
-                if (password.contentEquals(employer_Password)) {
+                if (db.checkEr(username_input.getText().toString(), password_input.getText().toString())) {
                     // Password and Email match. Successful Login
                     // Make your intent and go to employee profile activity.
                     Intent intent = new Intent(getApplicationContext(), MainActivity_jobs.class);
                     startActivity(intent);
                     // Remember to put ".class" at the end of the activity name!
                 } else {
-                    Toast.makeText(getApplicationContext(), "Incorrect email or password" + password, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Incorrect email or password", Toast.LENGTH_SHORT).show();
                 }
 
             }
