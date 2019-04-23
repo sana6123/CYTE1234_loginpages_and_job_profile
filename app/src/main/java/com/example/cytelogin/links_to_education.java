@@ -29,24 +29,27 @@ public class links_to_education extends AppCompatActivity {
         });
 
     }
-
+//this link takes the user to BowValley software developing course that they offer
     public void goto1 (View view) {
         goToUrl ( "https://bowvalleycollege.ca/programs-courses/creative-technologies/software-development");
     }
-
+    //this link takes the user to Sait programs and courses regarding java
     public void goto2 (View view) {
         goToUrl ( "https://www.sait.ca/programs-and-courses/continuing-education/courses-and-certificates/java-development-certificate-of-achievemen");
     }
+    //this link takes the user to Ontariocolleges to go through an analyst programming course that they offer
     public void goto3 (View view) {
         goToUrl ( "https://www.ontariocolleges.ca/en/programs/computers-and-telecommunications/computer-programmer-analyst");
     }
+    //this link takes the user to student Reviews for BowValley collage
     public void goto11 (View view) {
         goToUrl ( "http://www.ratemyprofessors.com/campusRatings.jsp?sid=5635");
     }
-
+    //this link takes the user to reviews for Sait Institute of Technology
     public void goto22 (View view) {
         goToUrl ( "https://www.sait.ca/about-sait/who-we-are/publications/graduate-employment-survey");
     }
+    //this link takes the user to reviews for Onatariocollages
     public void goto33 (View view) {
         goToUrl ( "https://www.facebook.com/pg/ontariocolleges.ca/reviews/");
     }
