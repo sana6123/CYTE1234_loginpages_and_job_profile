@@ -220,7 +220,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/check_Classifying"
                 android:layout_alignTop="@+id/button_Select"
-                android:text="TextView" />
+                android:text="TextView"
+                android:layout_alignLeft="@+id/check_Classifying" />
 
         </RelativeLayout>
     </ScrollView>
