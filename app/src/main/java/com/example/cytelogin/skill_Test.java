@@ -39,6 +39,7 @@ public class skill_Test extends AppCompatActivity {
 
         mselectedskillbutton = findViewById(R.id.button_Select);
         mresulttextview = findViewById(R.id.results);
+        mresulttextview.setVisibility(View.GONE);
         mresult = new ArrayList<>();
         mresulttextview.setEnabled(false);
 

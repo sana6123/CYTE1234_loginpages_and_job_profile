@@ -10,161 +10,42 @@
 
 
     <ScrollView
-        android:layout_width="383dp"
-        android:layout_height="485dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/semitransparentbackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
         <RelativeLayout
-            android:layout_width="375dp"
-            android:layout_height="419dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <CheckBox
                 android:id="@+id/check_Public"
                 android:layout_width="357dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/check_Calculation"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="89dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_border"
                 android:text="@string/check_public"
                 android:textColor="@color/Black"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp" />
-
-            <CheckBox
-                android:id="@+id/check_Calculation"
-                android:layout_width="357dp"
-                android:layout_height="69dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/rounded_border"
-                android:text="@string/check_Calculation"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="14dp" />
-
-            <CheckBox
-                android:id="@+id/check_Analytical"
-                android:layout_width="361dp"
-                android:layout_height="70dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="678dp"
-                android:background="@drawable/rounded_border"
-                android:text="@string/check_Analytical"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="15dp" />
-
-            <CheckBox
-                android:id="@+id/check_Elaboration"
-                android:layout_width="363dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="612dp"
-                android:background="@drawable/rounded_border"
-                android:text="@string/check_Elaboration"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp" />
-
-            <CheckBox
-                android:id="@+id/check_Displaying"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="527dp"
-                android:background="@drawable/rounded_border"
-                android:text="@string/check_Displaying"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp" />
-
-            <CheckBox
-                android:id="@+id/check_Quality"
-                android:layout_width="359dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="459dp"
-                android:background="@drawable/rounded_border"
-                android:text="@string/check_Quality"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="8dp" />
-
-            <CheckBox
-                android:id="@+id/check_Technological"
-                android:layout_width="359dp"
-                android:layout_height="71dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="374dp"
-                android:background="@drawable/rounded_border"
-                android:text="@string/check_Technological"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="14dp" />
-
-            <CheckBox
-                android:id="@+id/check_Classifying"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="11dp"
-                android:layout_marginTop="291dp"
-                android:background="@drawable/rounded_border"
-                android:text="@string/check_Classifying"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="11dp" />
+                tools:layout_editor_absoluteY="15dp" />
 
             <CheckBox
                 android:id="@+id/check_Problem"
@@ -172,51 +53,174 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="157dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="96dp"
                 android:background="@drawable/rounded_border"
                 android:text="@string/check_Problem"
                 android:textColor="@color/Black"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="13dp" />
+                tools:layout_editor_absoluteY="15dp" />
+
+            <CheckBox
+                android:id="@+id/check_Calculation"
+                android:layout_width="357dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/check_Problem"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_border"
+                android:text="@string/check_Calculation"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="15dp" />
 
             <CheckBox
                 android:id="@+id/check_Assessing"
                 android:layout_width="361dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/check_Calculation"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="11dp"
-                android:layout_marginTop="224dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="270dp"
                 android:background="@drawable/rounded_border"
                 android:text="@string/check_Assessing"
                 android:textColor="@color/Black"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="11dp" />
+                tools:layout_editor_absoluteY="15dp" />
+
+            <CheckBox
+                android:id="@+id/check_Classifying"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="336dp"
+                android:background="@drawable/rounded_border"
+                android:text="@string/check_Classifying"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <CheckBox
+                android:id="@+id/check_Technological"
+                android:layout_width="359dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="440dp"
+                android:background="@drawable/rounded_border"
+                android:text="@string/check_Technological"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <CheckBox
+                android:id="@+id/check_Analytical"
+                android:layout_width="361dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="678dp"
+                android:background="@drawable/rounded_border"
+                android:text="@string/check_Analytical"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <CheckBox
+                android:id="@+id/check_Elaboration"
+                android:layout_width="363dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="612dp"
+                android:background="@drawable/rounded_border"
+                android:text="@string/check_Elaboration"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <CheckBox
+                android:id="@+id/check_Displaying"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="527dp"
+                android:background="@drawable/rounded_border"
+                android:text="@string/check_Displaying"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <CheckBox
+                android:id="@+id/check_Quality"
+                android:layout_width="359dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="765dp"
+                android:background="@drawable/rounded_border"
+                android:text="@string/check_Quality"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="15dp" />
 
             <Button
                 android:id="@+id/button_Select"
-                android:layout_width="wrap_content"
-                android:layout_height="68dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_gravity="bottom"
-                android:layout_marginStart="186dp"
-                android:layout_marginLeft="186dp"
-                android:layout_marginTop="764dp"
+                android:layout_marginStart="111dp"
+                android:layout_marginLeft="111dp"
+                android:layout_marginTop="880dp"
+                android:layout_marginEnd="113dp"
+                android:layout_marginRight="113dp"
                 android:background="@drawable/rounded_border"
                 android:text="@string/select_skills_button"
                 android:textColor="@color/design_default_color_primary_dark"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="15dp"
                 tools:layout_editor_absoluteY="15dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/check_Classifying"
+                android:layout_alignTop="@+id/button_Select"
+                android:text="TextView" />
 
         </RelativeLayout>
     </ScrollView>
