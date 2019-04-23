@@ -52,7 +52,6 @@ public class Employee_Profile_Activity extends AppCompatActivity {
                 //login_button.setText(username + " " + password); // Get rid of this
                 Toast.makeText(getApplicationContext(), "Your data is stored", Toast.LENGTH_SHORT).show();
 
-                //startActivity(new Intent(employee_login.this, Employee_Profile_Activity.class));
             }
         });
     }

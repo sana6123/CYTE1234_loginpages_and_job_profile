@@ -3,6 +3,7 @@ package com.example.cytelogin;
 //import android.content.Intent;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
@@ -97,7 +98,7 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
 
         final Button searchPosts = findViewById(R.id.Search_posts);
 
-      /*  searchPosts.setOnClickListener(new View.OnClickListener() {
+      searchPosts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Cursor cursor;
@@ -105,7 +106,7 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
                 String selectedCity = spinner2.getSelectedItem().toString();
                 String titleText = title.getText().toString();
 
-                cursor = myDb.getAllApplications(titleText, selectedIndustry, selectedCity);
+                //cursor = myDb.getAllApplications(titleText, selectedIndustry, selectedCity);
                 //jobpostsCursorAdapter = new JobpostsCursorAdapter(getApplicationContext(),cursor);
                 //jobList.setAdapter(jobpostsCursorAdapter);
 
@@ -117,12 +118,8 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
                 startActivity(intent);
 
             }
-        });*/
+        });
 
-//create an activity with the linear layout to call search posts, follow spaceship example
-
-//something I added this weekend
-        //Toast.makeText(getApplicationContext(), "New post is stored", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -171,21 +168,3 @@ public class MainActivity_jobs extends AppCompatActivity implements AdapterView.
     }
 
 }
-//cut it out later
-/*for (int i = 0; i < posts.size(); i++) {
-                    Jobposts sa = posts.get(i);
-                    TextView t = new TextView(getApplicationContext());
-                    t.setText(sa.toString());
-                    final int update_id = sa.getId();
-                    runOnUiThread(run);
-                    t.setOnClickListener(new View.OnClickListener() {
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Assessment1.class);
-                            intent.putExtra("id", update_id);
-                            startActivity(intent);
-                        }});
-                    jobPostlist.addView(t);
-                }
-// what is the Joblist from database then?
-                jobPostlist.postInvalidate();*/
